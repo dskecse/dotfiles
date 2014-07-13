@@ -456,12 +456,12 @@ sudo apt-get install erlang erlang-manpages
 # Installing the erlang package automatically installs the entire OTP suite.
 # run using `erl`
 
-# install IntelliJ IDEA
-wget http://download.jetbrains.com/idea/ideaIU-12.1.4.tar.gz | sudo tar -C /usr/local -xzf -
-echo 'PATH=$PATH:/usr/local/idea-IU-129.713/bin' >> ~/.zshrc
-/usr/local/idea/bin/idea.sh
-# Name: BoringFlooders
-# Serial: 92547-R9RUL-A8ZF2-2AUCI-4YJX8-0F5I3
+# # install IntelliJ IDEA
+# wget http://download.jetbrains.com/idea/ideaIU-12.1.4.tar.gz | sudo tar -C /usr/local -xzf -
+# echo 'PATH=$PATH:/usr/local/idea-IU-129.713/bin' >> ~/.zshrc
+# /usr/local/idea/bin/idea.sh
+# # Name: BoringFlooders
+# # Serial: 92547-R9RUL-A8ZF2-2AUCI-4YJX8-0F5I3
 
 ## DBs
 # install Redis (http://redis.io/)
