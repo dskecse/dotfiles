@@ -361,7 +361,7 @@ sudo sed -i 's/gedit\.desktop/subl\.desktop/g' /usr/share/applications/defaults.
 # install vim and rails.vim (http://biodegradablegeek.com/2007/12/using-vim-as-a-complete-ruby-on-rails-ide/)
 sudo apt-get install -y vim
 # autogenerate .vimrc
-cp ~/dotfiles/vimrc ~/.vimrc
+ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 mkdir .vim
 cd .vim
 wget http://www.vim.org/scripts/download_script.php?src_id=16429
@@ -387,7 +387,7 @@ sudo wget http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-mode.el
 sudo wget http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-electric.el
 cd ~
 # append to .emacs
-cp ~/dotfiles/emacs ~/.emacs
+ln -s ~/dotfiles/emacs/emacs ~/.emacs
 
 # install ImageMagick/RMagick
 # ImageMagick / RMagick - Can't install RMagick 2.13.1. Can't find Magick-config
