@@ -11,9 +11,9 @@ sudo apt-get update
 # sudo apt-get upgrade -y
 
 # install some basic programs
-sudo apt-get install -y dkms # For installing VirtualBox guest additions
 sudo apt-get install -y curl
 sudo apt-get install -y dos2unix
+sudo apt-get install -y zmv # for doing mass renaming
 sudo apt-get install -y unrar
 sudo apt-get install -y sqlite3 libsqlite3-dev # install sqlite3 dev
 sudo apt-get install -y libssl-dev openssl zlib1g zlib1g-dev zlibc
@@ -670,6 +670,19 @@ rustc -v
 # sudo add-apt-repository ppa:birdie-team/daily
 # sudo apt-get update && sudo apt-get install birdie -y
 
+# install keybase
+# sudo apt-get install -y gnupg # or gpg
+sudo npm install -g keybase-installer
+keybase-installer # run the installer, which verifies the latest release
+keybase version
+
+# install screenfetch
+# http://tuxtweaks.com/2013/12/install-screenfetch-linux/
+sudo apt-get install -y lsb-release scrot
+wget -O screenfetch 'https://raw.github.com/KittyKatt/screenFetch/master/screenfetch-dev'
+chmod u+x screenfetch
+sudo cp screenfetch /usr/local/bin
+screenfetch -s
 
 # turn off update popups
 cd ~
