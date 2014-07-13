@@ -188,10 +188,10 @@ cd /usr/local/share/jboss/bin
 ./add-user.sh # app1:appserver
 # Now you should create a new Management User by typing "a" and enter later username `app1` and password
 # Start the jBoss
-./standalone.sh -Djboss.bind.address=0.0.0.0 -Djboss.bind.address.management=0.0.0.0 &
-# http://0.0.0.0:8080/
-# http://0.0.0.0:9990/console
-./jboss-cli.sh --connect --controller=0.0.0.0:9999 command=:shutdown # to shutdown
+./standalone.sh -Djboss.bind.address=127.0.0.1 -Djboss.bind.address.management=127.0.0.1 &
+# http://127.0.0.1:8080/
+# http://127.0.0.1:9990/console
+./jboss-cli.sh --connect --controller=127.0.0.1:9999 command=:shutdown # to shutdown
 exit
 cd ~
 
