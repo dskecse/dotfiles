@@ -134,7 +134,7 @@ exec /bin/zsh
 git clone git@github.com:robbyrussel/oh-my-zsh.git ~/.oh-my-zsh # MANUAL way
 cp ~/.zshrc ~/.zshrc.orig # OPTIONAL backup existing ~/.zshrc file
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc # create a new zsh config by copying zsh template
-exec /bin/zshs
+exec /bin/zsh
 
 # install xclip
 # to copy file contents into clipboard like: xclip -sel clip < ~/some_file
