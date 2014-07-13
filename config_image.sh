@@ -307,8 +307,15 @@ gem install sqlite3-ruby
 # install addional rails-related applications
 sudo apt-get install -y sphinxsearch
 # install PostgreSQL
-sudo apt-get install -y postgresql
-sudo apt-get install -y postgresql-server-dev-9.1
+echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -sc)-pgdg main" | sudo tee -a /etc/apt/sources.list.d/pgdg.list
+# import the repository signing key, and update the package lists
+wget -qO - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install -y postgresql-9.4 postgresql-client-9.4 postgresql-contrib-9.4
+# sudo apt-get install -y libpq-dev # libraries and headers for C language frontend development
+sudo apt-get install -y pgadmin3
+sudo /etc/init.d/postgresql restart
+sudo update-rc.d postgresql disable
 
 # # download rottenpotatoes
 # cd ~/Documents
