@@ -691,6 +691,9 @@ sudo npm install -g keybase-installer
 sudo keybase-installer # run the installer, which verifies the latest release
 keybase version
 
+# install keepassx
+sudo apt-get install -y keepassx
+
 # install screenfetch
 # http://tuxtweaks.com/2013/12/install-screenfetch-linux/
 sudo apt-get install -y scrot
