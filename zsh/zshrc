@@ -39,7 +39,7 @@ source $ZSH/oh-my-zsh.sh
 alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'
-alias spk='nautilus ~/.config/sublime-text-3/Packages'
+alias spk='thunar ~/.config/sublime-text-3/Packages'
 alias zip='zip -9'
 
 GOPATH=$HOME/gocode
