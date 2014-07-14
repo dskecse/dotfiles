@@ -3,27 +3,30 @@
 # run with . config_image.sh
 # please note this script is fragile, as public download urls may change
 
+cd ~
+
 # delete standard games
 sudo apt-get remove --purge gnome-mines gnome-sudoku gnome-mahjongg aisleriot -y
 
-cd ~
 sudo apt-get update
 # sudo apt-get upgrade -y
 
 # install some basic programs
 sudo apt-get install -y curl
 sudo apt-get install -y dos2unix
-sudo apt-get install -y zmv # for doing mass renaming
+sudo apt-get install -y mc
+# sudo apt-get install -y zmv # for doing mass renaming
 sudo apt-get install -y unrar
 sudo apt-get install -y sqlite3 libsqlite3-dev # install sqlite3 dev
 sudo apt-get install -y libssl-dev openssl zlib1g zlib1g-dev zlibc
 sudo apt-get install -y libxslt-dev libxml2-dev
+sudo apt-get install -y libcurl3-dev
 sudo apt-get install -y g++
 sudo apt-get install -y build-essential
-sudo apt-get install -y texinfo
-sudo apt-get install -y compizconfig-settings-manager
+# sudo apt-get install -y compizconfig-settings-manager # for Unity only
 sudo apt-get install -y libreadline6-dev
 sudo apt-get install -y graphviz
+sudo apt-get install -y lsb-release
 
 # install git
 sudo apt-get install -y git gitg # git-core package is obsolete
@@ -78,7 +81,7 @@ git config --global core.autocrlf input
 #   type = cat-file -t
 #   dump = cat-file -p
 
-# install tig (https://github.com/jonas/tig)
+# install tig (https://github.com/jonas/tig) - already available via pkg manager
 # http://jonas.nitro.dk/tig/
 # http://jonas.nitro.dk/tig/INSTALL.html
 # depends on git, ncurses (ncursesw - ncurses w/ wide character support
@@ -113,28 +116,28 @@ sudo apt-get install -y phantomjs
 # That will install phantomjs and any other packages which it depends on.
 
 # Install jslint
-cd ~/
+cd ~
 curl -LO http://www.javascriptlint.com/download/jsl-0.3.0-src.tar.gz
 tar xzvf jsl-0.3.0-src.tar.gz
 cd jsl-0.3.0/src/
 make -f Makefile.ref
-cd ~/
+cd ~
 sudo cp jsl-0.3.0/src/Linux_All_DBG.OBJ/jsl /usr/local/bin
 sudo rm jsl-0.3.0-src.tar.gz
 sudo rm -rf ~/jsl-0.3.0
 
 # install zsh
 sudo apt-get install -y zsh
-chsh -s /bin/zsh
-exec /bin/zsh
+# chsh -s /bin/zsh
+# exec /bin/zsh
 # Do you have this line in your ~/.zshrc?
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 #
-## curl -L http://install.ohmyz.sh | sh # AUTOMATIC way
-git clone git@github.com:robbyrussel/oh-my-zsh.git ~/.oh-my-zsh # MANUAL way
-cp ~/.zshrc ~/.zshrc.orig # OPTIONAL backup existing ~/.zshrc file
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc # create a new zsh config by copying zsh template
-exec /bin/zsh
+curl -L http://install.ohmyz.sh | sh # AUTOMATIC way
+# git clone git@github.com:robbyrussel/oh-my-zsh.git ~/.oh-my-zsh # MANUAL way (use when you have ssh keys to authenticate with)
+# cp ~/.zshrc ~/.zshrc.orig # OPTIONAL backup existing ~/.zshrc file
+# cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc # create a new zsh config by copying zsh template
+# exec /bin/zsh
 
 # install xclip
 # to copy file contents into clipboard like: xclip -sel clip < ~/some_file
@@ -159,7 +162,7 @@ echo "export M2=$M2_HOME/bin" >> ~/.zshrc
 echo "export PATH=$M2:$PATH" >> ~/.zshrc
 # Make sure that JAVA_HOME is set to the location of your JDK, e.g. export JAVA_HOME=/usr/java/jdk1.5.0_02 (mine is /usr/lib/jvm/java-8-oracle/jre)
 # and that $JAVA_HOME/bin is in your PATH environment variable.
-exec /bin/zsh
+# exec /bin/zsh
 mvn -v
 # http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 # try `sudo apt-get install maven' # too many packages
@@ -175,24 +178,22 @@ sudo adduser $(whoami) tomcat7
 sudo update-rc.d tomcat7 disable    # Disabling system startup links for /etc/init.d/tomcat7
 
 # install JBoss AS 7.1.1.Final (https://www.digitalocean.com/community/articles/how-to-install-jboss-on-ubuntu-12-10-64bit)
-wget http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.tar.gz
-tar xzvf jboss-as-7.1.1.Final.tar.gz
-rm -rf jboss-as-7.1.1.Final.tar.gz
+wget -qO- http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.tar.gz | tar xzvf -
 mv jboss-as-7.1.1.Final jboss-as-7.1.1
 sudo mv jboss-as-7.1.1 /usr/local/share/jboss
 # Because we don't want to run it as root you should create a new user which is used to start the JBoss server.
 sudo adduser appserver # pwd: appserver
 sudo chown -R appserver /usr/local/share/jboss
-su appserver
-cd /usr/local/share/jboss/bin
-./add-user.sh # app1:appserver
-# Now you should create a new Management User by typing "a" and enter later username `app1` and password
-# Start the jBoss
-./standalone.sh -Djboss.bind.address=127.0.0.1 -Djboss.bind.address.management=127.0.0.1 &
-# http://127.0.0.1:8080/
-# http://127.0.0.1:9990/console
-./jboss-cli.sh --connect --controller=127.0.0.1:9999 command=:shutdown # to shutdown
-exit
+# su appserver
+# cd /usr/local/share/jboss/bin
+#./add-user.sh # app1:appserver
+# # Now you should create a new Management User by typing "a" and enter later username `app1` and password
+# # Start the jBoss
+# ./standalone.sh -Djboss.bind.address=127.0.0.1 -Djboss.bind.address.management=127.0.0.1 &
+# # http://127.0.0.1:8080/
+# # http://127.0.0.1:9990/console
+# ./jboss-cli.sh --connect --controller=127.0.0.1:9999 command=:shutdown # to shutdown
+# exit
 cd ~
 
 # install Oracle GlassFish 4 (https://glassfish.java.net/download.html)
@@ -203,6 +204,7 @@ cd ~
 \curl -sSL https://get.rvm.io | bash -s -- --version latest
 echo 'export rvm_pretty_print=1' >> ~/.rvmrc
 source ~/.rvm/scripts/rvm
+#
 # In case of any issues read output of 'rvm requirements' and/or 'rvm notes'
 # sudo apt-get install build-essential openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev libxslt-dev sqlite3 libsqlite3-dev autoconf libc6-dev ncurses-dev automake libtool bison pkg-config
 
@@ -311,9 +313,14 @@ echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -sc)-pgdg main"
 # import the repository signing key, and update the package lists
 wget -qO - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 sudo apt-get update
-sudo apt-get install -y postgresql-9.4 postgresql-client-9.4 postgresql-contrib-9.4
+sudo apt-get install -y postgresql-9.3 postgresql-client-9.3 postgresql-contrib-9.3 libpq-dev
 # sudo apt-get install -y libpq-dev # libraries and headers for C language frontend development
 sudo apt-get install -y pgadmin3
+# https://help.ubuntu.com/10.04/serverguide/postgresql.html
+sudo -u postgres psql template1
+# ALTER USER postgres with encrypted password 'your_password';
+# After configuring the password, edit the file /etc/postgresql/8.4/main/pg_hba.conf to use MD5 authentication with the postgres user:
+# local   all         postgres                          md5
 sudo /etc/init.d/postgresql restart
 sudo update-rc.d postgresql disable
 
@@ -332,7 +339,7 @@ cd ~
 # tar xjf Sublime\ Text\ 2.0.2\ x64.tar.bz2
 wget -qO- http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3059_x64.tar.bz2 | tar xjf -
 # mv Sublime\ Text\ 2 sublime2
-mv $_ sublime3
+mv sublime_text_3_build_3059_x64 sublime3
 # sudo mv sublime2 /opt/    # previously /usr/lib/
 sudo mv sublime3 /opt/
 # sudo ln -s /opt/sublime2/sublime_text /usr/bin/subl
@@ -369,8 +376,7 @@ sudo sed -i 's/gedit\.desktop/subl\.desktop/g' /usr/share/applications/defaults.
 sudo apt-get install -y vim
 # autogenerate .vimrc
 ln -s ~/dotfiles/vim/vimrc ~/.vimrc
-mkdir .vim
-cd .vim
+mkdir .vim && cd $_
 wget http://www.vim.org/scripts/download_script.php?src_id=16429
 mv d* rails.zip
 unzip rails.zip
@@ -381,8 +387,7 @@ cd ~
 # install emacs and basic config/plugins (http://appsintheopen.com/articles/1-setting-up-emacs-for-rails-development/part/7-emacs-ruby-foo)
 sudo apt-get install -y emacs24
 wget -qO- https://github.com/downloads/magit/magit/magit-1.1.1.tar.gz | tar xzvf - # emacs mode for git
-cd $_
-make
+cd magit-1.1.1 && make
 sudo make install
 # require magit in .emacs
 cd ~
@@ -479,12 +484,15 @@ sudo mv redis-2.8.12 /opt/redis && cd $_
 # install Redis binaries into /usr/local/bin
 sudo make install
 cd utils
-sudo ./install_server
+sudo ./install_server.sh
+sudo service redis_6379 restart
+sudo update-rc.d redis_6379 disable
 cd ~
 
 # install MySQL (maybe Percona instead?)
-sudo apt-get install -y mysql-server
-/usr/bin/mysql_secure_installation
+sudo apt-get install -y mysql-server libmysqlclient-dev
+# /usr/bin/mysql_secure_installation
+#
 # > SET PASSWORD FOR 'user'@'hostname' = PASSWORD('passwordhere');
 # > FLUSH PRIVILEGES;
 # Type the statement "FLUSH PRIVILEGES;" to update the grant table.
@@ -680,15 +688,15 @@ rustc -v
 # install keybase
 # sudo apt-get install -y gnupg # or gpg
 sudo npm install -g keybase-installer
-keybase-installer # run the installer, which verifies the latest release
+sudo keybase-installer # run the installer, which verifies the latest release
 keybase version
 
 # install screenfetch
 # http://tuxtweaks.com/2013/12/install-screenfetch-linux/
-sudo apt-get install -y lsb-release scrot
-wget -O screenfetch 'https://raw.github.com/KittyKatt/screenFetch/master/screenfetch-dev'
+sudo apt-get install -y scrot
+wget -O screenfetch 'https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev'
 chmod u+x screenfetch
-sudo cp screenfetch /usr/local/bin
+sudo mv screenfetch /usr/local/bin
 screenfetch -s
 
 # turn off update popups
