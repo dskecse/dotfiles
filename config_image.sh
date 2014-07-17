@@ -378,7 +378,7 @@ sudo apt-get install -y vim
 ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 mkdir .vim && cd $_
 wget http://www.vim.org/scripts/download_script.php?src_id=16429
-mv d* rails.zip
+mv download_script* rails.zip
 unzip rails.zip
 rm -rf rails.zip
 # to allow :help rails, start up vim and type :helptags ~/.vim/doc
