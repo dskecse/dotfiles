@@ -694,6 +694,9 @@ keybase version
 # install keepassx
 sudo apt-get install -y keepassx
 
+# install wkhtmltopdf (http://wkhtmltopdf.org/)
+wget http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb | xargs sudo dpkg -i
+
 # install screenfetch
 # http://tuxtweaks.com/2013/12/install-screenfetch-linux/
 sudo apt-get install -y scrot
