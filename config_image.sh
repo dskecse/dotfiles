@@ -249,9 +249,11 @@ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 # http://stark-fog-398.herokuapp.com/ | git@heroku.com:stark-fog-398.git
 # Git remote heroku added
 
-# install wkhtmltopdf (http://code.google.com/p/wkhtmltopdf/)
+# install wkhtmltopdf (http://wkhtmltopdf.org/)
 # Simple shell utility to convert html to pdf using the webkit rendering engine, and qt.
-wget -q https://wkhtmltopdf.googlecode.com/files/wkhtmltopdf-0.11.0_rc1-static-amd64.tar.bz2 | tar xjf -
+wget http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb
+sudo dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.deb
+rm wkhtmltox-0.12.1_linux-trusty-amd64.deb
 # if [ ! -f wkhtmltopdf-0.11.0_rc1-static-amd64.tar.bz2 ] ||
 #       [ "$(openssl md5 wkhtmltopdf-0.11.0_rc1-static-amd64.tar.bz2)" != "$(cat )"]
 # then
@@ -505,7 +507,7 @@ sudo apt-get install -y mysql-workbench
 # sudo update-rc.d mongodb disable
 
 # install ElasticSearch (http://www.elasticsearch.org/download/)
-# wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.5.deb | sudo dpkg -i -
+# wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.5.deb | xargs sudo dpkg -i -
 # sudo /usr/share/elasticsearch/bin/plugin -install analysis-morphology -url http://dl.bintray.com/content/imotov/elasticsearch-plugins/elasticsearch-analysis-morphology-1.1.0.zip
 # sudo /usr/share/elasticsearch/bin/plugin -install elasticsearch/elasticsearch-analysis-phonetic/1.5.0
 # sudo /usr/share/elasticsearch/bin/plugin -install elasticsearch/elasticsearch-analysis-icu/1.10.0
@@ -693,9 +695,6 @@ keybase version
 
 # install keepassx
 sudo apt-get install -y keepassx
-
-# install wkhtmltopdf (http://wkhtmltopdf.org/)
-wget http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb | xargs sudo dpkg -i
 
 # install screenfetch
 # http://tuxtweaks.com/2013/12/install-screenfetch-linux/
