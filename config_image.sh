@@ -251,6 +251,7 @@ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 
 # install wkhtmltopdf (http://wkhtmltopdf.org/)
 # Simple shell utility to convert html to pdf using the webkit rendering engine, and qt.
+# http://www.installion.co.uk/ubuntu/saucy/universe/w/wkhtmltopdf/index.html
 wget http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb
 sudo dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.deb
 rm wkhtmltox-0.12.1_linux-trusty-amd64.deb
@@ -661,6 +662,7 @@ make && sudo make install
 #
 # this will install `rustc` - Rust compiler, `rustdoc` - API-documentation tool
 # and `rustpkg` - Rust pkg manager and build system.
+cd ~
 rustc -v
 
 
@@ -669,6 +671,22 @@ rustc -v
 # sudo apt-get install gcl -y
 # # emacs23 emacs23-bin-common emacs23-common emacsen-common gcl libm17n-0 libotf0 m17n-contrib m17n-db tcl8.4 tk8.4
 # # (emacs23-el gcl-doc m17n-docs gawk tclreadline)
+
+# install Virtualbox
+#
+# how do i know where virtualbox is?
+# sudo apt-cache policy virtualbox
+sudo add-apt-repository multiverse
+sudo apt-get update
+sudo apt-get install -y virtualbox
+# install Virtualbox guest additions
+# http://www.binarytides.com/vbox-guest-additions-ubuntu-14-04/
+sudo apt-get install -y module-assistant
+sudo m-a prepare
+# wget http://download.virtualbox.org/virtualbox/4.3.14/Oracle_VM_VirtualBox_Extension_Pack-4.3.14-95030.vbox-extpack
+# sudo adduser $USER vboxusers
+# or
+# sudo gpasswd -a $USER vboxusers
 
 # # install Ubuntu HTML5 SDK (http://developer.ubuntu.com/apps/html-5/)
 # # http://developer.ubuntu.com/apps/html-5/tutorial/
