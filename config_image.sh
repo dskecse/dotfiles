@@ -405,8 +405,9 @@ cd ~
 ln -s ~/dotfiles/emacs/emacs ~/.emacs
 
 # install ImageMagick/RMagick
+sudo apt-get install -y imagemagick
 # ImageMagick / RMagick - Can't install RMagick 2.13.1. Can't find Magick-config
-sudo apt-get install graphicsmagick-libmagick-dev-compat  # fixed it for me on Ubuntu 12.04
+sudo apt-get install -y graphicsmagick-libmagick-dev-compat  # fixed it for me on Ubuntu 12.04
 #
 # Can't install RMagick 2.13.1. Can't find MagickWand.h.
 sudo apt-get install -y libmagickcore-dev libmagickwand-dev # worked for me.
