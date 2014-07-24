@@ -39,6 +39,7 @@ source $ZSH/oh-my-zsh.sh
 alias be='bundle exec'
 alias bi='bundle install'
 alias bu='bundle update'
+alias bo='bundle open'
 alias spk='thunar ~/.config/sublime-text-3/Packages'
 alias zip='zip -9'
 
@@ -50,3 +51,5 @@ export M2=$M2_HOME/bin
 
 PATH=$PATH:$M2
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+export EDITOR=subl
