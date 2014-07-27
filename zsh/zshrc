@@ -51,5 +51,6 @@ export M2=$M2_HOME/bin
 
 PATH=$PATH:$M2
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH=/usr/local/texlive/2013/bin/x86_64-linux:/opt/ActiveTcl-8.5/bin:$PATH
 
 export EDITOR=subl

@@ -208,8 +208,14 @@ source ~/.rvm/scripts/rvm
 # In case of any issues read output of 'rvm requirements' and/or 'rvm notes'
 # sudo apt-get install build-essential openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev libxslt-dev sqlite3 libsqlite3-dev autoconf libc6-dev ncurses-dev automake libtool bison pkg-config
 
+# setup Bundler
+bundle config --global jobs 3
+# Nokogiri builds and uses a packaged version of libxslt. Use the system library instead
+bundle config build.nokogiri --use-system-libraries
+
 # install ruby via RVM
 rvm install 1.9.3,2.0.0,2.1.2,rbx,jruby # java is needed for jruby to run
+# rvm reinstall ruby-2.1.2 --with-tcl --with-tk
 rvm --default 2.1.2
 # rvm docs generate
 # export RI="--format ansi"
@@ -264,7 +270,6 @@ rm wkhtmltox-0.12.1_linux-trusty-amd64.deb
 # fi
 
 ## GEMS
-bundle config --global jobs 3
 # install rails 4.1.4
 gem install rails -v 4.1.4
 
@@ -672,6 +677,39 @@ rustc -v
 # sudo apt-get install gcl -y
 # # emacs23 emacs23-bin-common emacs23-common emacsen-common gcl libm17n-0 libotf0 m17n-contrib m17n-db tcl8.4 tk8.4
 # # (emacs23-el gcl-doc m17n-docs gawk tclreadline)
+
+
+# set up VPN (HMA Pro) to download ActiveTcl
+# https://vpn.hidemyass.com/vpncontrol/myaccounts/welcome/pp
+sudo apt-get install -y openvpn
+# Linux Software v1.3 (https://www.youtube.com/watch?v=Kuy2C1zN_0k)
+wget https://vpn.hidemyass.com/hma-vpn-linux-cli.zip
+unzip hma-vpn-linux-cli.zip # is unpacked into ~
+rm hma-vpn-linux-cli.zip
+./hma-vpn.sh -l
+# ./hma-vpn.sh "Canada, Quebec, Montreal (LOC1 S4)"
+# or Manual Setup using PPTP & L2TP VPN protocols (https://vpn.hidemyass.com/vpncontrol/myaccounts/pptp)
+
+# install Tk 8.5.15.0 (right now tk v8.6.1 is not supported by Ruby)
+# (http://www.tkdocs.com/tutorial/install.html)
+wget -qO - http://downloads.activestate.com/ActiveTcl/releases/8.5.15.0/ActiveTcl8.5.15.0.297577-linux-x86_64-threaded.tar.gz | tar xzf -
+cd ActiveTcl8.5.15.0.297577-linux-x86_64-threaded/
+sudo ./install.sh
+# set PATH env
+# export PATH="/opt/ActiveTcl-8.5/bin:$PATH"
+cd ~
+
+# install LaTeX
+# (http://www.tug.org/texlive/doc/texlive-en/texlive-en.html#installation)
+sudo mkdir /mnt/tex
+sudo mount /media/dskecse/Seagate/backup/2014-07-13/Downloads/texlive2013-20130530.iso /mnt/tex
+sudo perl /mnt/tex/install-tl -gui
+# See /usr/local/texlive/2013/index.html for links to documentation.
+# The TeX Live web site contains updates and corrections: http://tug.org/texlive.
+# export PATH="/usr/local/texlive/2013/bin/x86_64-linux:$PATH"
+sudo umount /mnt/tex
+sudo rm -rf /mnt/tex
+
 
 # install Virtualbox
 #
