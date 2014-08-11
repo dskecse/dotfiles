@@ -97,7 +97,16 @@ cd ~ && rm -rf tig-1.2.1
 sudo apt-get install -y htop
 
 # install tmux (http://tmux.sourceforge.net/)
+# update-alternatives to use xterm instead of xterm-whatever
+# ensure libevent is installed in the system
+sudo apt-get install -y libevent-2.0.5
+# http://tmux.svn.sourceforge.net/viewvc/tmux/trunk/FAQ
+# http://zanshin.net/2013/09/05/my-tmux-configuration/
+# http://www.sitepoint.com/tmux-a-simple-start/
+sudo add-apt-repository ppa:pi-rho/dev
+sudo apt-get update
 sudo apt-get install -y tmux
+# http://ethanschoonover.com/solarized
 
 # Install nodejs (possibly, through npm?) and npm
 # http://developwithguru.com/how-to-install-node-js-and-npm-in-ubuntu-or-mint/

@@ -34,6 +34,12 @@ plugins=(git rvm)
 
 source $ZSH/oh-my-zsh.sh
 
+# If not running interactively, do not do anything
+# [[ $- != *i* ]] && return
+case $- in *i*)
+  [[ -z "$TMUX" ]] && exec tmux
+esac
+
 # Customize to your needs...
 
 alias be='bundle exec'
