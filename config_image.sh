@@ -13,6 +13,7 @@ sudo apt-get update
 
 # install some basic programs
 sudo apt-get install -y curl
+# Change line endings on files recursively: find path/to/file -type f -exec dos2unix {} +
 sudo apt-get install -y dos2unix
 sudo apt-get install -y mc
 # sudo apt-get install -y zmv # for doing mass renaming
@@ -26,7 +27,9 @@ sudo apt-get install -y build-essential
 # sudo apt-get install -y compizconfig-settings-manager # for Unity only
 sudo apt-get install -y libreadline6-dev
 sudo apt-get install -y graphviz
+sudo apt-get install -y tree
 sudo apt-get install -y lsb-release
+sudo apt-get install -y traceroute
 
 # install git
 sudo apt-get install -y git gitg # git-core package is obsolete
@@ -381,12 +384,10 @@ sudo make install
 # require magit in .emacs
 cd ~
 rm -rf magit-1.1.1/
-cd /usr/share/emacs
-sudo mkdir includes
-cd includes
-sudo wget http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-mode.el
-sudo wget http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-electric.el
-cd ~
+wget http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-mode.el
+wget http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-electric.el
+sudo mkdir -p /usr/share/emacs/includes
+sudo mv ruby-mode.el ruby-electric.el $_
 # append to .emacs
 ln -s ~/dotfiles/emacs/emacs ~/.emacs
 
@@ -769,3 +770,6 @@ gconftool -s --type bool /apps/update-notifier/no_show_notifications true
 
 # Enable notifications for friends-app!!!:
 # dconf-editor -> com - canonical - friends -> Change the "notifications" value to "all"
+
+# gconf is now deprecated - http://en.wikipedia.org/wiki/GConf - and gsettings can be used in its place.
+# gsettings set org.gnome.desktop.default-applications.terminal exec 'konsole'
