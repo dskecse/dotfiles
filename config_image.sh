@@ -778,3 +778,7 @@ gconftool -s --type bool /apps/update-notifier/no_show_notifications true
 
 # gconf is now deprecated - http://en.wikipedia.org/wiki/GConf - and gsettings can be used in its place.
 # gsettings set org.gnome.desktop.default-applications.terminal exec 'konsole'
+
+
+# install Xmonad wm (and possibly Xmobar)
+sudo apt-get install -y xmonad suckless-tools
