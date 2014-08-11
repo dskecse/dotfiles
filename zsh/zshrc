@@ -52,6 +52,7 @@ PATH=$PATH:$GOPATH/bin
 PATH=$PATH:/usr/local/go/bin
 
 export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/
+
 export M2_HOME=/usr/local/apache-maven/apache-maven-3.1.1
 export M2=$M2_HOME/bin
 # Add the MAVEN_OPTS environment variable to specify JVM properties, e.g.
@@ -60,7 +61,8 @@ export M2=$M2_HOME/bin
 PATH=$PATH:$M2
 
 PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-linux
-export PATH=$PATH:/opt/ActiveTcl-8.5/bin
+PATH=$PATH:/opt/ActiveTcl-8.5/bin
+export PATH=$PATH:$HOME/elixir-0.15.1/bin
 
 export CATALINA_HOME=/opt/apache-tomcat-8.0.9
 

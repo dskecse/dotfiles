@@ -440,6 +440,12 @@ sudo apt-get install erlang erlang-manpages
 # Installing the erlang package automatically installs the entire OTP suite.
 # run using `erl`
 
+# install Elixir
+wget -O - https://github.com/elixir-lang/elixir/archive/v0.15.1.tar.gz | tar xzvf -
+cd elixir-0.15.1
+make clean test
+cd ~
+
 # # install IntelliJ IDEA
 # wget http://download.jetbrains.com/idea/ideaIU-12.1.4.tar.gz | sudo tar -C /usr/local -xzf -
 # echo 'PATH=$PATH:/usr/local/idea-IU-129.713/bin' >> ~/.zshrc
