@@ -43,14 +43,25 @@ alias bo='bundle open'
 alias spk='thunar ~/.config/sublime-text-3/Packages'
 alias zip='zip -9'
 
-GOPATH=$HOME/gocode
+# Add RVM to PATH for scripting
+PATH=$PATH:$HOME/.rvm/bin
+
+# Go workspace location
+export GOPATH=$HOME/gocode
+PATH=$PATH:$GOPATH/bin
+PATH=$PATH:/usr/local/go/bin
 
 export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/
 export M2_HOME=/usr/local/apache-maven/apache-maven-3.1.1
 export M2=$M2_HOME/bin
-
+# Add the MAVEN_OPTS environment variable to specify JVM properties, e.g.
+# export MAVEN_OPTS="-Xms256m -Xmx512m".
+# This environment variable can be used to supply extra options to Maven.
 PATH=$PATH:$M2
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export PATH=/usr/local/texlive/2013/bin/x86_64-linux:/opt/ActiveTcl-8.5/bin:$PATH
+
+PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-linux
+export PATH=$PATH:/opt/ActiveTcl-8.5/bin
+
+export CATALINA_HOME=/opt/apache-tomcat-8.0.9
 
 export EDITOR=subl

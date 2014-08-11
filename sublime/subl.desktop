@@ -1,0 +1,18 @@
+[Desktop Entry]
+Version=3.0
+Name=Sublime Text 3
+# Only KDE 4 seems to use GenericName, so we reuse the KDE strings.
+# From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413.
+GenericName=Text Editor
+
+Exec=subl %U
+Terminal=false
+Icon=/opt/sublime3/Icon/256x256/sublime_text.png
+Type=Application
+Categories=XFCE4;GNOME;GTK;Utility;TextEditor;IDE;Development
+X-Ayatana-Desktop-Shortcuts=NewWindow
+
+[NewWindow Shortcut Group]
+Name=New Window
+Exec=subl -n
+TargetEnvironment=Xfce4

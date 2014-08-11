@@ -155,14 +155,6 @@ sudo apt-get install -y oracle-java8-set-default # automatically set up the Java
 # http://askubuntu.com/questions/49557/how-do-i-install-maven-3?rq=1
 wget http://ftp.byfly.by/pub/apache.org/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.zip
 sudo unzip apache-maven-3.1.1-bin.zip -d /usr/local/apache-maven # the subdirectory apache-maven-3.1.1 will be created from the archive.
-echo "export M2_HOME=/usr/local/apache-maven/apache-maven-3.1.1" >> ~/.zshrc
-echo "export M2=$M2_HOME/bin" >> ~/.zshrc
-# Add the MAVEN_OPTS environment variable to specify JVM properties, e.g. export MAVEN_OPTS="-Xms256m -Xmx512m".
-# This environment variable can be used to supply extra options to Maven.
-echo "export PATH=$M2:$PATH" >> ~/.zshrc
-# Make sure that JAVA_HOME is set to the location of your JDK, e.g. export JAVA_HOME=/usr/java/jdk1.5.0_02 (mine is /usr/lib/jvm/java-8-oracle/jre)
-# and that $JAVA_HOME/bin is in your PATH environment variable.
-# exec /bin/zsh
 mvn -v
 # http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 # try `sudo apt-get install maven' # too many packages
@@ -173,7 +165,7 @@ mvn -v
 # sudo add-apt-repository ppa:eclipse-team/ppa # add --remove to remove ppa's
 # sudo apt-get update
 sudo apt-get install -y eclipse tomcat7
-sudo adduser $(whoami) tomcat7
+sudo usermod -G tomcat7 $(whoami)
 /usr/share/tomcat7/bin/shutdown.sh
 sudo update-rc.d tomcat7 disable    # Disabling system startup links for /etc/init.d/tomcat7
 
@@ -182,7 +174,7 @@ wget -qO- http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.
 mv jboss-as-7.1.1.Final jboss-as-7.1.1
 sudo mv jboss-as-7.1.1 /usr/local/share/jboss
 # Because we don't want to run it as root you should create a new user which is used to start the JBoss server.
-sudo adduser appserver # pwd: appserver
+sudo useradd -M appserver # pwd: appserver
 sudo chown -R appserver /usr/local/share/jboss
 # su appserver
 # cd /usr/local/share/jboss/bin
@@ -353,27 +345,7 @@ sudo mv sublime3 /opt/
 # sudo ln -s /opt/sublime2/sublime_text /usr/bin/subl
 sudo ln -s /opt/sublime3/sublime_text /usr/bin/subl
 # sudo subl /usr/share/applications/sublime.desktop # create a launcher in Unity
-touch subl.desktop
-# And paste the following content:
-echo "[Desktop Entry]"
-echo "Version=3.0"
-echo "Name=Sublime Text 3"
-echo "# Only KDE 4 seems to use GenericName, so we reuse the KDE strings."
-echo "# From Ubuntu's language-pack-kde-XX-base packages, version 9.04-20090413."
-echo "GenericName=Text Editor"
-echo ""
-echo "Exec=subl %U"
-echo "Terminal=false"
-echo "Icon=/opt/sublime3/Icon/256x256/sublime_text.png"
-echo "Type=Application"
-echo "Categories=GNOME;GTK;Utility;TextEditor;IDE;Development"
-echo "X-Ayatana-Desktop-Shortcuts=NewWindow"
-echo ""
-echo "[NewWindow Shortcut Group]"
-echo "Name=New Window"
-echo "Exec=subl -n"
-echo "TargetEnvironment=Unity"
-sudo mv subl.desktop /usr/share/applications/subl.desktop
+sudo ln -s ~/dotfiles/sublime/subl.desktop /usr/share/applications/subl.desktop
 # Open up the file associations list and replace all occurrences of gedit.desktop with subl.desktop.
 sudo sed -i 's/gedit\.desktop/subl\.desktop/g' /usr/share/applications/defaults.list
 # install CTags (http://blog.codeclimate.com/blog/2012/06/21/sublime-text-2-for-ruby/)
@@ -423,8 +395,6 @@ wget https://raw.github.com/pypa/pip/master/contrib/get-pip.py -O - | sudo pytho
 # install libyaml (http://rmcgibbo.github.io/blog/2013/05/23/faster-yaml-parsing-with-libyaml/)
 # installing apt-get install python-dev fixes the missing Python.h on Ubuntu
 sudo apt-get install -y libyaml-dev python-dev
-# append PYTHONPATH env var to .zshrc
-echo 'export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/' >> ~/.zshrc
 # install static site generator (http://wok.mythmon.com/docs/) - we use a fork https://github.com/stachern/wok
 # http://stackoverflow.com/questions/8247605/configuring-so-that-pip-install-can-work-from-github
 # http://jtushman.github.io/blog/2013/06/17/sharing-code-across-applications-with-python/
@@ -451,15 +421,8 @@ wget http://download1.rstudio.org/rstudio-0.97.551-amd64.deb | xargs sudo dpkg -
 # Extract the archive into /usr/local, creating a Go tree in /usr/local/go:
 \curl -L https://go.googlecode.com/files/go1.1.2.linux-amd64.tar.gz | sudo tar -C /usr/local -xzf -
 # check SHA1 checksum!
-# Add /usr/local/go/bin to the PATH environment variable.
-# You can do this by adding this line to your /etc/profile (for a system-wide installation) or ~/.profile:
-echo 'PATH=$PATH:/usr/local/go/bin' >> ~/.zshrc
 # How to write Go code (http://golang.org/doc/code.html)
-# The GOPATH environment variable specifies the location of your workspace.
-# It is likely the only environment variable you'll need to set when developing Go code.
 mkdir ~/gocode
-echo 'GOPATH=$HOME/gocode' >> ~/.zshrc
-echo 'PATH=$PATH:/usr/local/go/bin:$GOPATH/bin' >> ~/.zshrc
 # We'll use github.com/user as our base path. Create a directory inside your workspace in which to keep source code:
 mkdir -p $GOPATH/src/github.com/dskecse
 
@@ -695,8 +658,6 @@ rm hma-vpn-linux-cli.zip
 wget -qO - http://downloads.activestate.com/ActiveTcl/releases/8.5.15.0/ActiveTcl8.5.15.0.297577-linux-x86_64-threaded.tar.gz | tar xzf -
 cd ActiveTcl8.5.15.0.297577-linux-x86_64-threaded/
 sudo ./install.sh
-# set PATH env
-# export PATH="/opt/ActiveTcl-8.5/bin:$PATH"
 cd ~
 
 # install LaTeX
@@ -706,7 +667,6 @@ sudo mount /media/dskecse/Seagate/backup/2014-07-13/Downloads/texlive2013-201305
 sudo perl /mnt/tex/install-tl -gui
 # See /usr/local/texlive/2013/index.html for links to documentation.
 # The TeX Live web site contains updates and corrections: http://tug.org/texlive.
-# export PATH="/usr/local/texlive/2013/bin/x86_64-linux:$PATH"
 sudo umount /mnt/tex
 sudo rm -rf /mnt/tex
 
@@ -726,6 +686,7 @@ sudo m-a prepare
 # sudo adduser $USER vboxusers
 # or
 # sudo gpasswd -a $USER vboxusers
+sudo usermod -G vboxusers $USER
 
 # # install Ubuntu HTML5 SDK (http://developer.ubuntu.com/apps/html-5/)
 # # http://developer.ubuntu.com/apps/html-5/tutorial/
