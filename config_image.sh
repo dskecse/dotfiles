@@ -176,6 +176,11 @@ mvn -v
 # sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com DCC7AFE0
 # sudo add-apt-repository ppa:eclipse-team/ppa # add --remove to remove ppa's
 # sudo apt-get update
+# or install Eclipse EE from sources
+# wget -qO - http://www.eclipse.org/downloads/download.php\?file\=/technology/epp/downloads/release/luna/R/eclipse-jee-luna-R-linux-gtk-x86_64.tar.gz\&r\=1 | sudo tar xzvf - -C /opt
+# sudo ln -s /opt/eclipse/eclipse /usr/bin/eclipse
+
+# http://tecadmin.net/install-tomcat-8-on-centos-rhel-and-ubuntu/
 sudo apt-get install -y eclipse tomcat7
 sudo usermod -G tomcat7 $(whoami)
 /usr/share/tomcat7/bin/shutdown.sh
