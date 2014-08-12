@@ -73,3 +73,5 @@ export PATH=$PATH:$HOME/elixir-0.15.1/bin
 export CATALINA_HOME=/opt/apache-tomcat-8.0.9
 
 export EDITOR=subl
+
+export RI="--format ansi"
