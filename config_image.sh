@@ -303,6 +303,12 @@ cd elixir-0.15.1
 make clean test
 cd ~
 
+# install Haskell (ghc, cabal, ...)
+wget http://www.haskell.org/platform/download/2014.2.0.0/haskell-platform-2014.2.0.0-unknown-linux-x86_64.tar.gz
+cd / && sudo tar xvf $HOME/haskell-platform-2014.2.0.0-unknown-linux-x86_64.tar.gz
+sudo /usr/local/haskell/ghc-7.8.3-x86_64/bin/activate-hs
+cd ~
+
 # install Redis (http://redis.io/)
 # to use `redis-server` and `redis-cli`
 # sudo apt-get install redis-server -y (usually outdated versions)
