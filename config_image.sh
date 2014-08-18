@@ -502,3 +502,5 @@ gconftool -s --type bool /apps/update-notifier/no_show_notifications true
 
 # install Xmonad wm (and possibly Xmobar)
 sudo apt-get install -y xmonad suckless-tools
+# install extensions to xmonad
+sudo apt-get install -y libghc-xmonad-contrib-dev
