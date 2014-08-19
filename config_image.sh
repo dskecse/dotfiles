@@ -496,6 +496,10 @@ chmod u+x screenfetch
 sudo mv screenfetch /usr/local/bin
 screenfetch -s
 
+# install Samsung printer driver
+# printer management is at http://localhost:631/admin/
+sudo apt-get install -y cups printer-driver-splix
+
 # turn off update popups
 gconftool -s --type bool /apps/update-notifier/auto_launch false
 gconftool -s --type bool /apps/update-notifier/no_show_notifications true
