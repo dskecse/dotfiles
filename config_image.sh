@@ -30,6 +30,7 @@ sudo apt-get install -y tree
 sudo apt-get install -y lsb-release
 sudo apt-get install -y traceroute
 sudo apt-get install -y ipcalc
+sudo apt-get install -y whois
 sudo apt-get install -y htop
 sudo apt-get install -y xclip
 sudo apt-get install -y keepassx
