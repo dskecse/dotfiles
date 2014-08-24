@@ -25,6 +25,7 @@ sudo apt-get install -y g++
 sudo apt-get install -y build-essential
 # sudo apt-get install -y compizconfig-settings-manager # for Unity only
 sudo apt-get install -y libreadline6-dev
+sudo apt-get install -y links
 sudo apt-get install -y graphviz
 sudo apt-get install -y tree
 sudo apt-get install -y lsb-release
