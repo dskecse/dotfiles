@@ -33,6 +33,8 @@ sudo apt-get install -y traceroute
 sudo apt-get install -y ipcalc
 sudo apt-get install -y whois
 sudo apt-get install -y nmap
+# scriptreplay
+# script
 sudo apt-get install -y htop
 sudo apt-get install -y xclip
 sudo apt-get install -y keepassx
@@ -339,14 +341,16 @@ sudo apt-get install -y mysql-workbench
 # sudo update-rc.d mongodb disable
 
 # install ElasticSearch (http://www.elasticsearch.org/download/)
-# wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-0.90.5.deb | xargs sudo dpkg -i -
+# wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.3.1.deb | sudo dpkg -i -
+wget https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.3.1.deb
+sudo dpkg -i elasticsearch-1.3.1.deb
 # sudo /usr/share/elasticsearch/bin/plugin -install analysis-morphology -url http://dl.bintray.com/content/imotov/elasticsearch-plugins/elasticsearch-analysis-morphology-1.1.0.zip
 # sudo /usr/share/elasticsearch/bin/plugin -install elasticsearch/elasticsearch-analysis-phonetic/1.5.0
 # sudo /usr/share/elasticsearch/bin/plugin -install elasticsearch/elasticsearch-analysis-icu/1.10.0
 # sudo /usr/share/elasticsearch/bin/plugin -install de.spinscale/elasticsearch-plugin-suggest/0.90.1-0.7
-# echo "network.host: 127.0.0.1" | sudo tee -a /etc/elasticsearch/elasticsearch.yml
+sudo sed -i 's/#network\.host: 192\.168\.0\.1/network\.host: 127\.0\.0\.1/g' /etc/elasticsearch/elasticsearch.yml
 # sudo service elasticsearch restart
-# sudo update-rc.d elasticsearch disable
+# sudo update-rc.d elasticsearch disable (disabled by default)
 
 # install memcached
 sudo apt-get install -y memcached
