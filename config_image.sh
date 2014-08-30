@@ -312,6 +312,10 @@ wget http://www.haskell.org/platform/download/2014.2.0.0/haskell-platform-2014.2
 cd / && sudo tar xvf $HOME/haskell-platform-2014.2.0.0-unknown-linux-x86_64.tar.gz
 sudo /usr/local/haskell/ghc-7.8.3-x86_64/bin/activate-hs
 cd ~
+cabal update
+cabal install aeson haskell-src-exts haddock
+# for import and LANGUAGE completions and type inference
+cabal install ghc-mod
 
 # install Redis (http://redis.io/)
 # to use `redis-server` and `redis-cli`
