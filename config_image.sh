@@ -217,7 +217,7 @@ cd ~
 wget -qO- http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3065_x64.tar.bz2 | tar xjf -
 sudo mv sublime_text_3 /opt/ # previously /usr/lib/
 sudo ln -s /opt/sublime_text_3/sublime_text /usr/bin/subl
-sudo ln -s ~/dotfiles/sublime/subl.desktop /usr/share/applications/subl.desktop
+sudo ln -s ~/.dotfiles/sublime/subl.desktop /usr/share/applications/subl.desktop
 # Open up the file associations list and replace all occurrences of gedit.desktop with subl.desktop.
 sudo sed -i 's/gedit\.desktop/subl\.desktop/g' /usr/share/applications/defaults.list
 # install CTags (http://blog.codeclimate.com/blog/2012/06/21/sublime-text-2-for-ruby/)
@@ -247,7 +247,7 @@ wget http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-mode.el
 wget http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-electric.el
 sudo mkdir -p /usr/share/emacs/includes
 sudo mv ruby-mode.el ruby-electric.el $_
-ln -s ~/dotfiles/emacs/emacs ~/.emacs
+ln -s ~/.dotfiles/emacs/emacs ~/.emacs
 
 # install ImageMagick/RMagick
 sudo apt-get install -y imagemagick
