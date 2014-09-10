@@ -211,13 +211,12 @@ sudo -u postgres psql template1
 # local   all         postgres                          md5
 sudo /etc/init.d/postgresql restart
 sudo update-rc.d postgresql disable
-
-# install Sublime Text 2 (http://www.sublimetext.com/2)
 cd ~
-wget -qO- http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3059_x64.tar.bz2 | tar xjf -
-mv sublime_text_3_build_3059_x64 sublime3
-sudo mv sublime3 /opt/ # previously /usr/lib/
-sudo ln -s /opt/sublime3/sublime_text /usr/bin/subl
+
+# install Sublime Text 3 (http://www.sublimetext.com/3)
+wget -qO- http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3065_x64.tar.bz2 | tar xjf -
+sudo mv sublime_text_3 /opt/ # previously /usr/lib/
+sudo ln -s /opt/sublime_text_3/sublime_text /usr/bin/subl
 sudo ln -s ~/dotfiles/sublime/subl.desktop /usr/share/applications/subl.desktop
 # Open up the file associations list and replace all occurrences of gedit.desktop with subl.desktop.
 sudo sed -i 's/gedit\.desktop/subl\.desktop/g' /usr/share/applications/defaults.list

@@ -7,7 +7,7 @@ GenericName=Text Editor
 
 Exec=subl %U
 Terminal=false
-Icon=/opt/sublime3/Icon/256x256/sublime_text.png
+Icon=/opt/sublime_text_3/Icon/256x256/sublime_text.png
 Type=Application
 Categories=XFCE4;GNOME;GTK;Utility;TextEditor;IDE;Development
 X-Ayatana-Desktop-Shortcuts=NewWindow
