@@ -1,3 +1,10 @@
+#!/bin/bash
+# Note: you will be prompted to enter the password several times through the script
+# run with . genconfig_image.sh
+# please note this script is fragile, as public download urls may change
+
+cd ~
+
 sudo cl-update
 sudo layman -S && sudo eix-sync
 sudo emerge -uDNa world
@@ -13,6 +20,13 @@ sudo emerge -C filezilla
 sudo emerge -C chromium chromium-adblock
 sudo emerge -C liferea
 sudo emerge -C libreoffice libreoffice-l10n
+
+# install some basic utilities
+sudo emerge dos2unix
+sudo emerge app-text/tree
+sudo emerge net-misc/ipcalc
+sudo emerge x11-misc/xclip
+# sudo emerge keepassx
 
 echo "=www-client/google-chrome-37.0.2062.94_p1 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge google-chrome
