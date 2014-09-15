@@ -140,3 +140,5 @@ echo "x11-libs/libXft ~amd64" | sudo tee -a /etc/portage/package.keywords/fonts
 echo "media-fonts/ubuntu-font-family ~amd64" | sudo tee -a /etc/portage/package.keywords/fonts
 
 sudo emerge -uNa fontconfig freetype cairo libXft ubuntu-font-family
+
+sudo emerge thunderbird
