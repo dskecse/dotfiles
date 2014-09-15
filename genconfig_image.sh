@@ -129,3 +129,14 @@ sudo emerge erlang
 # install Elixir (v1.0.0)
 echo "=dev-lang/elixir-1.0.0 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge elixir
+
+# http://forums.gentoo.org/viewtopic-t-921722-start-0.html
+sudo layman -a lcd-filtering
+
+echo "media-libs/fontconfig ~amd64" | sudo tee -a /etc/portage/package.keywords/fonts
+echo "media-libs/freetype ~amd64" | sudo tee -a /etc/portage/package.keywords/fonts
+echo "x11-libs/cairo ~amd64" | sudo tee -a /etc/portage/package.keywords/fonts
+echo "x11-libs/libXft ~amd64" | sudo tee -a /etc/portage/package.keywords/fonts
+echo "media-fonts/ubuntu-font-family ~amd64" | sudo tee -a /etc/portage/package.keywords/fonts
+
+sudo emerge -uNa fontconfig freetype cairo libXft ubuntu-font-family
