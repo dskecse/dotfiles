@@ -43,7 +43,9 @@ sudo emerge zsh
 # echo "compinit" >> ~/.zshrc
 # echo "promptinit; prompt gentoo" >> ~/.zshrc
 
-sudo emerge nodejs # does not install npm
+sudo emerge nodejs
+npm -v
+node -v
 echo "=www-client/phantomjs-1.9.7 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge phantomjs
 
