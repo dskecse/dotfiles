@@ -52,6 +52,8 @@ alias zip='zip -9'
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin
 
+PATH=$PATH:/usr/local/heroku/bin
+
 # Go workspace location
 export GOPATH=$HOME/gocode
 PATH=$PATH:$GOPATH/bin
