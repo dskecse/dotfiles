@@ -164,6 +164,7 @@ rm -rf rails.zip
 #
 # https://github.com/vim-ruby/vim-ruby
 # http://cx4a.org/software/rsense/
+# https://github.com/elixir-lang/vim-elixir
 cd ~
 
 # install emacs and basic config/plugins (http://appsintheopen.com/articles/1-setting-up-emacs-for-rails-development/part/7-emacs-ruby-foo)
@@ -181,6 +182,7 @@ wget http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-electric.el
 sudo mkdir -p /usr/share/emacs/includes
 sudo mv ruby-mode.el ruby-electric.el $_
 # http://cx4a.org/software/rsense/
+# https://github.com/elixir-lang/emacs-elixir
 ln -s ~/.dotfiles/emacs/emacs ~/.emacs
 
 sudo EXTRA_ECONF="--with-png --with-jpeg" emerge imagemagick
