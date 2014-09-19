@@ -75,3 +75,4 @@ export CATALINA_HOME=/opt/apache-tomcat-8.0.9
 export EDITOR=subl
 
 export RI="--format ansi"
+export DISABLE_SPRING=true
