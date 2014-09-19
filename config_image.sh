@@ -211,7 +211,6 @@ sudo -u postgres psql template1
 # local   all         postgres                          md5
 sudo /etc/init.d/postgresql restart
 sudo update-rc.d postgresql disable
-cd ~
 
 # install Sublime Text 3 (http://www.sublimetext.com/3)
 wget -qO- http://c758482.r82.cf2.rackcdn.com/sublime_text_3_build_3065_x64.tar.bz2 | tar xjf -
@@ -226,13 +225,16 @@ sudo sed -i 's/gedit\.desktop/subl\.desktop/g' /usr/share/applications/defaults.
 
 # install vim and rails.vim (http://biodegradablegeek.com/2007/12/using-vim-as-a-complete-ruby-on-rails-ide/)
 sudo apt-get install -y vim
-ln -s ~/dotfiles/vim/vimrc ~/.vimrc
+ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
 mkdir .vim && cd $_
 wget http://www.vim.org/scripts/download_script.php?src_id=16429
 mv download_script* rails.zip
 unzip rails.zip
 rm -rf rails.zip
 # to allow :help rails, start up vim and type :helptags ~/.vim/doc
+#
+# https://github.com/vim-ruby/vim-ruby
+# http://cx4a.org/software/rsense/
 cd ~
 
 # install emacs and basic config/plugins (http://appsintheopen.com/articles/1-setting-up-emacs-for-rails-development/part/7-emacs-ruby-foo)
@@ -454,16 +456,9 @@ make && sudo make install
 cd ~
 rustc -v
 
-# set up VPN (HMA Pro) to download ActiveTcl
-# https://vpn.hidemyass.com/vpncontrol/myaccounts/welcome/pp
+# use VPN to download ActiveTcl
+# f*ck HideMyAss VPN
 sudo apt-get install -y openvpn
-# Linux Software v1.3 (https://www.youtube.com/watch?v=Kuy2C1zN_0k)
-wget https://vpn.hidemyass.com/hma-vpn-linux-cli.zip
-unzip hma-vpn-linux-cli.zip # is unpacked into ~
-rm hma-vpn-linux-cli.zip
-./hma-vpn.sh -l
-./hma-vpn.sh "Canada, Quebec, Montreal (LOC1 S4)"
-# or Manual Setup using PPTP & L2TP VPN protocols (https://vpn.hidemyass.com/vpncontrol/myaccounts/pptp)
 
 # install Tk 8.5.15.0 (right now tk v8.6.1 is not supported by Ruby)
 # (http://www.tkdocs.com/tutorial/install.html)
