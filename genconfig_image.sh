@@ -142,3 +142,10 @@ echo "media-fonts/ubuntu-font-family ~amd64" | sudo tee -a /etc/portage/package.
 sudo emerge -uNa fontconfig freetype cairo libXft ubuntu-font-family
 
 sudo emerge thunderbird
+
+# old release
+echo "=app-misc/elasticsearch-1.0.1 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
+sudo emerge app-misc/elasticsearch
+sudo cp /etc/elasticsearch/elasticsearch.in.sh.sample /etc/elasticsearch/elasticsearch.in.sh
+sudo cp /etc/elasticsearch/elasticsearch.yml.sample /etc/elasticsearch/elasticsearch.yml
+sudo cp /etc/elasticsearch/logging.yml.sample /etc/elasticsearch/logging.yml
