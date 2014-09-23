@@ -252,7 +252,7 @@ rm chromedriver_linux64.zip
 
 # TODO: install Charles proxy
 
-sudo emerge mplayer
+sudo emerge mplayer2
 
 # dropbox + dropbox-cli
 # http://www.dropboxwiki.com/tips-and-tricks/install-dropbox-in-an-entirely-text-based-linux-environment
