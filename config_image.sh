@@ -225,6 +225,7 @@ sudo sed -i 's/gedit\.desktop/subl\.desktop/g' /usr/share/applications/defaults.
 
 # install vim and rails.vim (http://biodegradablegeek.com/2007/12/using-vim-as-a-complete-ruby-on-rails-ide/)
 sudo apt-get install -y vim
+sudo apt-get install -y gvim
 ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
 mkdir .vim && cd $_
 wget http://www.vim.org/scripts/download_script.php?src_id=16429

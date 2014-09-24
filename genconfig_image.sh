@@ -153,7 +153,7 @@ sudo ln -s ~/.dotfiles/sublime/subl.desktop /usr/share/applications/subl.desktop
 
 # install vim and rails.vim (http://biodegradablegeek.com/2007/12/using-vim-as-a-complete-ruby-on-rails-ide/)
 sudo emerge app-editors/vim
-# sudo emerge app-editors/gvim
+sudo emerge app-editors/gvim
 ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
 mkdir .vim && cd $_
 wget http://www.vim.org/scripts/download_script.php?src_id=16429
