@@ -43,11 +43,12 @@ sudo apt-get install -y keepassx
 sudo apt-get install -y git gitg # git-core package is obsolete
 git config --global user.name "Dzianis Dashkevich"
 git config --global user.email "dskecse@gmail.com"
-git config --global core.editor emacs
+git config --global core.editor vim
 git config --global merge.tool vimdiff
 git config --global push.default simple
 git config --global color.ui true
 git config --global core.autocrlf input
+git config --global core.excludesfile ~/.gitignore_global
 
 # install tig (https://github.com/jonas/tig) - already available via pkg manager
 # http://jonas.nitro.dk/tig/
