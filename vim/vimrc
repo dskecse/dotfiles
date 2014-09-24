@@ -1,4 +1,8 @@
 filetype on  " Automatically detect file types.
+
+" Load the entire list of plugins
+execute pathogen#infect()
+
 set nocompatible  " no vi compatibility.
 
 " Add recently accessed projects menu (project plugin)

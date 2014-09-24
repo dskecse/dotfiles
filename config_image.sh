@@ -228,6 +228,13 @@ sudo apt-get install -y vim
 sudo apt-get install -y gvim
 ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
 mkdir .vim && cd $_
+# install pathogen.vim to manage 'runtimepath' with ease
+# https://github.com/tpope/vim-pathogen
+mkdir -p ~/.vim/{autoload,bundle}
+curl -LSso ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+# install nerdtree tree explorer plugin
+git clone --depth 1 git@github.com:scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+# rails support
 wget http://www.vim.org/scripts/download_script.php?src_id=16429
 mv download_script* rails.zip
 unzip rails.zip
