@@ -59,6 +59,9 @@ set laststatus=2  " Always show status line.
 " gvim specific
 set mousehide  " Hide mouse after chars typed
 set mouse=a  " Mouse in all modesc
+set guioptions-=m  " Remove menu bar
+set guioptions-=T  " Remove toolbar
+set guioptions-=r  " Remove right-hand scroll bar
 
 " Highlight line characters starting from 81st one
 highlight ColorColumn ctermbg=magenta guibg=Magenta
