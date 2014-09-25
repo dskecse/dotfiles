@@ -117,7 +117,7 @@ rvm install 1.9.3,2.0.0,2.1.3,rbx,jruby # java is needed for jruby to run
 # rvm reinstall ruby-2.1.3 --with-tcl --with-tk
 rvm --default 2.1.3
 # rvm docs generate
-gem install rails -v 4.1.5
+gem install rails -v 4.1.6
 
 # install Shoes4 (requires JDK and JRuby installed)
 git clone git@github.com:shoes/shoes4.git
