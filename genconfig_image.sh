@@ -45,7 +45,7 @@ git config --global core.excludesfile ~/.gitignore_global
 echo "=dev-vcs/tig-2.0.3 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge dev-vcs/tig
 
-# tmux
+sudo emerge tmux
 
 sudo emerge nodejs
 npm -v
