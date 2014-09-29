@@ -499,11 +499,7 @@ sudo m-a prepare
 # wget http://download.virtualbox.org/virtualbox/4.3.14/Oracle_VM_VirtualBox_Extension_Pack-4.3.14-95030.vbox-extpack
 sudo usermod -G vboxusers $USER
 
-# install keybase
 # sudo apt-get install -y gnupg # or gpg
-sudo npm install -g keybase-installer
-sudo keybase-installer # run the installer, which verifies the latest release
-keybase version
 
 # install screenfetch
 # http://tuxtweaks.com/2013/12/install-screenfetch-linux/

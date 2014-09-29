@@ -282,11 +282,7 @@ dropbox-cli start
 
 # TODO: install Virtualbox
 
-# install keybase
 # sudo apt-get install -y gnupg # or gpg
-sudo npm install -g keybase-installer
-sudo keybase-installer # run the installer, which verifies the latest release
-keybase version
 
 sudo emerge screenfetch
 
