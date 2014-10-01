@@ -521,3 +521,5 @@ gconftool -s --type bool /apps/update-notifier/no_show_notifications true
 sudo apt-get install -y xmonad suckless-tools
 # install extensions to xmonad
 sudo apt-get install -y libghc-xmonad-contrib-dev
+xmonad --recompile
+xmonad --replace

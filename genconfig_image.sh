@@ -320,4 +320,7 @@ sudo emerge -uNa fontconfig freetype cairo libXft ubuntu-font-family
 
 sudo emerge thunderbird
 
-# TODO: install Xmonad
+# install Xmonad wm (and possibly Xmobar) and extensions
+sudo emerge xmonad-contrib
+xmonad --recompile
+xmonad --replace
