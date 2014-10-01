@@ -91,6 +91,7 @@ myManageHook =
     , title     =? "Adding option to alternative"        --> doCenterFloat
     , isFullscreen                                       --> doFullFloat
     , isDialog                                           --> doCenterFloat
+    , className =? "Xfce4-appfinder"                     --> doCenterFloat
     , className =? "Xfrun4"                              --> doCenterFloat
     --, className =? "KeePass2"                            --> doIgnore
     , className =? "xfce4-panel"                         --> doIgnore
