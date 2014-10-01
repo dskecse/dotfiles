@@ -218,7 +218,16 @@ sudo emerge erlang
 echo "=dev-lang/elixir-1.0.0 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge elixir
 
-# TODO: install Haskell
+# install Haskell (ghc, cabal, ...)
+# build my own haskell-platform ebuild
+# echo "=dev-haskell/haskell-platform-2013.2.0.0-r2 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
+# sudo layman -a haskell
+echo "=dev-haskell/haskell-platform-2013.2.0.0 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
+sudo emerge haskell-platform
+cabal update # command not found: cabal
+cabal install aeson haskell-src-exts haddock
+# for import and LANGUAGE completions and type inference
+cabal install ghc-mod
 
 wget -qO- http://download.redis.io/releases/redis-2.8.14.tar.gz | tar xzf -
 sudo mv redis-2.8.14 /opt/redis && cd $_
