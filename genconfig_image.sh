@@ -101,6 +101,8 @@ mvn -v
 # TODO: install JBoss AS
 
 \curl -sSL https://get.rvm.io | bash -s -- --version latest
+# enable auto-update
+echo 'rvm_autoupdate_flag=2' >> ~/.rvmrc
 echo 'export rvm_pretty_print=1' >> ~/.rvmrc
 source ~/.rvm/scripts/rvm
 unset RUBYOPT
