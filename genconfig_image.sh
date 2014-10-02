@@ -117,8 +117,8 @@ bundle config build.nokogiri --use-system-libraries
 # install Ruby via RVM
 rvm install 1.9.3,2.0.0,2.1.3,rbx,jruby # java is needed for jruby to run
 # rvm reinstall ruby-2.1.3 --with-tcl --with-tk
-rvm --default 2.1.3
-# rvm docs generate
+rvm use 2.1.3 --default
+rvm docs generate-ri
 gem install rails -v 4.1.6
 
 # install Shoes4 (requires JDK and JRuby installed)
