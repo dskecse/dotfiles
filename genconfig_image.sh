@@ -210,7 +210,7 @@ sudo emerge sci-mathematics/rstudio
 
 # install Erlang OTP (https://www.erlang-solutions.com/downloads/download-erlang-otp)
 # Java as a dependency
-echo "=dev-lang/erlang-17.1 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
+echo "=dev-lang/erlang-17.3 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge erlang
 # Erlang/OTP Platform is a complex system composed of many smaller applications (modules).
 # Installing the erlang package automatically installs the entire OTP suite.
