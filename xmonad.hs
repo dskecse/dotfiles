@@ -46,6 +46,7 @@ myStartupHook = do
   spawn "xset s off"
 --  spawn "xrandr --output HDMI1 --right-of eDS1"
   spawnOn "2" "xfce4-terminal"
+  setWMName "LG3D"
 
 --myStartupHook = setWMName "LG3D"
 --myStartupHook = setWMName "compiz"
@@ -54,6 +55,7 @@ myStartupHook = do
 myManageHook :: [ManageHook]
 myManageHook =
     [ appName   =? "Do"                                  --> doIgnore
+    , appName   =? "matlab"                              --> doFloat
     , appName   =? "xev"                                 --> doFloat
     , appName   =? "opera"                               --> doShift "1"
     , className =? "Chromium-browser"                    --> doShift "1"
