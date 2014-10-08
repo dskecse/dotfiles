@@ -309,7 +309,8 @@ cd ~
 
 sudo emerge screenfetch
 
-# TODO: install cups and Samsung printer driver
+# install cups and Samsung printer driver
+sudo emerge splix
 
 # Install DE theme
 sudo emerge greybird
