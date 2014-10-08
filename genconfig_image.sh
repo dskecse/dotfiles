@@ -283,7 +283,19 @@ dropbox-cli start
 
 # TODO: install unetbootin
 
-# TODO: install Matlab
+# install Matlab
+# http://rutracker.org/forum/viewtopic.php?t=4761942
+cd ~/Downloads/Matlab801_MacUnix
+./mount_matlab801
+cd ~/Matlab801
+sudo ./install
+# http://askubuntu.com/questions/139352/how-do-i-make-a-matlab-launcher-for-unity
+# https://help.ubuntu.com/community/MATLAB
+# create Matlab Launcher
+sudo cp Matlab.png /usr/local/MATLAB/R2013a/
+cp Matlab.desktop ~/.local/share/applications/
+cd ~
+~/Downloads/Matlab801_MacUnix/unmount_matlab801
 
 # TODO: install Rust
 

@@ -444,19 +444,19 @@ sudo apt-get install -y tuxboot
 
 # install Matlab
 # http://rutracker.org/forum/viewtopic.php?t=4761942
-cd Downloads/Matlab801_MacUnix
+cd ~/Downloads/Matlab801_MacUnix
 ./mount_matlab801
 cd ~/Matlab801
 sudo ./install
-Downloads/Matlab801_MacUnix/unmount_matlab801 # unmount it
 # when Segmentation fault (Core Dumped)
 # http://braintrekking.wordpress.com/2013/05/14/matlab-r2013a-segmentation-fault-in-ubuntu-12-04-x86-64/
-sudo ln -s /usr/local/MATLAB/R2013a/bin/matlab /usr/local/bin/matlab
+~/Downloads/Matlab801_MacUnix/unmount_matlab801
 # http://askubuntu.com/questions/139352/how-do-i-make-a-matlab-launcher-for-unity
 # https://help.ubuntu.com/community/MATLAB
 # create Matlab Launcher
 sudo wget http://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png -O /usr/share/icons/matlab.png
 sudo wget 'https://help.ubuntu.com/community/MATLAB?action=AttachFile&do=get&target=matlab-r2012a.desktop' -O /usr/share/applications/matlab.desktop
+cd ~
 
 # install Rust (http://www.rust-lang.org/, https://github.com/steveklabnik/rust_for_rubyists)
 curl -O http://static.rust-lang.org/dist/rust-0.11.0.tar.gz
