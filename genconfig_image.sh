@@ -154,24 +154,14 @@ sudo ln -s ~/.dotfiles/sublime/subl.desktop /usr/share/applications/subl.desktop
 # Open up the file associations list and replace all occurrences of gedit.desktop with subl.desktop.
 # sudo sed -i 's/gedit\.desktop/subl\.desktop/g' /usr/share/applications/defaults.list
 
-# install vim and rails.vim (http://biodegradablegeek.com/2007/12/using-vim-as-a-complete-ruby-on-rails-ide/)
+# install vim (http://biodegradablegeek.com/2007/12/using-vim-as-a-complete-ruby-on-rails-ide/)
 sudo emerge app-editors/vim
 sudo emerge app-editors/gvim
 git clone git@ssh.github.com:dskecse/dotvim.git ~/.vim
 cd ~/.vim
 git submodule update --init
 ln -s ~/.vim/vimrc ~/.vimrc
-# rails support
-# TODO: add rails.vim submodule to a dotvim repo
-wget http://www.vim.org/scripts/download_script.php?src_id=16429
-mv download_script* rails.zip
-unzip rails.zip
-rm -rf rails.zip
-# to allow :help rails, start up vim and type :helptags ~/.vim/doc
-#
-# https://github.com/vim-ruby/vim-ruby
 # http://cx4a.org/software/rsense/
-# https://github.com/elixir-lang/vim-elixir
 cd ~
 
 # install emacs and basic config/plugins (http://appsintheopen.com/articles/1-setting-up-emacs-for-rails-development/part/7-emacs-ruby-foo)

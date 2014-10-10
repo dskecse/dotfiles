@@ -226,24 +226,14 @@ sudo sed -i 's/gedit\.desktop/subl\.desktop/g' /usr/share/applications/defaults.
 # sudo apt-get install -y exuberant-ctags # no more needed in sublime 3
 # add Rust package to sublime
 
-# install vim and rails.vim (http://biodegradablegeek.com/2007/12/using-vim-as-a-complete-ruby-on-rails-ide/)
+# install vim (http://biodegradablegeek.com/2007/12/using-vim-as-a-complete-ruby-on-rails-ide/)
 sudo apt-get install -y vim
 sudo apt-get install -y gvim
 git clone git@ssh.github.com:dskecse/dotvim.git ~/.vim
 cd ~/.vim
 git submodule update --init
 ln -s ~/.vim/vimrc ~/.vimrc
-# rails support
-# TODO: add rails.vim submodule to a dotvim repo
-wget http://www.vim.org/scripts/download_script.php?src_id=16429
-mv download_script* rails.zip
-unzip rails.zip
-rm -rf rails.zip
-# to allow :help rails, start up vim and type :helptags ~/.vim/doc
-#
-# https://github.com/vim-ruby/vim-ruby
 # http://cx4a.org/software/rsense/
-# https://github.com/elixir-lang/vim-elixir
 cd ~
 
 # install emacs and basic config/plugins (http://appsintheopen.com/articles/1-setting-up-emacs-for-rails-development/part/7-emacs-ruby-foo)
