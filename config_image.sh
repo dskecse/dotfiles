@@ -437,10 +437,7 @@ wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 sudo apt-get remove --purge brasero-common -y
 sudo apt-get install -y xfburn
 
-# install Tuxboot
-sudo apt-add-repository ppa:thomas.tsai/ubuntu-tuxboot
-sudo apt-get update
-sudo apt-get install -y tuxboot
+sudo apt-get install -y unetbootin
 
 # install Matlab
 # http://rutracker.org/forum/viewtopic.php?t=4761942

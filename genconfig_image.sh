@@ -281,7 +281,7 @@ sudo emerge net-misc/dropbox-cli
 dropbox-cli autostart y
 dropbox-cli start
 
-# TODO: install unetbootin
+sudo emerge unetbootin
 
 # install Matlab
 # http://rutracker.org/forum/viewtopic.php?t=4761942
