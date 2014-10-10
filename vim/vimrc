@@ -1,6 +1,7 @@
 filetype on  " Automatically detect file types.
 
 " Load the entire list of plugins
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 set nocompatible  " no vi compatibility.
