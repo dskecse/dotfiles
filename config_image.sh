@@ -229,15 +229,12 @@ sudo sed -i 's/gedit\.desktop/subl\.desktop/g' /usr/share/applications/defaults.
 # install vim and rails.vim (http://biodegradablegeek.com/2007/12/using-vim-as-a-complete-ruby-on-rails-ide/)
 sudo apt-get install -y vim
 sudo apt-get install -y gvim
-ln -s ~/.dotfiles/vim/vimrc ~/.vimrc
-mkdir .vim && cd $_
-# install pathogen.vim to manage 'runtimepath' with ease
-# https://github.com/tpope/vim-pathogen
-mkdir -p ~/.vim/{autoload,bundle}
-curl -LSso ~/.vim/autoload/pathogen.vim https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-# install nerdtree tree explorer plugin
-git clone --depth 1 git@github.com:scrooloose/nerdtree.git ~/.vim/bundle/nerdtree
+git clone git@ssh.github.com:dskecse/dotvim.git ~/.vim
+cd ~/.vim
+git submodule update --init
+ln -s ~/.vim/vimrc ~/.vimrc
 # rails support
+# TODO: add rails.vim submodule to a dotvim repo
 wget http://www.vim.org/scripts/download_script.php?src_id=16429
 mv download_script* rails.zip
 unzip rails.zip
