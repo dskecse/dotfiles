@@ -1,5 +1,5 @@
 ```
-git clone git@github.com:dskecse/dotfiles.git ~/.dotfiles
+git clone git@ssh.github.com:dskecse/dotfiles.git ~/.dotfiles
 ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
 ln -s ~/.dotfiles/iex.exs ~/.iex.exs
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
