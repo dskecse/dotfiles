@@ -74,7 +74,7 @@ export PATH=$PATH:$HOME/elixir-0.15.1/bin
 
 export CATALINA_HOME=/opt/apache-tomcat-8.0.9
 
-export EDITOR=subl
+export EDITOR=gvim
 
 export RI="--format ansi"
 export DISABLE_SPRING=true
