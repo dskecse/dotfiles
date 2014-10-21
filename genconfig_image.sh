@@ -155,6 +155,9 @@ sudo ln -s ~/.dotfiles/sublime/subl.desktop /usr/share/applications/subl.desktop
 # sudo sed -i 's/gedit\.desktop/subl\.desktop/g' /usr/share/applications/defaults.list
 
 # install vim (http://biodegradablegeek.com/2007/12/using-vim-as-a-complete-ruby-on-rails-ide/)
+echo '=app-editors/vim-core-7.4.475 ~amd64' | sudo tee -a /etc/portage/package.keywords/custom
+echo '=app-editors/vim-7.4.475 ~amd64' | sudo tee -a /etc/portage/package.keywords/custom
+echo '=app-editors/gvim-7.4.475 ~amd64' | sudo tee -a /etc/portage/package.keywords/custom
 sudo USE="python" emerge app-editors/vim
 sudo USE="python" emerge app-editors/gvim
 git clone git@ssh.github.com:dskecse/dotvim.git ~/.vim
