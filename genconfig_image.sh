@@ -155,11 +155,13 @@ sudo ln -s ~/.dotfiles/sublime/subl.desktop /usr/share/applications/subl.desktop
 # sudo sed -i 's/gedit\.desktop/subl\.desktop/g' /usr/share/applications/defaults.list
 
 # install vim (http://biodegradablegeek.com/2007/12/using-vim-as-a-complete-ruby-on-rails-ide/)
-sudo emerge app-editors/vim
-sudo emerge app-editors/gvim
+sudo USE="python" emerge app-editors/vim
+sudo USE="python" emerge app-editors/gvim
 git clone git@ssh.github.com:dskecse/dotvim.git ~/.vim
 cd ~/.vim
-git submodule update --init
+git submodule update --init --recursive
+cd ~/.vim/bundle/YouCompleteMe
+./install.sh
 ln -s ~/.vim/vimrc ~/.vimrc
 # http://cx4a.org/software/rsense/
 cd ~
