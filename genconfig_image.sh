@@ -189,7 +189,11 @@ ln -s ~/.dotfiles/emacs/emacs ~/.emacs
 
 sudo EXTRA_ECONF="--with-png --with-jpeg" emerge imagemagick
 
-# TODO: install Python
+# setup python environment
+wget -qO - https://bootstrap.pypa.io/get-pip.py | sudo python
+sudo pip install Paste
+sudo pip install webapp2
+sudo pip install google_eppengine # installs WebOb
 
 # install R (http://cran.rstudio.com/)
 echo "=dev-lang/R-3.1.1 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
