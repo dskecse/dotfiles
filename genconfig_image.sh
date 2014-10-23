@@ -238,7 +238,7 @@ cd ~
 
 # http://wiki.gentoo.org/wiki/MySQL/Startup_Guide
 sudo emerge mysql # installs 9 packages
-sudo emerge --config "=dev-db/mysql-5.5_39"
+sudo emerge --config "=dev-db/mysql-5.5_40"
 sudo /etc/init.d/mysql start
 sudo /usr/bin/mysql_secure_installation
 
