@@ -269,6 +269,12 @@ rm chromedriver_linux64.zip
 
 # TODO: install Charles proxy
 
+# install ngrok reverse proxy
+wget https://dl.ngrok.com/linux_386/ngrok.zip
+unzip ngrok.zip && rm ngrok.zip
+./ngrok -help
+# inspect and replay requests at localhost:4040
+
 sudo emerge mplayer2
 
 # dropbox + dropbox-cli
