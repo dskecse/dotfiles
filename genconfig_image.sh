@@ -329,7 +329,7 @@ echo "media-fonts/ubuntu-font-family ~amd64" | sudo tee -a /etc/portage/package.
 
 sudo emerge -uNa fontconfig freetype cairo libXft ubuntu-font-family
 
-sudo emerge thunderbird
+sudo emerge thunderbird-bin
 
 # install Xmonad wm (and possibly Xmobar) and extensions
 sudo emerge xmonad-contrib
