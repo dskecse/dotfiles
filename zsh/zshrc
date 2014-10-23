@@ -36,9 +36,13 @@ source $ZSH/oh-my-zsh.sh
 
 # If not running interactively, do not do anything
 # [[ $- != *i* ]] && return
-case $- in *i*)
-  [[ -z "$TMUX" ]] && exec tmux -2
-esac
+distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
+if [[ $distro == "Ubuntu" ]]
+then
+  case $- in *i*)
+    [[ -z "$TMUX" ]] && exec tmux -2
+  esac
+fi
 
 # Customize to your needs...
 
