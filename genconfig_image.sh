@@ -105,7 +105,6 @@ mvn -v
 echo 'rvm_autoupdate_flag=2' >> ~/.rvmrc
 echo 'export rvm_pretty_print=1' >> ~/.rvmrc
 source ~/.rvm/scripts/rvm
-unset RUBYOPT
 echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 gem install bundler # still unknown command
 

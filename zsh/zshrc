@@ -82,3 +82,8 @@ export EDITOR=gvim
 
 export RI="--format ansi"
 export DISABLE_SPRING=true
+
+# https://github.com/sstephenson/rbenv/issues/616
+if [[ $distro == "Gentoo" ]]; then
+  unset RUBYOPT
+fi
