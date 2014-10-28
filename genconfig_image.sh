@@ -153,6 +153,9 @@ sudo ln -s ~/.dotfiles/sublime/subl.desktop /usr/share/applications/subl.desktop
 # Open up the file associations list and replace all occurrences of gedit.desktop with subl.desktop.
 # sudo sed -i 's/gedit\.desktop/subl\.desktop/g' /usr/share/applications/defaults.list
 
+# install ag utility
+sudo emerge the_silver_searcher
+
 # install vim (http://biodegradablegeek.com/2007/12/using-vim-as-a-complete-ruby-on-rails-ide/)
 echo '=app-editors/vim-core-7.4.475 ~amd64' | sudo tee -a /etc/portage/package.keywords/custom
 echo '=app-editors/vim-7.4.475 ~amd64' | sudo tee -a /etc/portage/package.keywords/custom

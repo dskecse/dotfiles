@@ -226,6 +226,9 @@ sudo sed -i 's/gedit\.desktop/subl\.desktop/g' /usr/share/applications/defaults.
 # sudo apt-get install -y exuberant-ctags # no more needed in sublime 3
 # add Rust package to sublime
 
+# install ag utility
+sudo apt-get install -y silversearcher-ag
+
 # install vim (http://biodegradablegeek.com/2007/12/using-vim-as-a-complete-ruby-on-rails-ide/)
 sudo apt-get install -y vim
 sudo apt-get install -y gvim
