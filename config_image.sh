@@ -307,9 +307,9 @@ sudo apt-get install -y erlang erlang-manpages
 # Installing the erlang package automatically installs the entire OTP suite.
 # run using `erl`
 
-# install Elixir (v1.0.1)
-wget -O - https://github.com/elixir-lang/elixir/archive/v1.0.1.tar.gz | tar xzvf -
-cd elixir-1.0.1
+# install Elixir (v1.0.2)
+wget -O - https://github.com/elixir-lang/elixir/archive/v1.0.2.tar.gz | tar xzvf -
+cd elixir-1.0.2
 make install
 cd ~
 

@@ -216,8 +216,8 @@ sudo emerge erlang
 # Installing the erlang package automatically installs the entire OTP suite.
 # run using `erl`
 
-# install Elixir (v1.0.1)
-echo "=dev-lang/elixir-1.0.1 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
+# install Elixir (v1.0.2)
+echo "=dev-lang/elixir-1.0.2 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge elixir
 
 # install Haskell (ghc, cabal, ...)
