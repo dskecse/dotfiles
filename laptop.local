@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+fancy_echo "Installing MySQL ..."
+  brew_install_or_upgrade 'mysql'
+
+# http://stackoverflow.com/questions/9134423/os-x-lion-attempting-nokogiri-install-libxml2-is-missing
+# http://www.nokogiri.org/tutorials/installing_nokogiri.html
+fancy_echo "Installing libxml and libxslt ..."
+  brew_install_or_upgrade 'libxml2'
+  brew_install_or_upgrade 'libxslt'
+
+  xcode-select --install
+
+fancy_echo "Installing PhantomJS, a scriptable headless webkit ..."
+  brew_install_or_upgrade 'phantomjs'
