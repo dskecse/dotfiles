@@ -13,3 +13,9 @@ fancy_echo "Installing libxml and libxslt ..."
 
 fancy_echo "Installing PhantomJS, a scriptable headless webkit ..."
   brew_install_or_upgrade 'phantomjs'
+
+fancy_echo "Install Erlang OTP ..."
+  brew_install_or_upgrade 'erlang'
+
+fancy_echo "Install Elixir ..."
+  brew_install_or_upgrade 'elixir'
