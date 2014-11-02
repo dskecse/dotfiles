@@ -121,3 +121,6 @@ fancy_echo "Installing RStudio ..."
 # TODO: install memcached
 
 # TODO: install nginx
+
+fancy_echo "Installing chromedriver ..."
+  brew_install_or_upgrade 'chromedriver'
