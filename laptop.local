@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+fancy_echo "Installing dos2unix ..."
+  brew_install_or_upgrade 'dos2unix'
+
+fancy_echo "Installing tree ..."
+  brew_install_or_upgrade 'tree'
+
+fancy_echo "Installing ipcalc ..."
+  brew_install_or_upgrade 'ipcalc'
+
 fancy_echo "Installing MySQL ..."
   brew_install_or_upgrade 'mysql'
 
