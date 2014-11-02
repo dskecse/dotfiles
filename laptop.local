@@ -82,5 +82,8 @@ else
   fancy_echo "jenv already installed. Skipping ..."
 fi
 
+fancy_echo "Installing maven ..."
+  brew_install_or_upgrade 'maven'
+
 fancy_echo "Installing elasticsearch ..."
   brew_install_or_upgrade 'elasticsearch'
