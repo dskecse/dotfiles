@@ -17,10 +17,10 @@ fancy_echo "Installing libxml and libxslt ..."
 fancy_echo "Installing PhantomJS, a scriptable headless webkit ..."
   brew_install_or_upgrade 'phantomjs'
 
-fancy_echo "Install Erlang OTP ..."
+fancy_echo "Installing Erlang OTP ..."
   brew_install_or_upgrade 'erlang'
 
-fancy_echo "Install Elixir ..."
+fancy_echo "Installing Elixir ..."
   brew_install_or_upgrade 'elixir'
 
 # http://hanxue-it.blogspot.com/2014/05/installing-java-8-managing-multiple.html
