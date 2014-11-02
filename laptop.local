@@ -127,3 +127,6 @@ fancy_echo "Installing chromedriver ..."
 
 fancy_echo "Installing ngrok, a reverse proxy ..."
   brew_cask_install_or_skip 'ngrok'
+
+fancy_echo "Installing Dropbox client ..."
+  brew_cask_install_or_skip 'dropbox'
