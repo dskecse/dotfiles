@@ -111,3 +111,13 @@ fancy_echo "Installing R ..."
 # http://www.rstudio.com/ide/download/desktop
 fancy_echo "Installing RStudio ..."
   brew_cask_install_or_skip 'rstudio'
+
+# TODO: install Go
+
+# TODO: install Haskell platform
+
+# TODO: install MongoDB
+
+# TODO: install memcached
+
+# TODO: install nginx
