@@ -32,6 +32,10 @@ fancy_echo "Installing libxml and libxslt ..."
 fancy_echo "Installing PhantomJS, a scriptable headless webkit ..."
   brew_install_or_upgrade 'phantomjs'
 
+fancy_echo "Installing jsl, a JavaScript linter ..."
+  brew tap homebrew/binary
+  brew_install_or_upgrade 'jsl'
+
 fancy_echo "Installing Erlang OTP ..."
   brew_install_or_upgrade 'erlang'
 
