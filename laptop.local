@@ -62,3 +62,6 @@ if ! command -v jenv >/dev/null; then
 else
   fancy_echo "jenv already installed. Skipping ..."
 fi
+
+fancy_echo "Installing elasticsearch ..."
+  brew_install_or_upgrade 'elasticsearch'
