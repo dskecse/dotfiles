@@ -36,12 +36,14 @@ source $ZSH/oh-my-zsh.sh
 
 # If not running interactively, do not do anything
 # [[ $- != *i* ]] && return
-distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
-if [[ $distro == "Ubuntu" ]]
-then
-  case $- in *i*)
-    [[ -z "$TMUX" ]] && exec tmux -2
-  esac
+if [[ $OSTYPE != darwin* ]]; then
+  distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
+  if [[ $distro == "Ubuntu" ]]
+  then
+    case $- in *i*)
+      [[ -z "$TMUX" ]] && exec tmux -2
+    esac
+  fi
 fi
 
 # Customize to your needs...
@@ -86,4 +88,14 @@ export DISABLE_SPRING=true
 # https://github.com/sstephenson/rbenv/issues/616
 if [[ $distro == "Gentoo" ]]; then
   unset RUBYOPT
+fi
+
+if [[ $OSTYPE == darwin* ]]; then
+  if which jenv > /dev/null; then
+    # Enable shims and autocompletion
+    eval "$(jenv init -)"
+
+    # Use Homebrew's directories rather than ~/.jenv
+    # export JENV_ROOT=/usr/local/opt/jenv
+  fi
 fi
