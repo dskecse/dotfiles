@@ -143,3 +143,5 @@ fancy_echo "Installing Dropbox client ..."
 
 fancy_echo "Installing screenfetch ..."
   brew_install_or_upgrade 'screenfetch'
+
+# TODO: install Clion IDE
