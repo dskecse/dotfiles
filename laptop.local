@@ -140,3 +140,6 @@ fancy_echo "Installing Dropbox client ..."
 # TODO: install LaTeX
 
 # TODO: install Virtualbox
+
+fancy_echo "Installing screenfetch ..."
+  brew_install_or_upgrade 'screenfetch'
