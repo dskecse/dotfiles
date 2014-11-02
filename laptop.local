@@ -98,3 +98,6 @@ fancy_echo "Installing elasticsearch ..."
 
 fancy_echo "Installing macvim ..."
   brew_install_or_upgrade 'macvim --with-lua --with-luajit'
+
+fancy_echo "Installing emacs ..."
+  brew_install_or_upgrade 'emacs --cocoa'
