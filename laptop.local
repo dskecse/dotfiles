@@ -9,6 +9,9 @@ fancy_echo "Installing libxml and libxslt ..."
   brew_install_or_upgrade 'libxml2'
   brew_install_or_upgrade 'libxslt'
 
+  # In the past it was necessary to install Apple's XCode IDE to get
+  # basic tools like GCC, Git and Subversion on your machine, but
+  # nowadays there is a slim solution by just installing the command line tools
   xcode-select --install
 
 fancy_echo "Installing PhantomJS, a scriptable headless webkit ..."
