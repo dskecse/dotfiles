@@ -101,3 +101,5 @@ fancy_echo "Installing macvim ..."
 
 fancy_echo "Installing emacs ..."
   brew_install_or_upgrade 'emacs --cocoa'
+
+# TODO: set up python development environment
