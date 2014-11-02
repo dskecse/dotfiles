@@ -85,5 +85,11 @@ fi
 fancy_echo "Installing maven ..."
   brew_install_or_upgrade 'maven'
 
+# TODO: install Eclipse
+
+# TODO: install Tomcat
+
+# TODO: install JBoss AS
+
 fancy_echo "Installing elasticsearch ..."
   brew_install_or_upgrade 'elasticsearch'
