@@ -12,6 +12,9 @@ fancy_echo "Installing ipcalc ..."
 fancy_echo "Installing nmap ..."
   brew_install_or_upgrade 'nmap'
 
+fancy_echo "Installing tig, an ncurses-based text-mode interface for git ..."
+  brew_install_or_upgrade 'tig --with-docs'
+
 fancy_echo "Installing MySQL ..."
   brew_install_or_upgrade 'mysql'
 
