@@ -130,3 +130,13 @@ fancy_echo "Installing ngrok, a reverse proxy ..."
 
 fancy_echo "Installing Dropbox client ..."
   brew_cask_install_or_skip 'dropbox'
+
+# TODO: install Matlab
+
+# TODO: install Rust
+
+# TODO: install Tk
+
+# TODO: install LaTeX
+
+# TODO: install Virtualbox
