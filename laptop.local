@@ -145,3 +145,6 @@ fancy_echo "Installing screenfetch ..."
   brew_install_or_upgrade 'screenfetch'
 
 # TODO: install Clion IDE
+
+fancy_echo "Installing skype ..."
+  brew_cask_install_or_skip 'skype'
