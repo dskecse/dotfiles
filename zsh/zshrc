@@ -99,3 +99,7 @@ if [[ $OSTYPE == darwin* ]]; then
     # export JENV_ROOT=/usr/local/opt/jenv
   fi
 fi
+
+if [[ $OSTYPE == darwin* ]]; then
+  source ~/.github_token
+fi
