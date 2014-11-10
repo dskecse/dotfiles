@@ -1,41 +1,103 @@
-# Path to your oh-my-zsh configuration.
+# Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-# ZSH_THEME="robbyrussell"
 ZSH_THEME="mgutz"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Set to this to use case-sensitive completion
+# Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Comment this out to disable weekly auto-update checks
+# Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
-# Uncomment following line if you want to disable colors in ls
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
 
-# Uncomment following line if you want to disable autosetting terminal title.
+# Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rvm)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(rbenv git bundler rails cake coffee capistrano)
 
 source $ZSH/oh-my-zsh.sh
 
+# User configuration
+
+if [[ $OSTYPE == darwin* ]]; then
+  export PATH="$HOME/.bin:$PATH"
+
+  # recommended by brew doctor
+  export PATH="/usr/local/bin:$PATH"
+
+  export PATH="$PATH:/usr/local/lib/node_modules"
+  source $(brew --prefix nvm)/nvm.sh
+
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init - zsh --no-rehash)"
+fi
+
+if [[ $OSTYPE == linux* ]]; then
+  # Add RVM to PATH for scripting
+  PATH=$PATH:$HOME/.rvm/bin
+
+  PATH=$PATH:/usr/local/heroku/bin
+
+  # Go workspace location
+  export GOPATH=$HOME/gocode
+  PATH=$PATH:$GOPATH/bin
+  PATH=$PATH:/usr/local/go/bin
+
+  export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/
+
+  export M2_HOME=/usr/local/apache-maven/apache-maven-3.1.1
+  export M2=$M2_HOME/bin
+  # Add the MAVEN_OPTS environment variable to specify JVM properties, e.g.
+  # export MAVEN_OPTS="-Xms256m -Xmx512m".
+  # This environment variable can be used to supply extra options to Maven.
+  PATH=$PATH:$M2
+
+  PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-linux
+  PATH=$PATH:/opt/ActiveTcl-8.5/bin
+  export PATH=$PATH:$HOME/elixir-0.15.1/bin
+
+  export CATALINA_HOME=/opt/apache-tomcat-8.0.9
+fi
+
+export RI="--format ansi"
+export DISABLE_SPRING=true
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
 # If not running interactively, do not do anything
-# [[ $- != *i* ]] && return
 if [[ $OSTYPE != darwin* ]]; then
   distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
   if [[ $distro == "Ubuntu" ]]
@@ -45,45 +107,6 @@ if [[ $OSTYPE != darwin* ]]; then
     esac
   fi
 fi
-
-# Customize to your needs...
-
-alias be='bundle exec'
-alias bi='bundle install'
-alias bu='bundle update'
-alias bo='bundle open'
-alias spk='thunar ~/.config/sublime-text-3/Packages'
-alias zip='zip -9'
-
-# Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin
-
-PATH=$PATH:/usr/local/heroku/bin
-
-# Go workspace location
-export GOPATH=$HOME/gocode
-PATH=$PATH:$GOPATH/bin
-PATH=$PATH:/usr/local/go/bin
-
-export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/
-
-export M2_HOME=/usr/local/apache-maven/apache-maven-3.1.1
-export M2=$M2_HOME/bin
-# Add the MAVEN_OPTS environment variable to specify JVM properties, e.g.
-# export MAVEN_OPTS="-Xms256m -Xmx512m".
-# This environment variable can be used to supply extra options to Maven.
-PATH=$PATH:$M2
-
-PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-linux
-PATH=$PATH:/opt/ActiveTcl-8.5/bin
-export PATH=$PATH:$HOME/elixir-0.15.1/bin
-
-export CATALINA_HOME=/opt/apache-tomcat-8.0.9
-
-export EDITOR=gvim
-
-export RI="--format ansi"
-export DISABLE_SPRING=true
 
 # https://github.com/sstephenson/rbenv/issues/616
 if [[ $distro == "Gentoo" ]]; then
@@ -103,3 +126,31 @@ fi
 if [[ $OSTYPE == darwin* ]]; then
   source ~/.github_token
 fi
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  if [[ $OSTYPE == darwin* ]]; then
+    export EDITOR='mvim'
+  else
+    export EDITOR='gvim'
+  fi
+fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias zip='zip -9'
