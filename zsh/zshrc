@@ -154,3 +154,4 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias zip='zip -9'
+alias abc='cd code/ruby/gitlab.activeby.net/activebilling/core'
