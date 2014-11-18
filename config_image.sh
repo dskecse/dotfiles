@@ -4,8 +4,8 @@
 # run with . config_image.sh
 # please note this script is fragile, as public download urls may change
 
-latest_ruby_version=2.1.5
-latest_rails_version=4.1.8
+# load latest versions of software
+. versions.sh
 
 cd ~
 
@@ -311,9 +311,9 @@ sudo apt-get install -y erlang erlang-manpages
 # Installing the erlang package automatically installs the entire OTP suite.
 # run using `erl`
 
-# install Elixir (v1.0.2)
-wget -O - https://github.com/elixir-lang/elixir/archive/v1.0.2.tar.gz | tar xzvf -
-cd elixir-1.0.2
+# install Elixir
+wget -O - https://github.com/elixir-lang/elixir/archive/v${latest_elixir_version}.tar.gz | tar xzvf -
+cd elixir-${latest_elixir_version}
 make install
 cd ~
 

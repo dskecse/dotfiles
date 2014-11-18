@@ -4,8 +4,8 @@
 # run with . genconfig_image.sh
 # please note this script is fragile, as public download urls may change
 
-latest_ruby_version=2.1.5
-latest_rails_version=4.1.8
+# load latest versions of software
+. versions.sh
 
 cd ~
 
@@ -214,14 +214,14 @@ sudo emerge sci-mathematics/rstudio
 
 # install Erlang OTP (https://www.erlang-solutions.com/downloads/download-erlang-otp)
 # Java as a dependency
-echo "=dev-lang/erlang-17.3 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
+echo "=dev-lang/erlang-${latest_erlang_version} ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge erlang
 # Erlang/OTP Platform is a complex system composed of many smaller applications (modules).
 # Installing the erlang package automatically installs the entire OTP suite.
 # run using `erl`
 
-# install Elixir (v1.0.2)
-echo "=dev-lang/elixir-1.0.2 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
+# install Elixir
+echo "=dev-lang/elixir-${latest_elixir_version} ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge elixir
 
 # install Haskell (ghc, cabal, ...)
