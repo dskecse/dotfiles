@@ -1,7 +1,11 @@
 #!/bin/bash
+
 # Note: you will be prompted to enter the password several times through the script
 # run with . config_image.sh
 # please note this script is fragile, as public download urls may change
+
+latest_ruby_version=2.1.5
+latest_rails_version=4.1.8
 
 cd ~
 
@@ -174,11 +178,11 @@ bundle config --global jobs 3
 bundle config build.nokogiri --use-system-libraries
 
 # install ruby via RVM
-rvm install 1.9.3,2.0.0,2.1.3,rbx,jruby # java is needed for jruby to run
-# rvm reinstall ruby-2.1.3 --with-tcl --with-tk
-rvm use 2.1.3 --default
+rvm install 1.9.3,2.0.0,$latest_ruby_version,rbx,jruby # java is needed for jruby to run
+# rvm reinstall ruby-2.1.5 --with-tcl --with-tk
+rvm use $latest_ruby_version --default
 rvm docs generate-ri
-gem install rails -v 4.1.6
+gem install rails -v $latest_rails_version
 
 # install Shoes4 (requires JDK and JRuby installed)
 git clone git@github.com:shoes/shoes4.git
