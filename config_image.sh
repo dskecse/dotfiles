@@ -60,11 +60,11 @@ git config --global core.excludesfile ~/.gitignore_global
 # depends on git, ncurses (ncursesw - ncurses w/ wide character support
 sudo apt-get install -y ncurses-base libncursesw5
 # is required to properly handle utf-8 encoded strings) and possibly iconv
-wget -qO- http://jonas.nitro.dk/tig/releases/tig-1.2.1.tar.gz | tar xzf -
-cd tig-1.2.1/
+wget -qO- http://jonas.nitro.dk/tig/releases/tig-${latest_tig_version}.tar.gz | tar xzf -
+cd tig-${latest_tig_version}/
 make prefix=/usr/local
 sudo make install prefix=/usr/local
-cd ~ && rm -rf tig-1.2.1
+cd ~ && rm -rf tig-${latest_tig_version}
 
 # install tmux (http://tmux.sourceforge.net/)
 # update-alternatives to use xterm instead of xterm-whatever
@@ -94,14 +94,14 @@ sudo npm install -g grunt-cli  # /usr/bin/grunt -> /usr/lib/node_modules/grunt-c
 sudo apt-get install -y phantomjs
 
 # Install jslint
-curl -LO http://www.javascriptlint.com/download/jsl-0.3.0-src.tar.gz
-tar xzvf jsl-0.3.0-src.tar.gz
-cd jsl-0.3.0/src/
+curl -LO http://www.javascriptlint.com/download/jsl-${latest_jsl_version}-src.tar.gz
+tar xzvf jsl-${latest_jsl_version}-src.tar.gz
+cd jsl-${latest_jsl_version}/src/
 make -f Makefile.ref
 cd ~
-sudo cp jsl-0.3.0/src/Linux_All_DBG.OBJ/jsl /usr/local/bin
-sudo rm jsl-0.3.0-src.tar.gz
-sudo rm -rf ~/jsl-0.3.0
+sudo cp jsl-${latest_jsl_version}/src/Linux_All_DBG.OBJ/jsl /usr/local/bin
+sudo rm jsl-${latest_jsl_version}-src.tar.gz
+sudo rm -rf ~/jsl-${latest_jsl_version}
 
 # install zsh
 sudo apt-get install -y zsh
@@ -121,8 +121,9 @@ sudo apt-get install -y oracle-java8-set-default # automatically set up the Java
 
 # install Maven (http://maven.apache.org/download.cgi)
 # http://askubuntu.com/questions/49557/how-do-i-install-maven-3?rq=1
-wget http://ftp.byfly.by/pub/apache.org/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.zip
-sudo unzip apache-maven-3.1.1-bin.zip -d /usr/local/apache-maven # the subdirectory apache-maven-3.1.1 will be created from the archive.
+wget http://ftp.byfly.by/pub/apache.org/maven/maven-3/${latest_mvn_version}/binaries/apache-maven-${latest_mvn_version}-bin.zip
+sudo unzip apache-maven-${latest_mvn_version}-bin.zip -d /usr/local/apache-maven # the subdirectory apache-maven-3.1.1 will be created from the archive.
+rm apache-maven-${latest_mvn_version}-bin.zip
 mvn -v
 # http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 # try `sudo apt-get install maven' # too many packages
@@ -142,10 +143,10 @@ sudo usermod -G tomcat7 $(whoami)
 /usr/share/tomcat7/bin/shutdown.sh
 sudo update-rc.d tomcat7 disable    # Disabling system startup links for /etc/init.d/tomcat7
 
-# install JBoss AS 7.1.1.Final (https://www.digitalocean.com/community/articles/how-to-install-jboss-on-ubuntu-12-10-64bit)
-wget -qO- http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.tar.gz | tar xzvf -
-mv jboss-as-7.1.1.Final jboss-as-7.1.1
-sudo mv jboss-as-7.1.1 /usr/local/share/jboss
+# install JBoss AS (https://www.digitalocean.com/community/articles/how-to-install-jboss-on-ubuntu-12-10-64bit)
+wget -qO- http://download.jboss.org/jbossas/${latest_jboss_version}/jboss-as-${latest_jboss_version}.Final/jboss-as-${latest_jboss_version}.Final.tar.gz | tar xzvf -
+mv jboss-as-${latest_jboss_version}.Final jboss-as-${latest_jboss_version}
+sudo mv jboss-as-${latest_jboss_version} /usr/local/share/jboss
 # Because we don't want to run it as root you should create a new user which is used to start the JBoss server.
 sudo useradd -M appserver # pwd: appserver
 sudo chown -R appserver /usr/local/share/jboss
@@ -197,9 +198,9 @@ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 # install wkhtmltopdf (http://wkhtmltopdf.org/)
 # Simple shell utility to convert html to pdf using the webkit rendering engine, and qt.
 # http://www.installion.co.uk/ubuntu/saucy/universe/w/wkhtmltopdf/index.html
-wget http://downloads.sourceforge.net/project/wkhtmltopdf/0.12.1/wkhtmltox-0.12.1_linux-trusty-amd64.deb
-sudo dpkg -i wkhtmltox-0.12.1_linux-trusty-amd64.deb
-rm wkhtmltox-0.12.1_linux-trusty-amd64.deb
+wget http://downloads.sourceforge.net/project/wkhtmltopdf/${latest_wkhtmltopdf_version}/wkhtmltox-${latest_wkhtmltopdf_version}_linux-trusty-amd64.deb
+sudo dpkg -i wkhtmltox-${latest_wkhtmltopdf_version}_linux-trusty-amd64.deb
+rm wkhtmltox-${latest_wkhtmltopdf_version}_linux-trusty-amd64.deb
 
 # install addional rails-related applications
 sudo apt-get install -y sphinxsearch
@@ -289,7 +290,7 @@ sudo apt-get install -y r-base
 sudo apt-get install -y r-base-dev
 # install RStudio with R v2.11.1+ (http://www.rstudio.com/ide/download/desktop)
 sudo apt-get install -y libjpeg62
-wget http://download1.rstudio.org/rstudio-0.97.551-amd64.deb | xargs sudo dpkg -i
+wget http://download1.rstudio.org/rstudio-${latest_rstudio_version}-amd64.deb | xargs sudo dpkg -i
 
 # install Go (https://code.google.com/p/go/)
 # The Go binary distributions assume they will be installed in /usr/local/go.
@@ -330,8 +331,8 @@ cabal install ghc-mod
 # install Redis (http://redis.io/)
 # to use `redis-server` and `redis-cli`
 # sudo apt-get install redis-server -y (usually outdated versions)
-wget -qO- http://download.redis.io/releases/redis-2.8.12.tar.gz | tar xzf -
-sudo mv redis-2.8.12 /opt/redis && cd $_
+wget -qO- http://download.redis.io/releases/redis-${latest_redis_version}.tar.gz | tar xzf -
+sudo mv redis-${latest_redis_version} /opt/redis && cd $_
 # install Redis binaries into /usr/local/bin
 sudo make install
 cd utils
@@ -388,7 +389,7 @@ sudo apt-get install -y google-chrome-stable
 # It provides capabilities for navigating to web pages, user input, JavaScript execution, and more.
 # ChromeDriver is a standalone server which implements WebDriver's wire protocol for Chromium.
 # It is being developed by members of the Chromium and WebDriver teams.
-wget http://chromedriver.storage.googleapis.com/2.10/chromedriver_linux64.zip # check SHA1 checksum!
+wget http://chromedriver.storage.googleapis.com/${latest_chromedriver_version}/chromedriver_linux64.zip # check SHA1 checksum!
 sudo unzip chromedriver_linux64.zip -d /usr/local/bin
 rm chromedriver_linux64.zip
 
@@ -449,12 +450,9 @@ sudo wget http://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png -O 
 sudo wget 'https://help.ubuntu.com/community/MATLAB?action=AttachFile&do=get&target=matlab-r2012a.desktop' -O /usr/share/applications/matlab.desktop
 cd ~
 
-# install Rust (http://www.rust-lang.org/, https://github.com/steveklabnik/rust_for_rubyists)
-curl -O http://static.rust-lang.org/dist/rust-0.11.0.tar.gz
-tar xzf rust-0.11.0.tar.gz && rm rust-0.11.0.tar.gz
-cd rust-0.11.0
-./configure --prefix=/usr/local
-make && sudo make install
+# install Rust nightly (http://www.rust-lang.org/, https://github.com/steveklabnik/rust_for_rubyists)
+# this will also install Cargo, Rusts's package manager
+curl -s https://static.rust-lang.org/rustup.sh | sudo sh
 # this will install `rustc` - Rust compiler, `rustdoc` - API-documentation tool
 # and `rustpkg` - Rust pkg manager and build system.
 cd ~

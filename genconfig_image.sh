@@ -46,7 +46,7 @@ git config --global core.excludesfile ~/.gitignore_global
 # http://jonas.nitro.dk/tig/
 # http://jonas.nitro.dk/tig/INSTALL.html
 # depends on git, ncurses (ncursesw - ncurses w/ wide character support
-echo "=dev-vcs/tig-2.0.3 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
+echo "=dev-vcs/tig-${latest_tig_version} ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge dev-vcs/tig
 
 sudo emerge tmux
@@ -60,18 +60,18 @@ sudo npm install -g coffee-script
 # install Grunt js task runner (http://blog.teamtreehouse.com/getting-started-with-grunt)
 sudo npm install -g grunt-cli  # /usr/bin/grunt -> /usr/lib/node_modules/grunt-cli/bin/grunt
 
-echo "=www-client/phantomjs-1.9.7 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
+echo "=www-client/phantomjs-${latest_phantomjs_version} ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge phantomjs
 
 # install jslint
-curl -LO http://www.javascriptlint.com/download/jsl-0.3.0-src.tar.gz
-tar xzvf jsl-0.3.0-src.tar.gz
-cd jsl-0.3.0/src/
+curl -LO http://www.javascriptlint.com/download/jsl-${latest_jsl_version}-src.tar.gz
+tar xzvf jsl-${latest_jsl_version}-src.tar.gz
+cd jsl-${latest_jsl_version}/src/
 make -f Makefile.ref
 cd ~
-sudo cp jsl-0.3.0/src/Linux_All_DBG.OBJ/jsl /usr/local/bin
-sudo rm jsl-0.3.0-src.tar.gz
-sudo rm -rf ~/jsl-0.3.0
+sudo cp jsl-${latest_jsl_version}/src/Linux_All_DBG.OBJ/jsl /usr/local/bin
+sudo rm jsl-${latest_jsl_version}-src.tar.gz
+sudo rm -rf ~/jsl-${latest_jsl_version}
 
 sudo emerge zsh
 # sudo emerge app-shells/zsh-completion
@@ -92,9 +92,9 @@ sudo emerge dev-java/oracle-jdk-bin
 # install Maven (http://maven.apache.org/download.cgi)
 # echo "=dev-java/maven-bin-3.1.1 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 # sudo emerge dev-java/maven-bin
-wget http://ftp.byfly.by/pub/apache.org/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.zip
-sudo unzip apache-maven-3.1.1-bin.zip -d /usr/local/apache-maven # the subdirectory apache-maven-3.1.1 will be created from the archive.
-rm apache-maven-3.1.1-bin.zip
+wget http://ftp.byfly.by/pub/apache.org/maven/maven-3/${latest_mvn_version}/binaries/apache-maven-${latest_mvn_version}-bin.zip
+sudo unzip apache-maven-${latest_mvn_version}-bin.zip -d /usr/local/apache-maven # the subdirectory apache-maven-3.1.1 will be created from the archive.
+rm apache-maven-${latest_mvn_version}-bin.zip
 mvn -v
 # http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 
@@ -161,9 +161,9 @@ sudo ln -s ~/.dotfiles/sublime/subl.desktop /usr/share/applications/subl.desktop
 sudo emerge the_silver_searcher
 
 # install vim (http://biodegradablegeek.com/2007/12/using-vim-as-a-complete-ruby-on-rails-ide/)
-echo '=app-editors/vim-core-7.4.475 ~amd64' | sudo tee -a /etc/portage/package.keywords/custom
-echo '=app-editors/vim-7.4.475 ~amd64' | sudo tee -a /etc/portage/package.keywords/custom
-echo '=app-editors/gvim-7.4.475 ~amd64' | sudo tee -a /etc/portage/package.keywords/custom
+echo "=app-editors/vim-core-${latest_vim_version} ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
+echo "=app-editors/vim-${latest_vim_version} ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
+echo "=app-editors/gvim-${latest_vim_version} ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo USE="python" emerge app-editors/vim
 sudo USE="python" emerge app-editors/gvim
 git clone git@ssh.github.com:dskecse/dotvim.git ~/.vim
@@ -204,10 +204,10 @@ sudo pip install appengine
 # Install requires a virtual environment to be active
 
 # install R (http://cran.rstudio.com/)
-echo "=dev-lang/R-3.1.1 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
+echo "=dev-lang/R-${latest_r_version} ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge dev-lang/R
 # install RStudio with R v2.11.1+ (http://www.rstudio.com/ide/download/desktop)
-echo "=sci-mathematics/rstudio-0.98.1028 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
+echo "=sci-mathematics/rstudio-${latest_rstudio_version} ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge sci-mathematics/rstudio
 
 # TODO: install Go
@@ -235,8 +235,8 @@ cabal install aeson haskell-src-exts haddock
 # for import and LANGUAGE completions and type inference
 cabal install ghc-mod
 
-wget -qO- http://download.redis.io/releases/redis-2.8.14.tar.gz | tar xzf -
-sudo mv redis-2.8.14 /opt/redis && cd $_
+wget -qO- http://download.redis.io/releases/redis-${latest_redis_version}.tar.gz | tar xzf -
+sudo mv redis-${latest_redis_version} /opt/redis && cd $_
 sudo make install
 cd utils
 sudo ./install_server.sh
@@ -246,7 +246,7 @@ cd ~
 
 # http://wiki.gentoo.org/wiki/MySQL/Startup_Guide
 sudo emerge mysql # installs 9 packages
-sudo emerge --config "=dev-db/mysql-5.5_40"
+sudo emerge --config "=dev-db/mysql-${latest_mysql_version}"
 sudo /etc/init.d/mysql start
 sudo /usr/bin/mysql_secure_installation
 
@@ -268,7 +268,7 @@ sudo emerge memcached
 echo "=www-client/google-chrome-37.0.2062.94_p1 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge google-chrome
 
-wget http://chromedriver.storage.googleapis.com/2.10/chromedriver_linux64.zip
+wget http://chromedriver.storage.googleapis.com/${latest_chromedriver_version}/chromedriver_linux64.zip
 sudo unzip chromedriver_linux64.zip -d /usr/local/bin
 sudo chmod 755 $_/chromedriver
 rm chromedriver_linux64.zip
