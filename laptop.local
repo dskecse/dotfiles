@@ -153,3 +153,8 @@ fancy_echo "Installing screenfetch ..."
 
 fancy_echo "Installing skype ..."
   brew_cask_install_or_skip 'skype'
+
+if [[ ! -d "$HOME/.pow/" ]]; then
+  fancy_echo "Installing pow ..."
+    curl get.pow.cx | sh
+fi
