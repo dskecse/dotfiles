@@ -158,16 +158,10 @@ sudo chown -R appserver /usr/local/share/jboss
 # exit
 cd ~
 
-# install RVM stable release version (http://rvm.io/rvm/install)
-# http://cheat.errtheblog.com/s/rvm
+# install RVM (http://rvm.io/rvm/install)
 \curl -sSL https://get.rvm.io | bash -s -- --version latest
-# enable auto-update
-echo 'rvm_autoupdate_flag=2' >> ~/.rvmrc
-echo 'export rvm_pretty_print=1' >> ~/.rvmrc
 source ~/.rvm/scripts/rvm
-#
 # In case of any issues read output of 'rvm requirements' and/or 'rvm notes'
-# sudo apt-get install build-essential openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev libxslt-dev sqlite3 libsqlite3-dev autoconf libc6-dev ncurses-dev automake libtool bison pkg-config
 
 # setup Bundler
 # TODO: replace the hardcoded number of cpu cores with the proper command
