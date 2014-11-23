@@ -4,7 +4,7 @@
 # run with . config_image.sh
 # please note this script is fragile, as public download urls may change
 
-# load latest versions of software
+# load latest version numbers of software
 . versions.sh
 
 cd ~
@@ -105,11 +105,7 @@ sudo rm -rf ~/jsl-${latest_jsl_version}
 
 # install zsh
 sudo apt-get install -y zsh
-curl -L http://install.ohmyz.sh | sh # AUTOMATIC way
-# git clone git@github.com:robbyrussel/oh-my-zsh.git ~/.oh-my-zsh # MANUAL way (use when you have ssh keys to authenticate with)
-# cp ~/.zshrc ~/.zshrc.orig # OPTIONAL backup existing ~/.zshrc file
-# cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc # create a new zsh config by copying zsh template
-# exec /bin/zsh
+curl -L http://install.ohmyz.sh | sh
 
 # install Java (http://linuxg.net/how-to-install-oracle-java-jdk-678-on-ubuntu-13-04-12-10-12-04/)
 sudo apt-get purge 'openjdk*' # remove OpenJDK first
@@ -174,6 +170,7 @@ source ~/.rvm/scripts/rvm
 # sudo apt-get install build-essential openssl libreadline6 libreadline6-dev zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev libxslt-dev sqlite3 libsqlite3-dev autoconf libc6-dev ncurses-dev automake libtool bison pkg-config
 
 # setup Bundler
+# TODO: replace the hardcoded number of cpu cores with the proper command
 bundle config --global jobs 3
 # Nokogiri builds and uses a packaged version of libxslt. Use the system library instead
 bundle config build.nokogiri --use-system-libraries

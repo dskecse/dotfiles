@@ -4,7 +4,7 @@
 # run with . genconfig_image.sh
 # please note this script is fragile, as public download urls may change
 
-# load latest versions of software
+# load latest version numbers of software
 . versions.sh
 
 cd ~
@@ -78,11 +78,7 @@ sudo emerge zsh
 # echo "autoload -U compinit promptinit" >> ~/.zshrc
 # echo "compinit" >> ~/.zshrc
 # echo "promptinit; prompt gentoo" >> ~/.zshrc
-curl -L http://install.ohmyz.sh | sh # AUTOMATIC way
-# git clone git@github.com:robbyrussel/oh-my-zsh.git ~/.oh-my-zsh # MANUAL way (use when you have ssh keys to authenticate with)
-# cp ~/.zshrc ~/.zshrc.orig # OPTIONAL backup existing ~/.zshrc file
-# cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc # create a new zsh config by copying zsh template
-# exec /bin/zsh
+curl -L http://install.ohmyz.sh | sh
 
 echo "=dev-java/oracle-jdk-bin-1.8.0.20 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 wget http://download.oracle.com/otn-pub/java/jdk/8u20-b26/jdk-8u20-linux-x64.tar.gz
@@ -113,6 +109,7 @@ echo "gem: --no-ri --no-rdoc" > ~/.gemrc
 gem install bundler # still unknown command
 
 # setup Bundler
+# TODO: replace the hardcoded number of cpu cores with the proper command
 bundle config --global jobs 3
 # Nokogiri builds and uses a packaged version of libxslt. Use the system library instead
 bundle config build.nokogiri --use-system-libraries
