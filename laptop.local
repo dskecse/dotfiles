@@ -157,4 +157,5 @@ fancy_echo "Installing skype ..."
 if [[ ! -d "$HOME/.pow/" ]]; then
   fancy_echo "Installing pow ..."
     curl get.pow.cx | sh
+    gem i powder
 fi
