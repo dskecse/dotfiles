@@ -1,4 +1,3 @@
-
 import XMonad
 import XMonad.Actions.CycleWS
 import XMonad.Actions.FloatKeys
@@ -18,14 +17,7 @@ import XMonad.Util.EZConfig(additionalKeys, additionalMouseBindings)
 import XMonad.Config.Desktop (desktopLayoutModifiers)
 import XMonad.Layout.Spacing
 
---import XMonad.Layout.Spacing
---import XMonad.Layout.GridVariants
---import XMonad.Layout.ResizeScreen
---import XMonad.Layout.PerWorkspace (onWorkspace)
-
 import qualified XMonad.StackSet as W
---import qualified Data.Map        as M
---import System.Exit
 
 button6     =  6 :: Button
 button7     =  7 :: Button
@@ -41,39 +33,19 @@ button15    = 15 :: Button
 myStartupHook :: X ()
 myStartupHook = do
   spawn "xsetroot -cursor_name left_ptr"
---  spawn "setxkbmap -option grp:switch,grp:alt_space_toggle,grp:caps_toggle us,ru"
---  spawn "feh --bg-fill /home/styx/Pictures/Cacomixtle.jpg"
   spawn "xset s off"
---  spawn "xrandr --output HDMI1 --right-of eDS1"
   spawnOn "2" "xfce4-terminal"
-  setWMName "LG3D"
-
---myStartupHook = setWMName "LG3D"
---myStartupHook = setWMName "compiz"
---myStartupHook = ewmhDesktopsStartup >> setWMName "LG3D"
 
 myManageHook :: [ManageHook]
 myManageHook =
     [ appName   =? "Do"                                  --> doIgnore
     , appName   =? "matlab"                              --> doFloat
-    , appName   =? "xev"                                 --> doFloat
-    , appName   =? "opera"                               --> doShift "1"
-    , className =? "Chromium-browser"                    --> doShift "1"
     , className =? "Google-chrome"                       --> doShift "1"
-    , className =? "Gajim.py"                            --> doShift "3"
     , className =? "Skype"                               --> doShift "3"
     , appName   =? "vmware"                              --> doShift "4"
-    , appName   =? "kmail"                               --> doShift "9"
     , className =? "Claws-mail"                          --> doShift "9"
-    , className =? "Shredder"                            --> doShift "9"
     , className =? "Mail"                                --> doShift "9"
-    , className =? "Thunderbird"                         --> doShift "9"
-    , className =? "Gimp-2.6"                            --> doFloat
-    , className =? "WorldOfTanks.exe"                    --> doCenterFloat
-    , className =? "Wine"                                --> doFullFloat
     , className =? "MPlayer"                             --> doFloat
-    , className =? "TeamViewer.exe"                      --> doCenterFloat
-    , className =? "Nautilus"                            --> doCenterFloat
     , className =? "Vmware-modconfig"                    --> doCenterFloat
     , className =? "Gnome-mount"                         --> doCenterFloat
     , className =? "Gnome-desktop-item-edit"             --> doCenterFloat
@@ -83,9 +55,6 @@ myManageHook =
     , className =? "sun-awt-X11-XDialogPeer"             --> doCenterFloat
     , className =? "java-lang-Thread"                    --> doCenterFloat
     , className =? "java"                                --> doCenterFloat
-    , className =? "Seahorse-agent"                      --> doCenterFloat
-    , className =? "Ubuntuone-client-preferences"        --> doCenterFloat
-    , title     =? "TeamViewer"                          --> doCenterFloat
     , title     =? "Adding Owner..."                     --> doCenterFloat
     , title     =? "Authorize Passphrase Access"         --> doCenterFloat
     , title     =? "Downloading Package Files"           --> doCenterFloat
@@ -95,35 +64,22 @@ myManageHook =
     , isDialog                                           --> doCenterFloat
     , className =? "Xfce4-appfinder"                     --> doCenterFloat
     , className =? "Xfrun4"                              --> doCenterFloat
-    --, className =? "KeePass2"                            --> doIgnore
     , className =? "xfce4-panel"                         --> doIgnore
     , className =? "Xfce4-panel"                         --> doIgnore
-    , className =? "Unity-2d-panel"                      --> doIgnore
-    , className =? "Unity-2d-launcher"                   --> doFloat
-    , className =? "Steam"                               --> doFloat
-    , className =? "steam"                               --> doFullFloat
-    --, className =? "Photoshop.exe"                       --> doIgnore
     ]
-
---myLayouts ::
---myLayouts =
 
 myConfig = gnomeConfig
     { manageHook = manageSpawn <+> manageHook gnomeConfig <+> composeAll myManageHook
     , startupHook = myStartupHook
---    , layoutHook = myLayouts
     , workspaces = map show [1 .. 10 :: Int]
     , modMask = mod4Mask
     , terminal = "xfce4-terminal"
---    , logHook = takeTopFocus
---    , focusFollowsMouse = False
     } `additionalKeys`
 
         [ ((modMask(myConfig)              , xK_s ),            prevWS                                )
         , ((modMask(myConfig)              , xK_d ),            nextWS                                )
         , ((modMask(myConfig)              , xK_Right ),        nextWS                                )
         , ((modMask(myConfig)              , xK_Left ),         prevWS                                )
-        , ((modMask(myConfig)              , xK_g),             spawn "gajim-remote toggle_roster_appearance" )
         , ((modMask(myConfig)              , xK_u),             withFocused toggleBorder              )
         , ((modMask(myConfig)              , xK_b),             withFocused toggleBorder >>
                                                                 sendMessage ToggleStruts              )
@@ -133,7 +89,6 @@ myConfig = gnomeConfig
         , ((0                              , xK_Cancel),        kill                                  ) -- @@ Kill current window with special key Cancel
         , ((0                              , xK_Print),         spawn "xfce4-screenshooter -f"        )
         , ((modMask(myConfig)              , xK_L),             spawn "xflock4"                       ) -- @@ Lock screen
---        , ((modMask(myConfig)              , xK_p),             spawn "xfrun4"                        ) -- run panel
         , ((modMask(myConfig)              , xK_j),             setWMName "LG3D"                      ) -- @@ Java hack
         , ((modMask(myConfig)              , xK_r),             withFocused $
                                                                 keysMoveWindowTo (-1, -1) (0, 0)      )
