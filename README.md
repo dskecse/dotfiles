@@ -1,17 +1,7 @@
-```
-git clone git@ssh.github.com:dskecse/dotfiles.git ~/.dotfiles
-cp ~/.dotfiles/git/github_token.example ~/.dotfiles/git/github_token
-ln -s ~/.dotfiles/git/github_token ~/.github_token
-ln -s ~/.dotfiles/git/gitignore_global ~/.gitignore_global
-ln -s ~/.dotfiles/iex.exs ~/.iex.exs
-ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
-ln -s ~/.dotfiles/rvmrc ~/.rvmrc
-ln -s ~/.dotfiles/gemrc ~/.gemrc
-ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
-ln -s ~/.dotfiles/emacs/emacs ~/.emacs
-mkdir ~/.xmonad && ln -s ~/.dotfiles/xmonad.hs $_
-exec /bin/zsh
-```
+## Setup
+
+    git clone git@ssh.github.com:dskecse/dotfiles.git ~/.dotfiles
+    ./bootstrap.sh
 
 ## Mac OS X
 
