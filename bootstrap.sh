@@ -6,8 +6,7 @@ iex.exs
 tmux.conf
 rvmrc
 gemtc
-zsh/zshrc
-emacs/emacs"
+zsh/zshrc"
 
 cp ~/.dotfiles/git/github_token.example ~/.dotfiles/git/github_token
 
