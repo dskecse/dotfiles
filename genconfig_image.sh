@@ -184,7 +184,7 @@ sudo mkdir -p /usr/share/emacs/includes
 sudo mv ruby-mode.el ruby-electric.el $_
 # http://cx4a.org/software/rsense/
 # https://github.com/elixir-lang/emacs-elixir
-ln -s ~/.dotfiles/emacs/emacs ~/.emacs
+# ln -s ~/.dotfiles/emacs/emacs ~/.emacs
 
 sudo EXTRA_ECONF="--with-png --with-jpeg" emerge imagemagick
 

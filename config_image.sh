@@ -247,7 +247,7 @@ wget http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-mode.el
 wget http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-electric.el
 sudo mkdir -p /usr/share/emacs/includes
 sudo mv ruby-mode.el ruby-electric.el $_
-ln -s ~/.dotfiles/emacs/emacs ~/.emacs
+# ln -s ~/.dotfiles/emacs/emacs ~/.emacs
 # https://github.com/elixir-lang/emacs-elixir
 
 # install ImageMagick/RMagick
