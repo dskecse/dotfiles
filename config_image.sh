@@ -229,9 +229,8 @@ sudo apt-get install -y silversearcher-ag
 sudo apt-get install -y vim
 sudo apt-get install -y gvim
 git clone git@ssh.github.com:dskecse/dotvim.git ~/.vim
-cd ~/.vim
-git submodule update --init
-ln -s ~/.vim/vimrc ~/.vimrc
+cd $_
+rake setup
 # http://cx4a.org/software/rsense/
 cd ~
 

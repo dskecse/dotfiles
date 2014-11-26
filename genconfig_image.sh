@@ -160,11 +160,8 @@ echo "=app-editors/gvim-${latest_vim_version} ~amd64" | sudo tee -a /etc/portage
 sudo USE="python" emerge app-editors/vim
 sudo USE="python" emerge app-editors/gvim
 git clone git@ssh.github.com:dskecse/dotvim.git ~/.vim
-cd ~/.vim
-git submodule update --init --recursive
-cd ~/.vim/bundle/YouCompleteMe
-./install.sh
-ln -s ~/.vim/vimrc ~/.vimrc
+cd $_
+rake setup
 # http://cx4a.org/software/rsense/
 cd ~
 
