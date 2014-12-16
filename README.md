@@ -1,6 +1,6 @@
 ## Setup
 
-    git clone git@ssh.github.com:dskecse/dotfiles.git ~/.dotfiles
+    git clone https://github.com/dskecse/dotfiles ~/.dotfiles
     cd $_
     ./bootstrap.sh
 
