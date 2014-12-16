@@ -17,6 +17,9 @@ fancy_echo "Installing tree ..."
 fancy_echo "Installing ipcalc ..."
   brew_install_or_upgrade 'ipcalc'
 
+fancy_echo "Installing mc ..."
+  brew_install_or_upgrade 'mc'
+
 fancy_echo "Installing nmap ..."
   brew_install_or_upgrade 'nmap'
 
