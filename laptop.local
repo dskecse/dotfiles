@@ -8,6 +8,9 @@ fi
 fancy_echo "Installing dos2unix ..."
   brew_install_or_upgrade 'dos2unix'
 
+fancy_echo "Installing graphviz ..."
+  brew_install_or_upgrade 'graphviz'
+
 fancy_echo "Installing tree ..."
   brew_install_or_upgrade 'tree'
 
