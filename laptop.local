@@ -151,7 +151,13 @@ fancy_echo "Installing Dropbox client ..."
 
 # TODO: install Matlab
 
-# TODO: install Rust
+if ! command -v rustc >/dev/null; then
+  fancy_echo "Installing Rust (nightly build) ..."
+    curl -s https://static.rust-lang.org/rustup.sh | sudo sh
+    rustc -v
+else
+  echo "Rust already installed. Skipping ..."
+fi
 
 # TODO: install Tk
 

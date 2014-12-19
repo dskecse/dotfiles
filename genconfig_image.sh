@@ -297,7 +297,12 @@ cp Matlab.desktop ~/.local/share/applications/
 cd ~
 ~/Downloads/Matlab801_MacUnix/unmount_matlab801
 
-# TODO: install Rust
+# install Rust (nightly build)
+# This also installs Cargo, Rust's package manager
+if ! command -v rustc >/dev/null; then
+  curl -s https://static.rust-lang.org/rustup.sh | sudo sh
+  rustc -v
+fi
 
 # TODO: install Tk
 
