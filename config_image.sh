@@ -170,7 +170,7 @@ bundle config --global jobs 3
 bundle config build.nokogiri --use-system-libraries
 
 # install ruby via RVM
-rvm install 1.9.3,2.0.0,$latest_ruby_version,rbx,jruby # java is needed for jruby to run
+rvm install 1.9.3,2.0.0,2.1.5,$latest_ruby_version,rbx,jruby # java is needed for jruby to run
 # rvm reinstall ruby-2.1.5 --with-tcl --with-tk
 rvm use $latest_ruby_version --default
 rvm docs generate-ri

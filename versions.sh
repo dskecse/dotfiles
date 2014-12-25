@@ -1,6 +1,6 @@
 #!/bin/bash
 
-latest_ruby_version=2.1.5
+latest_ruby_version=2.2.0
 latest_rails_version=4.1.8
 
 latest_vim_version=7.4.475
