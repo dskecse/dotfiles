@@ -178,3 +178,6 @@ if [[ ! -d "$HOME/.pow/" ]]; then
     curl get.pow.cx | sh
     gem i powder
 fi
+
+fancy_echo "Installing Valgrind ..."
+  brew_install_or_upgrade "valgrind"
