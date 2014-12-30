@@ -106,11 +106,11 @@ if [[ $OSTYPE == linux* ]]; then
       [[ -z "$TMUX" ]] && exec tmux -2
     esac
   fi
-fi
 
-# https://github.com/sstephenson/rbenv/issues/616
-if [[ $distro == "Gentoo" ]]; then
-  unset RUBYOPT
+  # https://github.com/sstephenson/rbenv/issues/616
+  if [[ $distro == "Gentoo" ]]; then
+    unset RUBYOPT
+  fi
 fi
 
 if [[ $OSTYPE == darwin* ]]; then
