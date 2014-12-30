@@ -16,8 +16,10 @@ for file in $RC_FILES; do
   ln -s "$HOME/.dotfiles/$file" "$HOME/.${file##*/}"
 done
 
-if [[ ! -d "$HOME/.xmonad" ]]; then
-  mkdir ~/.xmonad && ln -s ~/.dotfiles/xmonad.hs $_
+if [[ $OSTYPE == linux* ]]; then
+  if [[ ! -d "$HOME/.xmonad" ]]; then
+    mkdir ~/.xmonad && ln -s ~/.dotfiles/xmonad.hs $_
+  fi
 fi
 
 exec /bin/zsh
