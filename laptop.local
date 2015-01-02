@@ -140,6 +140,9 @@ fancy_echo "Installing RStudio ..."
 
 # TODO: install nginx
 
+fancy_echo "Installing Firefox ..."
+  brew_cask_install_or_skip 'firefox'
+
 fancy_echo "Installing chromedriver ..."
   brew_install_or_upgrade 'chromedriver'
 
