@@ -121,9 +121,7 @@ if [[ $OSTYPE == darwin* ]]; then
     # Use Homebrew's directories rather than ~/.jenv
     # export JENV_ROOT=/usr/local/opt/jenv
   fi
-fi
 
-if [[ $OSTYPE == darwin* ]]; then
   source ~/.github_token
 fi
 
