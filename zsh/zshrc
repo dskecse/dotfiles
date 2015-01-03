@@ -97,11 +97,11 @@ export DISABLE_SPRING=true
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# If not running interactively, do not do anything
 if [[ $OSTYPE == linux* ]]; then
   distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
 
   if [[ $distro == "Ubuntu" ]]; then
+    # If not running interactively, do not do anything
     case $- in *i*)
       [[ -z "$TMUX" ]] && exec tmux -2
     esac
