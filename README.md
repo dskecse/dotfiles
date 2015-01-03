@@ -15,3 +15,7 @@ Add a symlink to `laptop.local` before running the above mentioned script to
 install custom packages:
 
     ln -s ~/.dotfiles/laptop.local ~/.laptop.local
+
+## Inspiration
+
+[Unofficial guide to dotfiles on Github](https://dotfiles.github.io/)
