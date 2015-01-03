@@ -1,3 +1,2 @@
-drafts/
-*.swp
-git/github_token
+/drafts
+/git/github_token
