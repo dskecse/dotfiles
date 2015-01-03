@@ -1,7 +1,16 @@
 #!/bin/bash
 
 declare -a rc_files
-rc_files=(git/github_token git/gitignore_global iex.exs tmux.conf rvmrc gemrc zsh/zshrc)
+rc_files=(
+  git/github_token
+  git/gitignore_global
+  git/gitconfig
+  iex.exs
+  tmux.conf
+  rvmrc
+  gemrc
+  zsh/zshrc
+)
 
 cp ~/.dotfiles/git/github_token.example ~/.dotfiles/git/github_token
 

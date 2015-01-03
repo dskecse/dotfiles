@@ -43,16 +43,8 @@ sudo apt-get install -y htop
 sudo apt-get install -y xclip
 sudo apt-get install -y keepassx
 
-# install git
-sudo apt-get install -y git gitg # git-core package is obsolete
-git config --global user.name "Dzianis Dashkevich"
-git config --global user.email "dskecse@gmail.com"
-git config --global core.editor vim
-git config --global merge.tool vimdiff
-git config --global push.default simple
-git config --global color.ui true
-git config --global core.autocrlf input
-git config --global core.excludesfile ~/.gitignore_global
+# install git (git-core package is obsolete)
+sudo apt-get install -y git gitg
 
 # install tig (https://github.com/jonas/tig) - already available via pkg manager
 # http://jonas.nitro.dk/tig/

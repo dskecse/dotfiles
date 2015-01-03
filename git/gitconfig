@@ -1,0 +1,12 @@
+[user]
+	name = "Dzianis Dashkevich"
+	email = "dskecse@gmail.com"
+[core]
+	editor = vim
+	autocrlf = input
+	ignore = dirty
+	excludesfile = ~/.gitignore_global
+[color]
+	ui = true
+[push]
+	default = simple
