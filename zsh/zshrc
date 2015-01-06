@@ -153,3 +153,4 @@ fi
 
 alias zip='zip -9'
 alias abc='cd code/ruby/gitlab.activeby.net/activebilling/core'
+alias f='git ls-files | grep'
