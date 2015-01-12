@@ -65,6 +65,8 @@ if [[ $OSTYPE == darwin* ]]; then
 fi
 
 if [[ $OSTYPE == linux* ]]; then
+  PATH=$PATH:$HOME/.dotfiles/bin
+
   # Add RVM to PATH for scripting
   PATH=$PATH:$HOME/.rvm/bin
 
