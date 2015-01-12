@@ -157,6 +157,7 @@ alias f='git ls-files | grep'
 # TODO: Remove this alias after PR
 #   https://github.com/robbyrussell/oh-my-zsh/pull/3480 is accepted.
 alias rdms='rake db:migrate:status'
+alias 'rds!'='rake db:setup'
 
 # TODO: Move OS type specific aliases to their respective files.
 if [[ $OSTYPE = darwin* ]]; then
