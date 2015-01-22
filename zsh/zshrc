@@ -154,7 +154,7 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias zip='zip -9'
-alias abc='cd code/ruby/gitlab.activeby.net/activebilling/core'
+alias abc='cd ~/code/ruby/gitlab.activeby.net/activebilling/core'
 alias f='git ls-files | grep'
 # TODO: Remove this alias after PR
 #   https://github.com/robbyrussell/oh-my-zsh/pull/3480 is accepted.
