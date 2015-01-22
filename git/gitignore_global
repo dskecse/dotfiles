@@ -1,4 +1,5 @@
 *.swp
 *.pyc
+.bundle/
 .DS_Store
 tags
