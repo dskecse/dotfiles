@@ -2,13 +2,14 @@
 
 declare -a rc_files
 rc_files=(
+  gemrc
   git/github_token
   git/gitignore_global
   git/gitconfig
   iex.exs
-  tmux.conf
+  railsrc
   rvmrc
-  gemrc
+  tmux.conf
   zsh/zshrc
 )
 
