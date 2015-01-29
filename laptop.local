@@ -187,3 +187,5 @@ fancy_echo "Installing Valgrind ..."
 
 fancy_echo "Installing gitx ..."
   brew_cask_install_or_skip 'gitx'
+
+# TODO: install Navicat
