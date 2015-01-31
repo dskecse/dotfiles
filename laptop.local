@@ -189,3 +189,6 @@ fancy_echo "Installing gitx ..."
   brew_cask_install_or_skip 'gitx'
 
 # TODO: install Navicat
+
+fancy_echo "Installing nasm ..."
+  brew_install_or_upgrade 'nasm'
