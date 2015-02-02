@@ -7,6 +7,7 @@ rc_files=(
   git/gitignore_global
   git/gitconfig
   iex.exs
+  irbrc
   railsrc
   rvmrc
   tmux.conf
