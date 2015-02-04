@@ -122,6 +122,9 @@ fancy_echo "Installing emacs ..."
 
 # TODO: set up python development environment
 
+# TODO: install Google App Engine SDK
+# https://cloud.google.com/appengine/downloads
+
 # http://cran.rstudio.com/
 fancy_echo "Installing R ..."
   brew_cask_install_or_skip 'R'
