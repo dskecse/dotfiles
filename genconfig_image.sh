@@ -23,6 +23,10 @@ sudo emerge x11-misc/xclip
 
 sudo emerge dev-vcs/git
 
+if [[ ! -d /etc/portage/package.keywords/ ]]; then
+  mkdir /etc/portage/package.keywords/
+fi
+
 # install tig (https://github.com/jonas/tig)
 # http://jonas.nitro.dk/tig/
 # http://jonas.nitro.dk/tig/INSTALL.html
