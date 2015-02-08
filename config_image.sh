@@ -9,25 +9,18 @@
 
 cd ~
 
-# delete standard games
 sudo apt-get remove --purge gnome-mines gnome-sudoku gnome-mahjongg aisleriot -y
 
 sudo apt-get update
-# sudo apt-get upgrade -y
 
-# install some basic programs
 sudo apt-get install -y curl
-sudo apt-get install -y dos2unix
 sudo apt-get install -y mc
-# sudo apt-get install -y zmv # for doing mass renaming
 sudo apt-get install -y unrar
 sudo apt-get install -y sqlite3 libsqlite3-dev # install sqlite3 dev
 sudo apt-get install -y libssl-dev openssl zlib1g zlib1g-dev zlibc
 sudo apt-get install -y libxslt-dev libxml2-dev
 sudo apt-get install -y libcurl3-dev
-sudo apt-get install -y g++
 sudo apt-get install -y build-essential
-# sudo apt-get install -y compizconfig-settings-manager # for Unity only
 sudo apt-get install -y libreadline6-dev
 sudo apt-get install -y links
 sudo apt-get install -y graphviz
@@ -37,21 +30,14 @@ sudo apt-get install -y traceroute
 sudo apt-get install -y ipcalc
 sudo apt-get install -y whois
 sudo apt-get install -y nmap
-# scriptreplay
-# script
 sudo apt-get install -y htop
 sudo apt-get install -y xclip
 sudo apt-get install -y keepassx
 
-# install git (git-core package is obsolete)
-sudo apt-get install -y git gitg
+sudo apt-get install -y git gitg # git-core is obsolete
 
-# install tig (https://github.com/jonas/tig) - already available via pkg manager
-# http://jonas.nitro.dk/tig/
-# http://jonas.nitro.dk/tig/INSTALL.html
-# depends on git, ncurses (ncursesw - ncurses w/ wide character support
+# install tig (https://github.com/jonas/tig)
 sudo apt-get install -y ncurses-base libncursesw5
-# is required to properly handle utf-8 encoded strings) and possibly iconv
 wget -qO- http://jonas.nitro.dk/tig/releases/tig-${latest_tig_version}.tar.gz | tar xzf -
 cd tig-${latest_tig_version}/
 make prefix=/usr/local
@@ -95,7 +81,6 @@ sudo cp jsl-${latest_jsl_version}/src/Linux_All_DBG.OBJ/jsl /usr/local/bin
 sudo rm jsl-${latest_jsl_version}-src.tar.gz
 sudo rm -rf ~/jsl-${latest_jsl_version}
 
-# install zsh
 sudo apt-get install -y zsh
 curl -L http://install.ohmyz.sh | sh
 
@@ -129,7 +114,7 @@ mvn -v
 sudo apt-get install -y eclipse tomcat7
 sudo usermod -G tomcat7 $(whoami)
 /usr/share/tomcat7/bin/shutdown.sh
-sudo update-rc.d tomcat7 disable    # Disabling system startup links for /etc/init.d/tomcat7
+sudo update-rc.d tomcat7 disable # disable system startup links for /etc/init.d/tomcat7
 
 # install JBoss AS (https://www.digitalocean.com/community/articles/how-to-install-jboss-on-ubuntu-12-10-64bit)
 wget -qO- http://download.jboss.org/jbossas/${latest_jboss_version}/jboss-as-${latest_jboss_version}.Final/jboss-as-${latest_jboss_version}.Final.tar.gz | tar xzvf -
@@ -150,7 +135,6 @@ sudo chown -R appserver /usr/local/share/jboss
 # exit
 cd ~
 
-# install RVM (http://rvm.io/rvm/install)
 \curl -sSL https://get.rvm.io | bash -s -- --version latest
 source ~/.rvm/scripts/rvm
 # In case of any issues read output of 'rvm requirements' and/or 'rvm notes'
@@ -292,25 +276,19 @@ sudo apt-get install -y erlang erlang-manpages
 # Installing the erlang package automatically installs the entire OTP suite.
 # run using `erl`
 
-# install Elixir
 wget -O - https://github.com/elixir-lang/elixir/archive/v${latest_elixir_version}.tar.gz | tar xzvf -
 cd elixir-${latest_elixir_version}
 make install
 cd ~
 
-# install Haskell (ghc, cabal, ...)
-wget http://www.haskell.org/platform/download/2014.2.0.0/haskell-platform-2014.2.0.0-unknown-linux-x86_64.tar.gz
-cd / && sudo tar xvf $HOME/haskell-platform-2014.2.0.0-unknown-linux-x86_64.tar.gz
+wget http://www.haskell.org/platform/download/${latest_haskell_version}/haskell-platform-${latest_haskell_version}-unknown-linux-x86_64.tar.gz
+cd / && sudo tar xvf $HOME/haskell-platform-${latest_haskell_version}-unknown-linux-x86_64.tar.gz
 sudo /usr/local/haskell/ghc-7.8.3-x86_64/bin/activate-hs
 cd ~
 cabal update
 cabal install aeson haskell-src-exts haddock
-# for import and LANGUAGE completions and type inference
-cabal install ghc-mod
+cabal install ghc-mod # for import and LANGUAGE completions and type inference
 
-# install Redis (http://redis.io/)
-# to use `redis-server` and `redis-cli`
-# sudo apt-get install redis-server -y (usually outdated versions)
 wget -qO- http://download.redis.io/releases/redis-${latest_redis_version}.tar.gz | tar xzf -
 sudo mv redis-${latest_redis_version} /opt/redis && cd $_
 # install Redis binaries into /usr/local/bin
@@ -341,7 +319,6 @@ sudo sed -i 's/#network\.host: 192\.168\.0\.1/network\.host: 127\.0\.0\.1/g' /et
 # sudo service elasticsearch restart
 # sudo update-rc.d elasticsearch disable (disabled by default)
 
-# install memcached
 sudo apt-get install -y memcached
 sudo service memcached stop
 sudo update-rc.d memcached disable
@@ -351,7 +328,6 @@ sudo update-rc.d memcached disable
 sudo apt-get install -y samba
 sudo service samba restart # smbd?
 
-# install nginx
 sudo add-apt-repository ppa:nginx/stable
 sudo apt-get update
 sudo apt-get install -y nginx
@@ -364,11 +340,7 @@ echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc
 sudo apt-get update
 sudo apt-get install -y google-chrome-stable
 
-# install chromedriver (http://code.google.com/p/chromedriver) - WebDriver for Google Chrome
-# WebDriver is an open source tool for automated testing of webapps across many browsers.
-# It provides capabilities for navigating to web pages, user input, JavaScript execution, and more.
-# ChromeDriver is a standalone server which implements WebDriver's wire protocol for Chromium.
-# It is being developed by members of the Chromium and WebDriver teams.
+# install chromedriver (http://code.google.com/p/chromedriver)
 wget http://chromedriver.storage.googleapis.com/${latest_chromedriver_version}/chromedriver_linux64.zip # check SHA1 checksum!
 sudo unzip chromedriver_linux64.zip -d /usr/local/bin
 rm chromedriver_linux64.zip
@@ -394,11 +366,9 @@ sudo apt-get update
 sudo apt-get install -y skype
 skype -v
 
-# totem video player -> vlc player
 sudo apt-get remove --purge totem-common -y
 sudo apt-get install -y vlc
 
-# some audio player (rhythmbox) -> mplayer
 sudo apt-get remove rhythmbox gmusicbrowser -y
 sudo apt-get install -y mplayer
 
@@ -408,7 +378,6 @@ sudo apt-get install -y mplayer
 wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
 ~/.dropbox-dist/dropboxd
 
-# brasero -> xfburn
 sudo apt-get remove --purge brasero-common -y
 sudo apt-get install -y xfburn
 
@@ -488,9 +457,6 @@ sudo apt-get install -y cups printer-driver-splix
 gconftool -s --type bool /apps/update-notifier/auto_launch false
 gconftool -s --type bool /apps/update-notifier/no_show_notifications true
 
-# install Xmonad wm (and possibly Xmobar)
-sudo apt-get install -y xmonad suckless-tools
-# install extensions to xmonad
-sudo apt-get install -y libghc-xmonad-contrib-dev
-xmonad --recompile
-xmonad --replace
+sudo apt-get install -y xmonad xmobar suckless-tools
+sudo apt-get install -y libghc-xmonad-contrib-dev # install extensions to xmonad
+xmonad --recompile && xmonad --replace
