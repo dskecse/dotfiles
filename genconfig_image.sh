@@ -309,10 +309,9 @@ sudo ./clion.sh
 
 sudo emerge thunderbird-bin
 
-# install Xmonad wm (and possibly Xmobar) and extensions
-sudo emerge xmonad-contrib
-echo "=x11-misc/xmobar-0.21 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
-echo "=dev-haskell/alsa-mixer-0.2.0.2 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
-echo "=dev-haskell/alsa-core-0.5.0.1-r2 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
-sudo emerge x11-misc/xmobar
-xmonad --recompile && xmonad --replace
+sudo emerge x11-base/xorg-x11
+sudo emerge xmonad xmonad-contrib xmobar dmenu --autounmask-write
+sudo dispatch-conf u
+sudo emerge xmonad xmonad-contrib xmobar dmenu
+xmonad --recompile
+startx

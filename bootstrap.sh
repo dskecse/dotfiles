@@ -23,7 +23,7 @@ done
 
 if [[ $OSTYPE == linux* ]]; then
   if [[ ! -d "$HOME/.xmonad" ]]; then
-    mkdir ~/.xmonad && ln -s ~/.dotfiles/xmonad.hs $_
+    ln -s "$HOME/.dotfiles/xmonad" "$HOME/.xmonad"
   fi
 fi
 
