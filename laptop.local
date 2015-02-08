@@ -5,9 +5,6 @@ if [[ ! -d "$HOME/.oh-my-zsh/" ]]; then
     curl -L http://install.ohmyz.sh | sh
 fi
 
-fancy_echo "Installing dos2unix ..."
-  brew_install_or_upgrade 'dos2unix'
-
 fancy_echo "Installing graphviz ..."
   brew_install_or_upgrade 'graphviz'
 
