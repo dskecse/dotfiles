@@ -20,7 +20,6 @@ sudo emerge -uDNa @world
 # /var/tmp/portage
 sudo emerge gentoolkit # tools to ease administration of a system
 
-# install some basic utilities
 sudo emerge app-text/tree
 sudo emerge net-misc/ipcalc
 sudo emerge x11-misc/xclip
@@ -33,9 +32,6 @@ if [[ ! -d /etc/portage/package.keywords/ ]]; then
 fi
 
 # install tig (https://github.com/jonas/tig)
-# http://jonas.nitro.dk/tig/
-# http://jonas.nitro.dk/tig/INSTALL.html
-# depends on git, ncurses (ncursesw - ncurses w/ wide character support
 echo "=dev-vcs/tig-${latest_tig_version} ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge dev-vcs/tig
 
@@ -204,16 +200,13 @@ sudo emerge erlang
 echo "=dev-lang/elixir-${latest_elixir_version} ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge elixir
 
-# install Haskell (ghc, cabal, ...)
-# build my own haskell-platform ebuild
-# echo "=dev-haskell/haskell-platform-2013.2.0.0-r2 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
-# sudo layman -a haskell
-echo "=dev-haskell/haskell-platform-2013.2.0.0 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
+sudo layman -a haskell
+echo "=dev-haskell/haskell-platform-${latest_haskell_version} ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
+sudo emerge haskell-platform --autounmerge-mask && sudo dispatch-conf u
 sudo emerge haskell-platform
-cabal update # command not found: cabal
+cabal update
 cabal install aeson haskell-src-exts haddock
-# for import and LANGUAGE completions and type inference
-cabal install ghc-mod
+cabal install ghc-mod # for import and LANGUAGE completions and type inference
 
 wget -qO- http://download.redis.io/releases/redis-${latest_redis_version}.tar.gz | tar xzf -
 sudo mv redis-${latest_redis_version} /opt/redis && cd $_

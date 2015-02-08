@@ -25,3 +25,5 @@ latest_redis_version=2.8.14
 latest_mysql_version=5.5_40
 
 latest_jboss_version=7.1.1
+
+latest_haskell_version=2014.2.0.0
