@@ -15,6 +15,11 @@ sudo emerge layman # used to setup overlays
 sudo layman -S && sudo eix-sync
 sudo emerge -uDNa @world
 
+# http://gentoo.linuxhowtos.org/faq/cleandistfiles.htm
+# /usr/portage/distfiles
+# /var/tmp/portage
+sudo emerge gentoolkit # tools to ease administration of a system
+
 # install some basic utilities
 sudo emerge app-text/tree
 sudo emerge net-misc/ipcalc
