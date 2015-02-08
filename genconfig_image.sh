@@ -9,24 +9,13 @@
 
 cd ~
 
-sudo cl-update
-sudo layman -S && sudo eix-sync
-sudo emerge -uDNa world
+sudo emerge eix    # more efficient and flexible than emerge's search
+sudo emerge layman # used to setup overlays
 
-# Clean up Calculate distro
-sudo emerge -C clementine
-sudo emerge -C media-video/smplayer
-sudo emerge -C media-gfx/gimp
-# Use `emerge @preserved-rebuild` to rebuild packages using these libraries
-sudo emerge -C gtkam
-sudo emerge -C xsane
-sudo emerge -C filezilla
-sudo emerge -C chromium chromium-adblock
-sudo emerge -C liferea
-sudo emerge -C libreoffice libreoffice-l10n
+sudo layman -S && sudo eix-sync
+sudo emerge -uDNa @world
 
 # install some basic utilities
-sudo emerge dos2unix
 sudo emerge app-text/tree
 sudo emerge net-misc/ipcalc
 sudo emerge x11-misc/xclip
