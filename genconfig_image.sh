@@ -90,9 +90,7 @@ mvn -v
 source ~/.rvm/scripts/rvm
 gem install bundler # still unknown command
 
-# setup Bundler
-# TODO: replace the hardcoded number of cpu cores with the proper command
-bundle config --global jobs 3
+bundle config --global jobs $(nproc --ignore=1)
 # Nokogiri builds and uses a packaged version of libxslt. Use the system library instead
 bundle config build.nokogiri --use-system-libraries
 
