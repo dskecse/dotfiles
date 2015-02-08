@@ -300,26 +300,12 @@ sudo emerge screenfetch
 # install cups and Samsung printer driver
 sudo emerge splix
 
-# Install DE theme
-sudo emerge greybird
-
 wget http://download.jetbrains.com/cpp/clion-138.1965.18.tar.gz
 tar xzvf clion-138.1965.18.tar.gz
 sudo mv clion-138.1965.18/ /opt/clion
 cd /opt/clion/bin
 # install java prior to running the next command
 sudo ./clion.sh
-
-# http://forums.gentoo.org/viewtopic-t-921722-start-0.html
-sudo layman -a lcd-filtering
-
-echo "media-libs/fontconfig ~amd64" | sudo tee -a /etc/portage/package.keywords/fonts
-echo "media-libs/freetype ~amd64" | sudo tee -a /etc/portage/package.keywords/fonts
-echo "x11-libs/cairo ~amd64" | sudo tee -a /etc/portage/package.keywords/fonts
-echo "x11-libs/libXft ~amd64" | sudo tee -a /etc/portage/package.keywords/fonts
-echo "media-fonts/ubuntu-font-family ~amd64" | sudo tee -a /etc/portage/package.keywords/fonts
-
-sudo emerge -uNa fontconfig freetype cairo libXft ubuntu-font-family
 
 sudo emerge thunderbird-bin
 
