@@ -2,6 +2,7 @@
 
 declare -a rc_files
 rc_files=(
+  bowerrc
   gemrc
   git/github_token
   git/gitignore_global
