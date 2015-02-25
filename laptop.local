@@ -23,6 +23,9 @@ fancy_echo "Installing nmap ..."
 fancy_echo "Installing tig, an ncurses-based text-mode interface for git ..."
   brew_install_or_upgrade 'tig --with-docs'
 
+fancy_echo "Installing dos2unix ..."
+  brew_install_or_upgrade 'dos2unix'
+
 fancy_echo "Installing MySQL ..."
   brew_install_or_upgrade 'mysql'
 
