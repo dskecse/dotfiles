@@ -52,7 +52,6 @@ fancy_echo "Installing Erlang OTP ..."
 fancy_echo "Installing Elixir ..."
   brew_install_or_upgrade 'elixir'
 
-# http://hanxue-it.blogspot.com/2014/05/installing-java-8-managing-multiple.html
 fancy_echo "Installing Homebrew Cask ..."
   brew_install_or_upgrade 'caskroom/cask/brew-cask'
 
@@ -80,6 +79,7 @@ fancy_echo "Installing iterm2 ..."
 fancy_echo "Installing Java ..."
   brew_cask_install_or_skip 'java'
 
+# http://hanxue-it.blogspot.com/2014/05/installing-java-8-managing-multiple.html
 if ! command -v jenv >/dev/null; then
   fancy_echo "Installing jenv, a Java version management tool ..."
     brew_install_or_upgrade 'jenv'
@@ -124,6 +124,8 @@ fancy_echo "Installing emacs ..."
 
 # TODO: install Google App Engine SDK
 # https://cloud.google.com/appengine/downloads
+sudo pip install lxml
+# http://stackoverflow.com/questions/21004960/no-module-named-lxml-html-while-running-python-script-on-fedora
 
 # http://cran.rstudio.com/
 fancy_echo "Installing R ..."
