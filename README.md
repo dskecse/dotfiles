@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/dskecse/dotfiles.svg?branch=master)](https://travis-ci.org/dskecse/dotfiles)
+
 ## Setup
 
     git clone https://github.com/dskecse/dotfiles ~/.dotfiles
