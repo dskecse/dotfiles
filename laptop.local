@@ -184,11 +184,9 @@ fancy_echo "Installing screenfetch ..."
 fancy_echo "Installing skype ..."
   brew_cask_install_or_skip 'skype'
 
-if [[ ! -d "$HOME/.pow/" ]]; then
-  fancy_echo "Installing pow ..."
-    curl get.pow.cx | sh
-    gem i powder
-fi
+fancy_echo "Installing pow ..."
+  brew_install_or_upgrade 'pow'
+  # TODO: install powder if necessary
 
 fancy_echo "Installing Valgrind ..."
   brew_install_or_upgrade "valgrind"
