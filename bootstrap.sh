@@ -1,6 +1,5 @@
 #!/bin/bash
 
-declare -a rc_files
 rc_files=(
   bowerrc
   gemrc
@@ -17,6 +16,7 @@ rc_files=(
 
 cp ~/.dotfiles/git/github_token.example ~/.dotfiles/git/github_token
 
+# shellcheck disable=SC2128
 for file in $rc_files; do
   # use greedy deletion from the beginning of a string
   ln -s "$HOME/.dotfiles/$file" "$HOME/.${file##*/}"
