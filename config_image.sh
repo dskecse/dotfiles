@@ -38,11 +38,11 @@ sudo apt-get install -y git gitg # git-core is obsolete
 
 # install tig (https://github.com/jonas/tig)
 sudo apt-get install -y ncurses-base libncursesw5
-wget -qO- http://jonas.nitro.dk/tig/releases/tig-${latest_tig_version}.tar.gz | tar xzf -
-cd tig-${latest_tig_version}/
+wget -qO- "http://jonas.nitro.dk/tig/releases/tig-${latest_tig_version}.tar.gz" | tar xzf -
+cd "tig-${latest_tig_version}"/
 make prefix=/usr/local
 sudo make install prefix=/usr/local
-cd ~ && rm -rf tig-${latest_tig_version}
+cd ~ && rm -rf "tig-${latest_tig_version}"
 
 # install tmux (http://tmux.sourceforge.net/)
 # update-alternatives to use xterm instead of xterm-whatever
@@ -72,14 +72,14 @@ sudo npm install -g grunt-cli  # /usr/bin/grunt -> /usr/lib/node_modules/grunt-c
 sudo apt-get install -y phantomjs
 
 # Install jslint
-curl -LO http://www.javascriptlint.com/download/jsl-${latest_jsl_version}-src.tar.gz
-tar xzvf jsl-${latest_jsl_version}-src.tar.gz
-cd jsl-${latest_jsl_version}/src/
+curl -LO "http://www.javascriptlint.com/download/jsl-${latest_jsl_version}-src.tar.gz"
+tar xzvf "jsl-${latest_jsl_version}-src.tar.gz"
+cd "jsl-${latest_jsl_version}"/src/
 make -f Makefile.ref
 cd ~
-sudo cp jsl-${latest_jsl_version}/src/Linux_All_DBG.OBJ/jsl /usr/local/bin
-sudo rm jsl-${latest_jsl_version}-src.tar.gz
-sudo rm -rf ~/jsl-${latest_jsl_version}
+sudo cp "jsl-${latest_jsl_version}"/src/Linux_All_DBG.OBJ/jsl /usr/local/bin
+sudo rm "jsl-${latest_jsl_version}-src.tar.gz"
+sudo rm -rf ~/"jsl-${latest_jsl_version}"
 
 sudo apt-get install -y zsh
 curl -L http://install.ohmyz.sh | sh
@@ -94,9 +94,10 @@ sudo apt-get install -y oracle-java8-set-default # automatically set up the Java
 
 # install Maven (http://maven.apache.org/download.cgi)
 # http://askubuntu.com/questions/49557/how-do-i-install-maven-3?rq=1
-wget http://ftp.byfly.by/pub/apache.org/maven/maven-3/${latest_mvn_version}/binaries/apache-maven-${latest_mvn_version}-bin.zip
-sudo unzip apache-maven-${latest_mvn_version}-bin.zip -d /usr/local/apache-maven # the subdirectory apache-maven-3.1.1 will be created from the archive.
-rm apache-maven-${latest_mvn_version}-bin.zip
+wget "http://ftp.byfly.by/pub/apache.org/maven/maven-3/${latest_mvn_version}/binaries/apache-maven-${latest_mvn_version}-bin.zip"
+# the subdirectory apache-maven-3.x.x will be created from the archive.
+sudo unzip "apache-maven-${latest_mvn_version}-bin.zip" -d /usr/local/apache-maven
+rm "apache-maven-${latest_mvn_version}-bin.zip"
 mvn -v
 # http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 # try `sudo apt-get install maven' # too many packages
@@ -117,9 +118,9 @@ sudo usermod -G tomcat7 "$(whoami)"
 sudo update-rc.d tomcat7 disable # disable system startup links for /etc/init.d/tomcat7
 
 # install JBoss AS (https://www.digitalocean.com/community/articles/how-to-install-jboss-on-ubuntu-12-10-64bit)
-wget -qO- http://download.jboss.org/jbossas/${latest_jboss_version}/jboss-as-${latest_jboss_version}.Final/jboss-as-${latest_jboss_version}.Final.tar.gz | tar xzvf -
-mv jboss-as-${latest_jboss_version}.Final jboss-as-${latest_jboss_version}
-sudo mv jboss-as-${latest_jboss_version} /usr/local/share/jboss
+wget -qO- "http://download.jboss.org/jbossas/${latest_jboss_version}/jboss-as-${latest_jboss_version}.Final/jboss-as-${latest_jboss_version}.Final.tar.gz" | tar xzvf -
+mv "jboss-as-${latest_jboss_version}.Final" "jboss-as-${latest_jboss_version}"
+sudo mv "jboss-as-${latest_jboss_version}" /usr/local/share/jboss
 # Because we don't want to run it as root you should create a new user which is used to start the JBoss server.
 sudo useradd -M appserver # pwd: appserver
 sudo chown -R appserver /usr/local/share/jboss
@@ -135,7 +136,7 @@ sudo chown -R appserver /usr/local/share/jboss
 # exit
 cd ~
 
-\curl -sSL https://get.rvm.io | bash -s -- --version latest
+curl -sSL https://get.rvm.io | bash -s -- --version latest
 source ~/.rvm/scripts/rvm
 # In case of any issues read output of 'rvm requirements' and/or 'rvm notes'
 
@@ -144,17 +145,17 @@ bundle config --global jobs "$(nproc --ignore=1)"
 bundle config build.nokogiri --use-system-libraries
 
 # install ruby via RVM
-rvm install 1.9.3,2.0.0,2.1.5,$latest_ruby_version,rbx,jruby # java is needed for jruby to run
+rvm install 1.9.3,2.0.0,2.1.5,"$latest_ruby_version",rbx,jruby # java is needed for jruby to run
 # rvm reinstall ruby-2.1.5 --with-tcl --with-tk
-rvm use $latest_ruby_version --default
+rvm use "$latest_ruby_version" --default
 rvm docs generate-ri
-gem install rails -v $latest_rails_version
+gem install rails -v "$latest_rails_version"
 
 # install Shoes4 (requires JDK and JRuby installed)
 git clone git@github.com:shoes/shoes4.git
-cd shoes4
+pushd shoes4
 bundle install
-cd ~
+popd
 
 # install heroku toolbelt
 # this will install heroku cli, foreman, git
@@ -163,9 +164,9 @@ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 # install wkhtmltopdf (http://wkhtmltopdf.org/)
 # Simple shell utility to convert html to pdf using the webkit rendering engine, and qt.
 # http://www.installion.co.uk/ubuntu/saucy/universe/w/wkhtmltopdf/index.html
-wget http://downloads.sourceforge.net/project/wkhtmltopdf/${latest_wkhtmltopdf_version}/wkhtmltox-${latest_wkhtmltopdf_version}_linux-trusty-amd64.deb
-sudo dpkg -i wkhtmltox-${latest_wkhtmltopdf_version}_linux-trusty-amd64.deb
-rm wkhtmltox-${latest_wkhtmltopdf_version}_linux-trusty-amd64.deb
+wget "http://downloads.sourceforge.net/project/wkhtmltopdf/${latest_wkhtmltopdf_version}/wkhtmltox-${latest_wkhtmltopdf_version}_linux-trusty-amd64.deb"
+sudo dpkg -i "wkhtmltox-${latest_wkhtmltopdf_version}_linux-trusty-amd64.deb"
+rm "wkhtmltox-${latest_wkhtmltopdf_version}_linux-trusty-amd64.deb"
 
 # install addional rails-related applications
 sudo apt-get install -y sphinxsearch
@@ -203,10 +204,10 @@ sudo apt-get install -y silversearcher-ag
 sudo apt-get install -y vim
 sudo apt-get install -y gvim
 git clone git@ssh.github.com:dskecse/dotvim.git ~/.vim
-cd $_
+pushd ~/.vim
 rake setup
 # http://cx4a.org/software/rsense/
-cd ~
+popd
 
 # install emacs and basic config/plugins (http://appsintheopen.com/articles/1-setting-up-emacs-for-rails-development/part/7-emacs-ruby-foo)
 sudo apt-get install -y emacs24
@@ -219,7 +220,7 @@ rm -rf magit-1.1.1/
 wget http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-mode.el
 wget http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-electric.el
 sudo mkdir -p /usr/share/emacs/includes
-sudo mv ruby-mode.el ruby-electric.el $_
+sudo mv ruby-mode.el ruby-electric.el /usr/share/emacs/includes
 # ln -s ~/.dotfiles/emacs/emacs ~/.emacs
 # https://github.com/elixir-lang/emacs-elixir
 
@@ -254,17 +255,16 @@ sudo apt-get install -y r-base
 sudo apt-get install -y r-base-dev
 # install RStudio with R v2.11.1+ (http://www.rstudio.com/ide/download/desktop)
 sudo apt-get install -y libjpeg62
-wget http://download1.rstudio.org/rstudio-${latest_rstudio_version}-amd64.deb | xargs sudo dpkg -i
+wget "http://download1.rstudio.org/rstudio-${latest_rstudio_version}-amd64.deb" | xargs sudo dpkg -i
 
 # install Go (https://code.google.com/p/go/)
 # The Go binary distributions assume they will be installed in /usr/local/go.
-\curl -L https://go.googlecode.com/files/go1.1.2.linux-amd64.tar.gz | sudo tar -C /usr/local -xzf -
+curl -L https://go.googlecode.com/files/go1.1.2.linux-amd64.tar.gz | sudo tar -C /usr/local -xzf -
 # check SHA1 checksum!
 # How to write Go code (http://golang.org/doc/code.html)
 mkdir ~/gocode
 # use github.com/user as base path
-mkdir -p $GOPATH/src/github.com/dskecse
-cd ~
+mkdir -p "$GOPATH/src/github.com/dskecse"
 
 # install Erlang OTP (https://www.erlang-solutions.com/downloads/download-erlang-otp)
 echo "" | sudo tee -a /etc/apt/sources.list
@@ -276,21 +276,22 @@ sudo apt-get install -y erlang erlang-manpages
 # Installing the erlang package automatically installs the entire OTP suite.
 # run using `erl`
 
-wget -O - https://github.com/elixir-lang/elixir/archive/v${latest_elixir_version}.tar.gz | tar xzvf -
-cd elixir-${latest_elixir_version}
+wget -O - "https://github.com/elixir-lang/elixir/archive/v${latest_elixir_version}.tar.gz" | tar xzvf -
+pushd "elixir-${latest_elixir_version}"
 make install
-cd ~
+popd
 
-wget http://www.haskell.org/platform/download/${latest_haskell_version}/haskell-platform-${latest_haskell_version}-unknown-linux-x86_64.tar.gz
-cd / && sudo tar xvf $HOME/haskell-platform-${latest_haskell_version}-unknown-linux-x86_64.tar.gz
+wget "http://www.haskell.org/platform/download/${latest_haskell_version}/haskell-platform-${latest_haskell_version}-unknown-linux-x86_64.tar.gz"
+pushd /
+sudo tar xvf "$HOME/haskell-platform-${latest_haskell_version}-unknown-linux-x86_64.tar.gz"
 sudo /usr/local/haskell/ghc-7.8.3-x86_64/bin/activate-hs
-cd ~
+popd
 cabal update
 cabal install aeson haskell-src-exts haddock
 cabal install ghc-mod # for import and LANGUAGE completions and type inference
 
-wget -qO- http://download.redis.io/releases/redis-${latest_redis_version}.tar.gz | tar xzf -
-sudo mv redis-${latest_redis_version} /opt/redis && cd $_
+wget -qO- "http://download.redis.io/releases/redis-${latest_redis_version}.tar.gz" | tar xzf -
+sudo mv "redis-${latest_redis_version}" /opt/redis && cd /opt/redis
 # install Redis binaries into /usr/local/bin
 sudo make install
 cd utils
@@ -341,7 +342,8 @@ sudo apt-get update
 sudo apt-get install -y google-chrome-stable
 
 # install chromedriver (http://code.google.com/p/chromedriver)
-wget http://chromedriver.storage.googleapis.com/${latest_chromedriver_version}/chromedriver_linux64.zip # check SHA1 checksum!
+wget "http://chromedriver.storage.googleapis.com/${latest_chromedriver_version}/chromedriver_linux64.zip"
+# TODO: check SHA1 checksum
 sudo unzip chromedriver_linux64.zip -d /usr/local/bin
 rm chromedriver_linux64.zip
 
@@ -414,9 +416,9 @@ sudo apt-get install -y openvpn
 # install Tk 8.5.15.0 (right now tk v8.6.1 is not supported by Ruby)
 # (http://www.tkdocs.com/tutorial/install.html)
 wget -qO - http://downloads.activestate.com/ActiveTcl/releases/8.5.15.0/ActiveTcl8.5.15.0.297577-linux-x86_64-threaded.tar.gz | tar xzf -
-cd ActiveTcl8.5.15.0.297577-linux-x86_64-threaded/
+pushd ActiveTcl8.5.15.0.297577-linux-x86_64-threaded/
 sudo ./install.sh
-cd ~
+popd
 
 # install LaTeX
 # (http://www.tug.org/texlive/doc/texlive-en/texlive-en.html#installation)
@@ -437,7 +439,7 @@ sudo apt-get install -y virtualbox
 sudo apt-get install -y module-assistant
 sudo m-a prepare
 # wget http://download.virtualbox.org/virtualbox/4.3.14/Oracle_VM_VirtualBox_Extension_Pack-4.3.14-95030.vbox-extpack
-sudo usermod -G vboxusers $USER
+sudo usermod -G vboxusers "$USER"
 
 # sudo apt-get install -y gnupg # or gpg
 

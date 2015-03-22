@@ -115,9 +115,9 @@ fancy_echo "Installing macvim ..."
 
   if [[ ! -d "$HOME/.vim/" ]]; then
     git clone git@ssh.github.com:dskecse/dotvim.git ~/.vim
-    cd $_
+    pushd ~/.vim
     rake setup
-    cd ~
+    popd
   fi
 
 fancy_echo "Installing emacs ..."

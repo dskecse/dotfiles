@@ -50,14 +50,14 @@ echo "=www-client/phantomjs-${latest_phantomjs_version} ~amd64" | sudo tee -a /e
 sudo emerge phantomjs
 
 # install jslint
-curl -LO http://www.javascriptlint.com/download/jsl-${latest_jsl_version}-src.tar.gz
-tar xzvf jsl-${latest_jsl_version}-src.tar.gz
-cd jsl-${latest_jsl_version}/src/
+curl -LO "http://www.javascriptlint.com/download/jsl-${latest_jsl_version}-src.tar.gz"
+tar xzvf "jsl-${latest_jsl_version}-src.tar.gz"
+cd "jsl-${latest_jsl_version}"/src/
 make -f Makefile.ref
 cd ~
-sudo cp jsl-${latest_jsl_version}/src/Linux_All_DBG.OBJ/jsl /usr/local/bin
-sudo rm jsl-${latest_jsl_version}-src.tar.gz
-sudo rm -rf ~/jsl-${latest_jsl_version}
+sudo cp "jsl-${latest_jsl_version}/src/Linux_All_DBG.OBJ/jsl" /usr/local/bin
+sudo rm "jsl-${latest_jsl_version}-src.tar.gz"
+sudo rm -rf ~/"jsl-${latest_jsl_version}"
 
 sudo emerge zsh
 # sudo emerge app-shells/zsh-completion
@@ -74,9 +74,9 @@ sudo emerge dev-java/oracle-jdk-bin
 # install Maven (http://maven.apache.org/download.cgi)
 # echo "=dev-java/maven-bin-3.1.1 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 # sudo emerge dev-java/maven-bin
-wget http://ftp.byfly.by/pub/apache.org/maven/maven-3/${latest_mvn_version}/binaries/apache-maven-${latest_mvn_version}-bin.zip
-sudo unzip apache-maven-${latest_mvn_version}-bin.zip -d /usr/local/apache-maven # the subdirectory apache-maven-3.1.1 will be created from the archive.
-rm apache-maven-${latest_mvn_version}-bin.zip
+wget "http://ftp.byfly.by/pub/apache.org/maven/maven-3/${latest_mvn_version}/binaries/apache-maven-${latest_mvn_version}-bin.zip"
+sudo unzip "apache-maven-${latest_mvn_version}-bin.zip" -d /usr/local/apache-maven # the subdirectory apache-maven-3.1.1 will be created from the archive.
+rm "apache-maven-${latest_mvn_version}-bin.zip"
 mvn -v
 # http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 
@@ -86,7 +86,7 @@ mvn -v
 
 # TODO: install JBoss AS
 
-\curl -sSL https://get.rvm.io | bash -s -- --version latest
+curl -sSL https://get.rvm.io | bash -s -- --version latest
 source ~/.rvm/scripts/rvm
 gem install bundler # still unknown command
 
@@ -95,17 +95,17 @@ bundle config --global jobs "$(nproc --ignore=1)"
 bundle config build.nokogiri --use-system-libraries
 
 # install Ruby via RVM
-rvm install 1.9.3,2.0.0,2.1.5,$latest_ruby_version,rbx,jruby # java is needed for jruby to run
+rvm install 1.9.3,2.0.0,2.1.5,"$latest_ruby_version",rbx,jruby # java is needed for jruby to run
 # rvm reinstall ruby-2.1.5 --with-tcl --with-tk
-rvm use $latest_ruby_version --default
+rvm use "$latest_ruby_version" --default
 rvm docs generate-ri
-gem install rails -v $latest_rails_version
+gem install rails -v "$latest_rails_version"
 
 # install Shoes4 (requires JDK and JRuby installed)
 git clone git@github.com:shoes/shoes4.git
-cd shoes4
+pushd shoes4
 bundle install
-cd ~
+popd
 
 # install heroku toolbelt
 # this will install heroku cli, foreman, git
@@ -144,10 +144,10 @@ echo "=app-editors/gvim-${latest_vim_version} ~amd64" | sudo tee -a /etc/portage
 sudo USE="python" emerge app-editors/vim
 sudo USE="python" emerge app-editors/gvim
 git clone git@ssh.github.com:dskecse/dotvim.git ~/.vim
-cd $_
+pushd ~/.vim
 rake setup
 # http://cx4a.org/software/rsense/
-cd ~
+popd
 
 # install emacs and basic config/plugins (http://appsintheopen.com/articles/1-setting-up-emacs-for-rails-development/part/7-emacs-ruby-foo)
 sudo emerge app-editors/emacs
@@ -162,7 +162,7 @@ rm -rf magit-1.1.1/
 wget http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-mode.el
 wget http://svn.ruby-lang.org/cgi-bin/viewvc.cgi/trunk/misc/ruby-electric.el
 sudo mkdir -p /usr/share/emacs/includes
-sudo mv ruby-mode.el ruby-electric.el $_
+sudo mv ruby-mode.el ruby-electric.el /usr/share/emacs/includes
 # http://cx4a.org/software/rsense/
 # https://github.com/elixir-lang/emacs-elixir
 # ln -s ~/.dotfiles/emacs/emacs ~/.emacs
@@ -206,8 +206,8 @@ cabal update
 cabal install aeson haskell-src-exts haddock
 cabal install ghc-mod # for import and LANGUAGE completions and type inference
 
-wget -qO- http://download.redis.io/releases/redis-${latest_redis_version}.tar.gz | tar xzf -
-sudo mv redis-${latest_redis_version} /opt/redis && cd $_
+wget -qO- "http://download.redis.io/releases/redis-${latest_redis_version}.tar.gz" | tar xzf -
+sudo mv "redis-${latest_redis_version}" /opt/redis && cd /opt/redis
 sudo make install
 cd utils
 sudo ./install_server.sh
@@ -239,9 +239,9 @@ sudo emerge memcached
 echo "=www-client/google-chrome-37.0.2062.94_p1 ~amd64" | sudo tee -a /etc/portage/package.keywords/custom
 sudo emerge google-chrome
 
-wget http://chromedriver.storage.googleapis.com/${latest_chromedriver_version}/chromedriver_linux64.zip
+wget "http://chromedriver.storage.googleapis.com/${latest_chromedriver_version}/chromedriver_linux64.zip"
 sudo unzip chromedriver_linux64.zip -d /usr/local/bin
-sudo chmod 755 $_/chromedriver
+sudo chmod 755 /usr/local/bin/chromedriver
 rm chromedriver_linux64.zip
 
 # TODO: install Charles proxy
