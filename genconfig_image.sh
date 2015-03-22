@@ -307,6 +307,19 @@ sudo ./clion.sh
 
 sudo emerge thunderbird-bin
 
+# TODO: investigate
+sudo euse --enable truetype corefonts
+sudo emerge -uDNa @world
+sudo emerge app-admin/eselect-fontconfig \
+       media-fonts/corefonts \
+       media-fonts/dejavu \
+       media-fonts/font-bh-ttf \
+       media-fonts/freefonts \
+       media-fonts/ttf-bitstream-vera \
+       media-fonts/unifont \
+       media-fonts/artwiz-aleczapka-en
+sudo eselect fontconfig list
+
 sudo emerge x11-base/xorg-x11
 sudo emerge xmonad xmonad-contrib xmobar dmenu --autounmask-write
 sudo dispatch-conf u
