@@ -112,7 +112,7 @@ mvn -v
 
 # http://tecadmin.net/install-tomcat-8-on-centos-rhel-and-ubuntu/
 sudo apt-get install -y eclipse tomcat7
-sudo usermod -G tomcat7 $(whoami)
+sudo usermod -G tomcat7 "$(whoami)"
 /usr/share/tomcat7/bin/shutdown.sh
 sudo update-rc.d tomcat7 disable # disable system startup links for /etc/init.d/tomcat7
 
@@ -139,7 +139,7 @@ cd ~
 source ~/.rvm/scripts/rvm
 # In case of any issues read output of 'rvm requirements' and/or 'rvm notes'
 
-bundle config --global jobs $(nproc --ignore=1)
+bundle config --global jobs "$(nproc --ignore=1)"
 # Nokogiri builds and uses a packaged version of libxslt. Use the system library instead
 bundle config build.nokogiri --use-system-libraries
 

@@ -90,7 +90,7 @@ mvn -v
 source ~/.rvm/scripts/rvm
 gem install bundler # still unknown command
 
-bundle config --global jobs $(nproc --ignore=1)
+bundle config --global jobs "$(nproc --ignore=1)"
 # Nokogiri builds and uses a packaged version of libxslt. Use the system library instead
 bundle config build.nokogiri --use-system-libraries
 
