@@ -29,8 +29,6 @@ fancy_echo "Installing dos2unix ..."
 fancy_echo "Installing MySQL ..."
   brew_install_or_upgrade 'mysql'
 
-# TODO: install Sphinx
-
 # http://stackoverflow.com/questions/9134423/os-x-lion-attempting-nokogiri-install-libxml2-is-missing
 # http://www.nokogiri.org/tutorials/installing_nokogiri.html
 fancy_echo "Installing libxml and libxslt ..."
@@ -101,12 +99,6 @@ fi
 fancy_echo "Installing maven ..."
   brew_install_or_upgrade 'maven'
 
-# TODO: install Eclipse
-
-# TODO: install Tomcat
-
-# TODO: install JBoss AS
-
 fancy_echo "Installing elasticsearch ..."
   brew_install_or_upgrade 'elasticsearch'
 
@@ -138,17 +130,11 @@ fancy_echo "Installing R ..."
 fancy_echo "Installing RStudio ..."
   brew_cask_install_or_skip 'rstudio'
 
-# TODO: install Go
-
 fancy_echo "Installing ghc ..."
   brew_install_or_upgrade 'ghc'
   brew_install_or_upgrade 'cabal-install'
 
 # TODO: install MongoDB
-
-# TODO: install memcached
-
-# TODO: install nginx
 
 fancy_echo "Installing Firefox ..."
   brew_cask_install_or_skip 'firefox'
@@ -162,8 +148,6 @@ fancy_echo "Installing ngrok, a reverse proxy ..."
 fancy_echo "Installing Dropbox client ..."
   brew_cask_install_or_skip 'dropbox'
 
-# TODO: install Matlab
-
 if ! command -v rustc >/dev/null; then
   fancy_echo "Installing Rust (nightly build) ..."
     curl -s https://static.rust-lang.org/rustup.sh | sudo sh
@@ -172,16 +156,8 @@ else
   echo "Rust already installed. Skipping ..."
 fi
 
-# TODO: install Tk
-
-# TODO: install LaTeX
-
-# TODO: install Virtualbox
-
 fancy_echo "Installing screenfetch ..."
   brew_install_or_upgrade 'screenfetch'
-
-# TODO: install Clion IDE
 
 fancy_echo "Installing skype ..."
   brew_cask_install_or_skip 'skype'
@@ -195,8 +171,6 @@ fancy_echo "Installing Valgrind ..."
 
 fancy_echo "Installing gitx ..."
   brew_cask_install_or_skip 'gitx'
-
-# TODO: install Navicat
 
 fancy_echo "Installing nasm ..."
   brew_install_or_upgrade 'nasm'
