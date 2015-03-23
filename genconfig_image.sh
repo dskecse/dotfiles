@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Note: you will be prompted to enter the password several times through the script
 # run with . genconfig_image.sh

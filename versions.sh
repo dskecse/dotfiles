@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 latest_ruby_version=2.2.1
 latest_rails_version=4.2.0
