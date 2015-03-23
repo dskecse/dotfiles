@@ -5,26 +5,14 @@ if [[ ! -d "$HOME/.oh-my-zsh/" ]]; then
     curl -L http://install.ohmyz.sh | sh
 fi
 
-fancy_echo "Installing graphviz ..."
-  brew_install_or_upgrade 'graphviz'
-
-fancy_echo "Installing tree ..."
-  brew_install_or_upgrade 'tree'
-
-fancy_echo "Installing ipcalc ..."
-  brew_install_or_upgrade 'ipcalc'
-
-fancy_echo "Installing mc ..."
-  brew_install_or_upgrade 'mc'
-
-fancy_echo "Installing nmap ..."
-  brew_install_or_upgrade 'nmap'
-
-fancy_echo "Installing tig, an ncurses-based text-mode interface for git ..."
-  brew_install_or_upgrade 'tig --with-docs'
-
-fancy_echo "Installing dos2unix ..."
-  brew_install_or_upgrade 'dos2unix'
+brew_install_or_upgrade 'graphviz'
+brew_install_or_upgrade 'tree'
+brew_install_or_upgrade 'ipcalc'
+brew_install_or_upgrade 'mc'
+brew_install_or_upgrade 'nmap'
+brew_install_or_upgrade 'tig --with-docs'
+brew_install_or_upgrade 'dos2unix'
+brew_install_or_upgrade 'screenfetch'
 
 fancy_echo "Installing MySQL ..."
   brew_install_or_upgrade 'mysql'
@@ -44,7 +32,7 @@ fancy_echo "Installing PhantomJS, a scriptable headless webkit ..."
   brew_install_or_upgrade 'phantomjs'
 
 fancy_echo "Installing jsl, a JavaScript linter ..."
-  brew tap homebrew/binary
+  brew_tap 'homebrew/binary'
   brew_install_or_upgrade 'jsl'
 
 fancy_echo "Installing Erlang OTP ..."
@@ -156,15 +144,12 @@ else
   echo "Rust already installed. Skipping ..."
 fi
 
-fancy_echo "Installing screenfetch ..."
-  brew_install_or_upgrade 'screenfetch'
-
 fancy_echo "Installing skype ..."
   brew_cask_install_or_skip 'skype'
 
 fancy_echo "Installing pow ..."
   brew_install_or_upgrade 'pow'
-  # TODO: install powder if necessary
+  gem_install_or_update 'powder'
 
 fancy_echo "Installing Valgrind ..."
   brew_install_or_upgrade "valgrind"
