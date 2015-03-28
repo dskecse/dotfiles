@@ -159,3 +159,6 @@ fancy_echo "Installing gitx ..."
 
 fancy_echo "Installing nasm ..."
   brew_install_or_upgrade 'nasm'
+
+fancy_echo "Installing gpg2 ..."
+  brew_install_or_upgrade 'gpg2'
