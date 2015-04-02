@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+pgrep -fl "$1" | head -1 | awk -F ' ' '{ print $1 }' | xargs kill -9
