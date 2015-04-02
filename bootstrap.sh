@@ -14,6 +14,7 @@ rc_files=(
   zsh/zshrc
 )
 
+ln -fs "$HOME/.dotfiles/bin" "$HOME/bin"
 cp ~/.dotfiles/git/github_token.example ~/.dotfiles/git/github_token
 
 # shellcheck disable=SC2128
