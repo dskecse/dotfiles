@@ -57,6 +57,9 @@ if [[ $OSTYPE == darwin* ]]; then
   # recommended by brew doctor
   export PATH="/usr/local/bin:$PATH"
 
+  # recommended by rabbitmq to enable command autocompletion
+  export PATH="$PATH:/usr/local/sbin"
+
   export PATH="$PATH:/usr/local/lib/node_modules"
   source "$(brew --prefix nvm)/nvm.sh"
 
