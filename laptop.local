@@ -167,3 +167,6 @@ fancy_echo "Installing gpg ..."
 
 fancy_echo "Installing RabbitMQ ..."
   brew_install_or_upgrade 'rabbitmq'
+
+fancy_echo "Installing memcached ..."
+  brew_install_or_upgrade 'memcached'
