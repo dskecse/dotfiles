@@ -170,3 +170,10 @@ fancy_echo "Installing RabbitMQ ..."
 
 fancy_echo "Installing memcached ..."
   brew_install_or_upgrade 'memcached'
+
+fancy_echo "Installing awscli ..."
+  brew_install_or_upgrade 'awscli'
+
+  if [[ ! -d "$HOME/.aws" ]]; then
+    aws configure
+  fi
