@@ -177,3 +177,6 @@ fancy_echo "Installing awscli ..."
   if [[ ! -d "$HOME/.aws" ]]; then
     aws configure
   fi
+
+fancy_echo "Installing jq ..."
+  brew_install_or_upgrade 'jq'
