@@ -161,7 +161,6 @@ alias abc='cd ~/code/ruby/gitlab.activeby.net/activebilling/core'
 alias f='git ls-files | grep'
 alias 'rds!'='rake db:setup'
 
-# TODO: Move OS type specific aliases to their respective files.
 if [[ $OSTYPE = darwin* ]]; then
-  alias updatedb='/usr/libexec/locate.updatedb'
+  source "$HOME/.dotfiles/zsh/mac.aliases"
 fi
