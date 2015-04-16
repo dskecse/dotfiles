@@ -52,48 +52,9 @@ source "$ZSH/oh-my-zsh.sh"
 # User configuration
 
 if [[ $OSTYPE == darwin* ]]; then
-  export PATH="$HOME/.bin:$HOME/bin:$PATH"
-
-  # recommended by brew doctor
-  export PATH="/usr/local/bin:$PATH"
-
-  # recommended by rabbitmq to enable command autocompletion
-  export PATH="$PATH:/usr/local/sbin"
-
-  export PATH="$PATH:/usr/local/lib/node_modules"
-  source "$(brew --prefix nvm)/nvm.sh"
-
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init - --no-rehash zsh)"
-fi
-
-if [[ $OSTYPE == linux* ]]; then
-  PATH=$PATH:$HOME/.dotfiles/bin
-
-  # Add RVM to PATH for scripting
-  PATH=$PATH:$HOME/.rvm/bin
-
-  PATH=$PATH:/usr/local/heroku/bin
-
-  # Go workspace location
-  export GOPATH=$HOME/gocode
-  PATH=$PATH:$GOPATH/bin
-  PATH=$PATH:/usr/local/go/bin
-
-  export PYTHONPATH=/usr/local/lib/python2.7/dist-packages/
-
-  export M2_HOME=/usr/local/apache-maven/apache-maven-3.1.1
-  export M2=$M2_HOME/bin
-  # Add the MAVEN_OPTS environment variable to specify JVM properties, e.g.
-  # export MAVEN_OPTS="-Xms256m -Xmx512m".
-  # This environment variable can be used to supply extra options to Maven.
-  PATH=$PATH:$M2
-
-  PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-linux
-  PATH=$PATH:/opt/ActiveTcl-8.5/bin
-  export PATH=$PATH:$HOME/elixir-0.15.1/bin
-
-  export CATALINA_HOME=/opt/apache-tomcat-8.0.9
+  source "$HOME/.dotfiles/zsh/mac.exports"
+elif [[ $OSTYPE == linux* ]]; then
+  source "$HOME/.dotfiles/zsh/linux.exports"
 fi
 
 export RI="--format ansi"
@@ -101,34 +62,6 @@ export DISABLE_SPRING=true
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-if [[ $OSTYPE == linux* ]]; then
-  distro=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
-
-  if [[ $distro == "Ubuntu" ]]; then
-    # If not running interactively, do not do anything
-    case $- in *i*)
-      [[ -z "$TMUX" ]] && exec tmux -2
-    esac
-  fi
-
-  # https://github.com/sstephenson/rbenv/issues/616
-  if [[ $distro == "Gentoo" ]]; then
-    unset RUBYOPT
-  fi
-fi
-
-if [[ $OSTYPE == darwin* ]]; then
-  if which jenv > /dev/null; then
-    # Enable shims and autocompletion
-    eval "$(jenv init -)"
-
-    # Use Homebrew's directories rather than ~/.jenv
-    # export JENV_ROOT=/usr/local/opt/jenv
-  fi
-
-  source ~/.github_token
-fi
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
