@@ -122,7 +122,8 @@ fancy_echo "Installing ghc ..."
   brew_install_or_upgrade 'ghc'
   brew_install_or_upgrade 'cabal-install'
 
-# TODO: install MongoDB
+fancy_echo "Installing MongoDB ..."
+  brew_install_or_upgrade 'mongodb'
 
 fancy_echo "Installing Firefox ..."
   brew_cask_install_or_skip 'firefox'
