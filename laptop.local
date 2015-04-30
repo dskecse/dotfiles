@@ -29,7 +29,8 @@ fancy_echo "Installing libxml and libxslt ..."
   xcode-select --install
 
 fancy_echo "Installing PhantomJS, a scriptable headless webkit ..."
-  brew_install_or_upgrade 'phantomjs'
+  brew_tap 'homebrew/versions'
+  brew_install_or_upgrade 'phantomjs182'
 
 fancy_echo "Installing jsl, a JavaScript linter ..."
   brew_tap 'homebrew/binary'
