@@ -113,7 +113,7 @@ sudo pip install lxml
 
 # http://cran.rstudio.com/
 fancy_echo "Installing R ..."
-  brew_cask_install_or_skip 'R'
+  brew_cask_install_or_skip 'r'
 
 # http://www.rstudio.com/ide/download/desktop
 fancy_echo "Installing RStudio ..."
