@@ -113,7 +113,11 @@ sudo pip install lxml
 
 # http://cran.rstudio.com/
 fancy_echo "Installing R ..."
-  brew_cask_install_or_skip 'r'
+  # http://stackoverflow.com/questions/14009606/homebrew-r-build-missing-cairo
+  brew_cask_install_or_skip 'xquartz'
+
+  brew_tap 'homebrew/science'
+  brew_install_or_upgrade 'R --build-from-source'
 
 # http://www.rstudio.com/ide/download/desktop
 fancy_echo "Installing RStudio ..."
