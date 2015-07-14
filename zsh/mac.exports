@@ -10,7 +10,7 @@ export PATH="$PATH:/usr/local/lib/node_modules"
 source "$(brew --prefix nvm)/nvm.sh"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - --no-rehash zsh)"
+eval "$(rbenv init - zsh)"
 
 if which jenv > /dev/null; then
   # Enable shims and autocompletion
