@@ -4,8 +4,10 @@ sudo: false
 
 addons:
   apt:
+    sources:
+      - debian-sid
     packages:
-    - shellcheck
+      - shellcheck
 
 script:
   - shellcheck bootstrap.sh config_image.sh genconfig_image.sh laptop.local bin/*
