@@ -177,6 +177,11 @@ fancy_echo "Installing gpg ..."
   # http://support.gpgtools.org/discussions/problems/42548-passphrase-window-not-shown
   brew_install_or_upgrade 'pinentry-mac'
 
+  # To only ever launch one instance of gpg agent and share the agents across
+  # every shell
+  # http://nullprogram.com/blog/2012/06/08/
+  brew_install_or_upgrade 'keychain'
+
 fancy_echo "Installing RabbitMQ ..."
   brew_install_or_upgrade 'rabbitmq'
 

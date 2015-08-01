@@ -20,4 +20,6 @@ if which jenv > /dev/null; then
   # export JENV_ROOT=/usr/local/opt/jenv
 fi
 
+eval "$(keychain --eval --agents gpg --quiet)"
+
 source ~/.github_token
