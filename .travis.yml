@@ -1,13 +1,9 @@
 language: sh
 
-sudo: false
-
-addons:
-  apt:
-    sources:
-      - debian-sid
-    packages:
-      - shellcheck
+before_script:
+  - sudo add-apt-repository -y "deb http://mirrors.kernel.org/ubuntu utopic main universe"
+  - sudo apt-get -y update
+  - sudo apt-get -y install shellcheck
 
 script:
   - shellcheck bootstrap.sh config_image.sh genconfig_image.sh laptop.local bin/*
