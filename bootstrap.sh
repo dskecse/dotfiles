@@ -17,6 +17,12 @@ rc_files=(
 ln -fs "$HOME/.dotfiles/bin" "$HOME/bin"
 cp ~/.dotfiles/git/github_token.example ~/.dotfiles/git/github_token
 
+if ! grep -q use-agent "$HOME/.gnupg/gpg.conf"; then
+  echo use-agent >> "$HOME/.gnupg/gpg.conf"
+fi
+
+ln -fs "$HOME/.dotfiles/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
+
 # shellcheck disable=SC2128
 for file in $rc_files; do
   # use greedy deletion from the beginning of a string
