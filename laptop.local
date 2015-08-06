@@ -202,7 +202,3 @@ fancy_echo "Installing Nginx w/ support for Phusion Passenger module ..."
   brew_install_or_upgrade 'pcre --universal'
   brew_install_or_upgrade 'passenger'
   brew_install_or_upgrade 'nginx --with-passenger'
-
-fancy_echo "Installing Vagrant ..."
-  # TODO: install VirtualBox prior to installing Vagrant
-  brew_cask_install_or_skip 'vagrant'
