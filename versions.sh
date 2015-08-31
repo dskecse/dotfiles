@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-latest_ruby_version=2.2.1
-latest_rails_version=4.2.0
+latest_ruby_version=2.2.3
+latest_rails_version=4.2.4
 
 latest_vim_version=7.4.475
 
