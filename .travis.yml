@@ -6,11 +6,11 @@ before_script:
   - sudo apt-get -y install shellcheck
 
 script:
-  - shellcheck bootstrap.sh config_image.sh genconfig_image.sh laptop.local bin/*
+  - shellcheck bootstrap.sh config_image.sh genconfig_image.sh bin/*
 
 notifications:
   email: false
 
 branches:
   only:
-    - master
+    - linux

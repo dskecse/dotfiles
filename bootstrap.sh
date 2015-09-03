@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 rc_files=(
-  bowerrc
   gemrc
-  git/github_token
   git/gitignore_global
   git/gitconfig
   iex.exs
@@ -15,9 +13,6 @@ rc_files=(
 )
 
 ln -fs "$HOME/.dotfiles/bin" "$HOME/bin"
-cp ~/.dotfiles/git/github_token.example ~/.dotfiles/git/github_token
-
-ln -fs "$HOME/.dotfiles/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
 
 # shellcheck disable=SC2128
 for file in $rc_files; do
@@ -25,10 +20,8 @@ for file in $rc_files; do
   ln -s "$HOME/.dotfiles/$file" "$HOME/.${file##*/}"
 done
 
-if [[ $OSTYPE == linux* ]]; then
-  if [[ ! -d "$HOME/.xmonad" ]]; then
-    ln -s "$HOME/.dotfiles/xmonad" "$HOME/.xmonad"
-  fi
+if [[ ! -d "$HOME/.xmonad" ]]; then
+  ln -s "$HOME/.dotfiles/xmonad" "$HOME/.xmonad"
 fi
 
 exec /bin/zsh

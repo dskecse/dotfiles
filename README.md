@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/dskecse/dotfiles.svg?branch=master)](https://travis-ci.org/dskecse/dotfiles)
+[![Build Status](https://travis-ci.org/dskecse/dotfiles.svg?branch=linux)](https://travis-ci.org/dskecse/dotfiles)
 
 ## Setup
 
@@ -6,17 +6,13 @@
     cd $_
     ./bootstrap.sh
 
-## Mac OS X
+## Ubuntu
 
-Use [thoughtbot's laptop script](https://github.com/thoughtbot/laptop) to set up
-an OS X development environment:
+    ./config_image.sh
 
-    bash <(curl -s https://raw.githubusercontent.com/thoughtbot/laptop/master/mac) 2>&1 | tee ~/laptop.log
+## Gentoo
 
-Add a symlink to `laptop.local` before running the above mentioned script to
-install custom packages:
-
-    ln -s ~/.dotfiles/laptop.local ~/.laptop.local
+    ./genconfig_image.sh
 
 ## Inspiration
 
