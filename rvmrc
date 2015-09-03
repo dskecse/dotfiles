@@ -1,4 +1,0 @@
-# enable autoupdate
-export rvm_autoupdate_flag=2
-
-export rvm_pretty_print=1

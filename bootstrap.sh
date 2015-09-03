@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 rc_files=(
-  bowerrc
   gemrc
   git/github_token
   git/gitignore_global
@@ -9,8 +8,6 @@ rc_files=(
   iex.exs
   irbrc
   railsrc
-  rvmrc
-  tmux.conf
   zsh/zshrc
 )
 
@@ -24,11 +21,5 @@ for file in $rc_files; do
   # use greedy deletion from the beginning of a string
   ln -s "$HOME/.dotfiles/$file" "$HOME/.${file##*/}"
 done
-
-if [[ $OSTYPE == linux* ]]; then
-  if [[ ! -d "$HOME/.xmonad" ]]; then
-    ln -s "$HOME/.dotfiles/xmonad" "$HOME/.xmonad"
-  fi
-fi
 
 exec /bin/zsh
