@@ -1,0 +1,7 @@
+alias zip='zip -9'
+alias abc='cd ~/code/ruby/gitlab.activeby.net/activebilling/core'
+alias rse='cd ~/code/ruby/github.com/rightscale'
+alias f='git ls-files | grep'
+alias 'rds!'='rake db:setup'
+alias gdc='git diff --cached'
+alias updatedb='/usr/libexec/locate.updatedb'
