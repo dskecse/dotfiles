@@ -2,24 +2,25 @@
 
 rc_files=(
   gemrc
-  git/github_token
-  git/gitignore_global
-  git/gitconfig
+  github_token
+  gitignore_global
+  gitconfig
   iex.exs
   irbrc
   railsrc
-  zsh/zshrc
+  zshrc
 )
 
 ln -fs "$HOME/.dotfiles/bin" "$HOME/bin"
-cp ~/.dotfiles/git/github_token.example ~/.dotfiles/git/github_token
+
+[ ! -f "$HOME/.dotfiles/github_token" ] && cp ~/.dotfiles/github_token.example ~/.dotfiles/github_token
 
 ln -fs "$HOME/.dotfiles/gpg-agent.conf" "$HOME/.gnupg/gpg-agent.conf"
 
 # shellcheck disable=SC2128
 for file in $rc_files; do
-  # use greedy deletion from the beginning of a string
-  ln -s "$HOME/.dotfiles/$file" "$HOME/.${file##*/}"
+  # TODO: supress warnings in cases files exist
+  ln -s "$HOME/.dotfiles/$file" "$HOME/.$file"
 done
 
 exec /bin/zsh
