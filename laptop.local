@@ -200,11 +200,6 @@ fancy_echo "Installing awscli ..."
 fancy_echo "Installing jq ..."
   brew_install_or_upgrade 'jq'
 
-fancy_echo "Installing Nginx w/ support for Phusion Passenger module ..."
-  brew_install_or_upgrade 'pcre --universal'
-  brew_install_or_upgrade 'passenger'
-  brew_install_or_upgrade 'nginx --with-passenger'
-
 fancy_echo "Installing docker ..."
   brew_cask_install_or_skip 'boot2docker'
 
