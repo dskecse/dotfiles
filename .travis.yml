@@ -6,7 +6,7 @@ before_script:
   - sudo apt-get -y install shellcheck
 
 script:
-  - shellcheck bootstrap.sh laptop.local bin/*
+  - shellcheck bootstrap.sh aliases exports laptop.local bin/*
 
 notifications:
   email: false
