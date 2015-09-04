@@ -90,9 +90,6 @@ fi
 fancy_echo "Installing maven ..."
   brew_install_or_upgrade 'maven'
 
-fancy_echo "Installing elasticsearch ..."
-  brew_install_or_upgrade 'elasticsearch'
-
 fancy_echo "Installing macvim ..."
   brew_install_or_upgrade 'macvim --with-lua --with-luajit'
 
