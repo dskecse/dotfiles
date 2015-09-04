@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+brew_tap 'homebrew/bundle'
+
 if [[ ! -d "$HOME/.oh-my-zsh/" ]]; then
   fancy_echo "Installing oh-my-zsh ..."
     curl -L http://install.ohmyz.sh | sh
