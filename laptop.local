@@ -68,24 +68,9 @@ brew_cask_expand_alias() {
 fancy_echo "Installing iterm2 ..."
   brew_cask_install_or_skip 'iterm2'
 
+# http://hanxue-it.blogspot.com/2014/05/installing-java-8-managing-multiple.html
 fancy_echo "Installing Java ..."
   brew_cask_install_or_skip 'java'
-
-# http://hanxue-it.blogspot.com/2014/05/installing-java-8-managing-multiple.html
-if ! command -v jenv >/dev/null; then
-  fancy_echo "Installing jenv, a Java version management tool ..."
-    brew_install_or_upgrade 'jenv'
-    eval "$(jenv init -)"
-
-    # Get rid of hardcoded path
-    jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
-
-    # Look for all known binaries and create the necessary shims
-    jenv rehash
-    jenv global oracle64-1.8.0.25
-else
-  fancy_echo "jenv already installed. Skipping ..."
-fi
 
 fancy_echo "Installing maven ..."
   brew_install_or_upgrade 'maven'

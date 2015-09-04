@@ -15,14 +15,6 @@ source "$(brew --prefix nvm)/nvm.sh"
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init - zsh)"
 
-if which jenv > /dev/null; then
-  # Enable shims and autocompletion
-  eval "$(jenv init -)"
-
-  # Use Homebrew's directories rather than ~/.jenv
-  # export JENV_ROOT=/usr/local/opt/jenv
-fi
-
 eval "$(keychain --eval --agents gpg --quiet)"
 
 eval "$(boot2docker shellinit 2>/dev/null)"
