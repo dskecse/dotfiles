@@ -11,3 +11,5 @@
   ui = true
 [push]
   default = nothing
+[commit]
+  gpgsign = true
