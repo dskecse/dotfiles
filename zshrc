@@ -51,7 +51,7 @@ source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
-source "$HOME/.dotfiles/exports"
+source "$HOME/.exports"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -78,4 +78,4 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source "$HOME/.dotfiles/aliases"
+source "$HOME/.aliases"
