@@ -1,2 +1,1 @@
 EXCLUDES="README.md dskecse.zsh-theme kkk github_token.example gpg-agent.conf"
-DOTFILES_DIRS="$HOME/.dotfiles"
