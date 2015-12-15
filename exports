@@ -3,9 +3,6 @@ export DISABLE_SPRING=true
 
 export PATH="$HOME/.bin:$HOME/bin:$PATH"
 
-# recommended by brew doctor
-export PATH="/usr/local/bin:$PATH"
-
 # recommended by rabbitmq to enable command autocompletion
 export PATH="$PATH:/usr/local/sbin"
 
