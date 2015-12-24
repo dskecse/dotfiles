@@ -11,6 +11,4 @@ source "$(brew --prefix nvm)/nvm.sh"
 
 eval "$(keychain --eval --agents gpg --quiet)"
 
-eval "$(boot2docker shellinit 2>/dev/null)"
-
 source ~/.github_token
