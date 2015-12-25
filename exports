@@ -9,6 +9,8 @@ export PATH="$PATH:/usr/local/sbin"
 export PATH="$PATH:/usr/local/lib/node_modules"
 source "$(brew --prefix nvm)/nvm.sh"
 
+export RUBY_CONFIGURE_OPTS="--with-readline-dir=`brew --prefix readline`"
+
 eval "$(keychain --eval --agents gpg --quiet)"
 
 source ~/.github_token
