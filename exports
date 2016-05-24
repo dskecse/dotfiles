@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 export RI="--format ansi"
 export DISABLE_SPRING=true
 
@@ -7,10 +9,14 @@ export PATH="$HOME/.bin:$HOME/bin:$PATH"
 export PATH="$PATH:/usr/local/sbin"
 
 export PATH="$PATH:/usr/local/lib/node_modules"
+
+# shellcheck disable=SC1090
 source "$(brew --prefix nvm)/nvm.sh"
 
-export RUBY_CONFIGURE_OPTS="--with-readline-dir=`brew --prefix readline`"
+export RUBY_CONFIGURE_OPTS
+RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline)"
 
 eval "$(keychain --eval --agents gpg --quiet)"
 
+# shellcheck disable=SC1090
 source ~/.github_token
