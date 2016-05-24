@@ -1,8 +1,8 @@
 language: sh
 
-before_script:
-  - sudo apt-get -y update
-  - sudo apt-get -y install shellcheck
+before_install:
+  - sudo apt-get update -qq
+  - sudo apt-get install -y shellcheck
 
 script:
   - shellcheck aliases exports bin/*
