@@ -18,7 +18,7 @@ RUBY_CONFIGURE_OPTS="--with-readline-dir=$(brew --prefix readline)"
 
 eval "$(keychain --eval --agents gpg --quiet)"
 
-eval "$(docker-machine env)"
+eval "$(docker-machine env 2>/dev/null)"
 
 # shellcheck disable=SC1090
 source ~/.github_token
