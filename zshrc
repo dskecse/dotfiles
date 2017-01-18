@@ -51,7 +51,7 @@ source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
-source "$HOME/.exports"
+source "$HOME/.dotfiles/exports"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -74,4 +74,4 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source "$HOME/.aliases"
+source "$HOME/.dotfiles/aliases"
