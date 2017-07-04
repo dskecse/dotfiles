@@ -13,4 +13,4 @@
 
 ## Inspiration
 
-[Unofficial guide to dotfiles on Github](https://dotfiles.github.io/)
+https://github.com/lest/dotfiles
