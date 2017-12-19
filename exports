@@ -12,6 +12,10 @@ export PATH="$PATH:/usr/local/lib/node_modules"
 # shellcheck disable=SC2155
 export PATH="$PATH:$(yarn global bin)"
 
+# The sqlite formula is keg-only, which means it was not symlinked
+# into /usr/local, because macOS provides an older sqlite3.
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+
 if [[ ! -d "$HOME/.nvm" ]]; then
   mkdir ~/.nvm
 fi
