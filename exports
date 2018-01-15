@@ -4,6 +4,8 @@ export RI="--format ansi"
 
 export PATH="$HOME/.bin:$HOME/bin:$PATH"
 
+export PATH="/usr/local/sbin:$PATH"
+
 export PATH="$PATH:/usr/local/lib/node_modules"
 
 # shellcheck disable=SC2155
