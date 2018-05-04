@@ -51,6 +51,8 @@ source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
+eval "$(rbenv init -)"
+
 source "$HOME/.dotfiles/exports"
 
 # You may need to manually set your language environment
