@@ -45,13 +45,15 @@ ZSH_THEME="dskecse"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
+# FYI: `rbenv` plugin adds "$HOME/.rbenv/bin" to the PATH first
+# and then invokes `rbenv init`, which inserts shims dir at the front of the PATH:
+#   export PATH="$HOME/.rbenv/shims:${PATH}"
 plugins=(rbenv git bundler rails)
 
 source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
-
-eval "$(rbenv init -)"
 
 source "$HOME/.dotfiles/exports"
 

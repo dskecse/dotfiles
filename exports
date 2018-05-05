@@ -2,8 +2,6 @@
 
 export RI="--format ansi"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-
 export PATH="$HOME/.bin:$HOME/bin:$PATH"
 
 export PATH="/usr/local/sbin:$PATH"
