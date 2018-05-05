@@ -20,11 +20,13 @@ if [[ ! -d "$HOME/.nvm" ]]; then
 fi
 export NVM_DIR="$HOME/.nvm"
 
+# `brew --prefix nvm` is slow
 # shellcheck disable=SC1090
-source "$(brew --prefix nvm)/nvm.sh"
+source "/usr/local/opt/nvm/nvm.sh"
 
+# `brew --prefix formula` is slow
 export RUBY_CONFIGURE_OPTS
-RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl) --with-readline-dir=$(brew --prefix readline)"
+RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl --with-readline-dir=/usr/local/opt/readline"
 
 eval "$(keychain --eval --agents gpg --quiet)"
 
