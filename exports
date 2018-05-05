@@ -21,8 +21,9 @@ fi
 export NVM_DIR="$HOME/.nvm"
 
 # `brew --prefix nvm` is slow
-# shellcheck disable=SC1090
-source "/usr/local/opt/nvm/nvm.sh"
+# `nvm` is extremely slow at startup: https://github.com/creationix/nvm/issues/1277
+# shellcheck disable=SC1091
+source "/usr/local/opt/nvm/nvm.sh" --no-use
 
 # `brew --prefix formula` is slow
 export RUBY_CONFIGURE_OPTS
