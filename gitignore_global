@@ -2,5 +2,6 @@
 *.pyc
 .bundle/
 .DS_Store
+.vscode/
 tags
 node_modules/
