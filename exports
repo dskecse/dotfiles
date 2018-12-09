@@ -16,16 +16,6 @@ export PATH="$PATH:/usr/local/lib/node_modules"
 # into /usr/local, because macOS provides an older sqlite3.
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
-if [[ ! -d "$HOME/.nvm" ]]; then
-  mkdir ~/.nvm
-fi
-export NVM_DIR="$HOME/.nvm"
-
-# `brew --prefix nvm` is slow
-# `nvm` is extremely slow at startup: https://github.com/creationix/nvm/issues/1277
-# shellcheck disable=SC1091
-source "/usr/local/opt/nvm/nvm.sh" --no-use
-
 # `brew --prefix formula` is slow
 export RUBY_CONFIGURE_OPTS
 RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl --with-readline-dir=/usr/local/opt/readline"
