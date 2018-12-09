@@ -16,6 +16,8 @@ export PATH="$PATH:/usr/local/lib/node_modules"
 # into /usr/local, because macOS provides an older sqlite3.
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
+export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin:$PATH"
+
 # `brew --prefix formula` is slow
 export RUBY_CONFIGURE_OPTS
 RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl --with-readline-dir=/usr/local/opt/readline"
