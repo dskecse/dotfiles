@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 export RI="--format ansi"
+export HOMEBREW_NO_ANALYTICS=1
 
 export PATH="$HOME/.bin:$HOME/bin:$PATH"
 
