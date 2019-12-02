@@ -21,7 +21,7 @@ export PATH="$HOME/Qt5.5.0/5.5/clang_64/bin:$PATH"
 
 # `brew --prefix formula` is slow
 export RUBY_CONFIGURE_OPTS
-RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl --with-readline-dir=/usr/local/opt/readline"
+RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl@1.1 --with-readline-dir=/usr/local/opt/readline"
 
 eval "$(keychain --eval --agents gpg --quiet)"
 
