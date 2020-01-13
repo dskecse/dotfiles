@@ -3,7 +3,7 @@
 export RI="--format ansi"
 export HOMEBREW_NO_ANALYTICS=1
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-export RUBYOPT="-W:no-experimental"
+# export RUBYOPT="-W:no-experimental"
 
 export PATH="$HOME/.bin:$HOME/bin:$PATH"
 
