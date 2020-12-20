@@ -78,4 +78,12 @@ export EDITOR='vim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# in general you must define aliases before functions
+# http://zsh.sourceforge.net/Intro/intro_4.html
 source "$HOME/.dotfiles/aliases"
+
+# TODO: Move fn definitions to a separate file and use the `autoload` builtin.
+# Kill a process by name
+function kl () {
+  pgrep -fl "$1" | head -1 | awk -F ' ' '{ print $1 }' | xargs kill -9
+}

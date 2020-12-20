@@ -5,8 +5,6 @@ export HOMEBREW_NO_ANALYTICS=1
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 # export RUBYOPT="-W:no-experimental"
 
-export PATH="$HOME/.bin:$HOME/bin:$PATH"
-
 export PATH="/usr/local/sbin:$PATH"
 
 export PATH="$PATH:/usr/local/lib/node_modules"
