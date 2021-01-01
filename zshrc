@@ -84,6 +84,6 @@ source "$HOME/.dotfiles/aliases"
 
 # TODO: Move fn definitions to a separate file and use the `autoload` builtin.
 # Kill a process by name
-function kl () {
+kl () {
   pgrep -fl "$1" | head -1 | awk -F ' ' '{ print $1 }' | xargs kill -9
 }
