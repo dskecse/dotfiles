@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/dskecse/dotfiles.svg?branch=master)](https://travis-ci.com/dskecse/dotfiles)
+[![build](https://github.com/dskecse/dotfiles/actions/workflows/main.yml/badge.svg)](https://github.com/dskecse/dotfiles/actions/workflows/main.yml)
 
 ## Setup
 
