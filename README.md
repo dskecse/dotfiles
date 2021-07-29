@@ -28,7 +28,7 @@ To find out what happens during that time run:
 
 ## TODO
 
-- [ ] Run benchmarks on Travis CI
+- [ ] Run benchmarks via Github Actions
 
 ## Inspiration
 
