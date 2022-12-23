@@ -1,2 +1,1 @@
-$KCODE = 'u' if RUBY_VERSION < '1.9.0'
 IRB.conf[:SAVE_HISTORY] = 1000
