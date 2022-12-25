@@ -55,7 +55,7 @@ source "$ZSH/oh-my-zsh.sh"
 source "$HOME/.dotfiles/exports"
 
 # Setting the default Ruby thru ~/.ruby-version
-chruby 3.1.3
+chruby 3.2.0
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
