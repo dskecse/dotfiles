@@ -5,5 +5,6 @@
 --skip-action-cable
 --skip-asset-pipeline
 --skip-hotwire
+--webpack
 -T
 --skip-bundle
