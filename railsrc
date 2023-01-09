@@ -3,7 +3,7 @@
 --skip-action-text
 --skip-active-storage
 --skip-action-cable
---skip-sprockets
+--skip-asset-pipeline
 --skip-turbolinks
 -T
 --skip-bundle
