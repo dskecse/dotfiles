@@ -32,6 +32,7 @@ unset DOCKER_MACHINE_NAME
 unset DOCKER_HOST
 
 export PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:$PATH"
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # shellcheck disable=SC1090
 source ~/.github_token
