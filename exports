@@ -17,7 +17,7 @@ export PATH="$PATH:/usr/local/lib/node_modules"
 # into /usr/local, because macOS provides an older sqlite3.
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
-export PATH="/usr/local/opt/erlang@24/bin:$PATH"
+export PATH="/usr/local/opt/erlang@25/bin:$PATH"
 
 # `brew --prefix formula` is slow
 export RUBY_CONFIGURE_OPTS
