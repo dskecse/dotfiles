@@ -7,3 +7,4 @@ tags
 node_modules/
 .venv
 venv/
+venv.bak/
