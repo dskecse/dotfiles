@@ -27,7 +27,8 @@ export PATH="/usr/local/opt/erlang@25/bin:$PATH"
 # `brew --prefix formula` is slow
 export RUBY_CONFIGURE_OPTS
 # openssl which is openssl@3 only for Ruby 3.1+
-RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl --with-readline-dir=/usr/local/opt/readline"
+# Ruby 3.3+ now uses Ruby-based reline instead of ext/readline
+RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl"
 
 eval "$(keychain --eval --agents gpg --quiet)"
 
