@@ -9,3 +9,4 @@ node_modules/
 venv/
 venv.bak/
 .env.playground
+.env.test
