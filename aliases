@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 alias zip='zip -9'
-alias abc='cd ~/code/ruby/gitlab.activeby.net/activebilling/core'
 alias f='git ls-files | grep'
 alias 'rds!'='rake db:setup'
 alias rg='rails generate'
@@ -11,3 +10,12 @@ alias ba='bundle add'
 alias bsl='brew services list'
 alias bs='brew services'
 alias bbdf='brew bundle dump --force'
+alias op='open http://localhost:3000/rails/mailers'
+
+alias abc='cd ~/code/ruby/github.com/activebilling/core'
+alias rv='cd ~/code/ruby/github.com/revvco/revv-v3'
+alias tm='cd ~/code/ruby/github.com/temedica/mineo-therapists-app'
+alias cm='cd ~/code/ruby/github.com/chattermill/'
+alias cme='cd ~/code/elixir/chattermill/toolkit/'
+alias dn='cd ~/code/ruby/github.com/distribusion/'
+alias cljk='cd ~/code/clojure/github.com/functional-koans/clojure-koans'
