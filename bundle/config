@@ -1,0 +1,5 @@
+---
+BUNDLE_JOBS: "3"
+BUNDLE_PATH: ".bundle"
+BUNDLE_WITHOUT: "production"
+BUNDLE_BUILD__MYSQL2: "--with-mysql-dir=/usr/local/opt/mysql --with-openssl-dir=/usr/local/opt/openssl"

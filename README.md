@@ -6,6 +6,7 @@
     cd $_
     [ ! -f github_token ] && cp github_token.example github_token
     ln -fs gpg-agent.conf ~/.gnupg/gpg-agent.conf
+    ln -fs bundle/config ~/.bundle/config
     brew tap thoughtbot/formulae
     brew install rcm
     env RCRC=$HOME/.dotfiles/rcrc rcup
