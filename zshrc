@@ -52,6 +52,14 @@ source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
+# Determine Homebrew prefix
+arch="$(uname -m)"
+if [ "$arch" = "arm64" ]; then
+  HOMEBREW_PREFIX="/opt/homebrew"
+else
+  HOMEBREW_PREFIX="/usr/local"
+fi
+
 source "$HOME/.dotfiles/exports"
 
 # Setting the default Ruby thru ~/.ruby-version

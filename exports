@@ -20,16 +20,16 @@ export PATH="$PATH:/usr/local/lib/node_modules"
 
 # The sqlite formula is keg-only, which means it was not symlinked
 # into /usr/local, because macOS provides an older sqlite3.
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/sqlite/bin:$PATH"
 
-export PATH="/usr/local/opt/erlang@25/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/erlang@25/bin:$PATH"
 
 # `brew --prefix formula` is slow
 export RUBY_CONFIGURE_OPTS
 # openssl which is openssl@3 only for Ruby 3.1+
 # Ruby 3.3+ now uses Ruby-based reline instead of ext/readline
 # jemalloc is useful to limit Ruby memory usage
-RUBY_CONFIGURE_OPTS="--with-openssl-dir=/usr/local/opt/openssl --with-jemalloc"
+RUBY_CONFIGURE_OPTS="--with-openssl-dir=$HOMEBREW_PREFIX/opt/openssl --with-jemalloc"
 
 eval "$(keychain --eval --agents gpg --quiet)"
 
@@ -38,7 +38,7 @@ unset DOCKER_CERT_PATH
 unset DOCKER_MACHINE_NAME
 unset DOCKER_HOST
 
-export PATH="/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin:$PATH"
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # shellcheck disable=SC1090
