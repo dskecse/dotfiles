@@ -29,7 +29,8 @@ export RUBY_CONFIGURE_OPTS
 # openssl which is openssl@3 only for Ruby 3.1+
 # Ruby 3.3+ now uses Ruby-based reline instead of ext/readline
 # jemalloc is useful to limit Ruby memory usage
-RUBY_CONFIGURE_OPTS="--with-openssl-dir=$HOMEBREW_PREFIX/opt/openssl --with-jemalloc"
+RUBY_CONFIGURE_OPTS="--with-openssl-dir=$HOMEBREW_PREFIX/opt/openssl"
+RUBY_CONFIGURE_OPTS="${RUBY_CONFIGURE_OPTS} --with-opt-dir=$HOMEBREW_PREFIX/opt/jemalloc --with-jemalloc"
 
 eval "$(keychain --eval --agents gpg --quiet)"
 
