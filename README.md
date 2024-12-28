@@ -28,7 +28,7 @@ To find out what happens during that time run:
 
 ## TODO
 
-- [ ] Add [Apple Silicon support](https://github.com/dskecse/laptop/commit/cde627d12c70e2fc0ab26f85ba86d8d716889232)
+- [x] Add [Apple Silicon support](https://github.com/dskecse/laptop/commit/cde627d12c70e2fc0ab26f85ba86d8d716889232)
 - [ ] Run benchmarks via Github Actions
 
 ## Inspiration
