@@ -53,6 +53,7 @@ source "$ZSH/oh-my-zsh.sh"
 # User configuration
 
 source "$HOME/.dotfiles/exports"
+source "$HOME/.github_token"
 
 # Setting the default Ruby thru ~/.ruby-version
 chruby "$(cat "$HOME/.ruby-version")"
