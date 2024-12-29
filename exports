@@ -10,6 +10,14 @@ export HOMEBREW_NO_ANALYTICS=1
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 # export RUBYOPT="-W:no-experimental"
 
+# Determine Homebrew prefix
+arch="$(uname -m)"
+if [ "$arch" = "arm64" ]; then
+  HOMEBREW_PREFIX="/opt/homebrew"
+else
+  HOMEBREW_PREFIX="/usr/local"
+fi
+
 export PATH="/usr/local/sbin:$PATH"
 
 export PATH="$PATH:/usr/local/lib/node_modules"
