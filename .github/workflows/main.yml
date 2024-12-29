@@ -16,5 +16,3 @@ jobs:
       - run: cp github_token.example github_token
       - run: ln -fs zshrc ~/.zshrc
       - run: hyperfine -N '/bin/zsh -il -c exit'
-      - run: repeat 3 { /usr/bin/time zsh -il -c exit }
-        shell: /bin/zsh {0}
