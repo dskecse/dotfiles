@@ -51,10 +51,20 @@ To find out what happens during that time, run:
 zsh -il -x
 ```
 
+Benchmarks are now run on Github Actions using [hyperfine](https://github.com/sharkdp/hyperfine).
+The following are [initial results](https://github.com/dskecse/dotfiles/actions/runs/12535587955/job/34957644878):
+
+    Benchmark 1: zsh -il -c exit
+
+      Time (mean ± σ):      19.1 ms ±   3.5 ms    [User: 5.1 ms, System: 13.7 ms]
+      Range (min … max):    18.2 ms …  46.0 ms    65 runs
+      Warning: The first benchmarking run for this command was significantly slower than the rest (46.0 ms). This could be caused by (filesystem) caches that were not filled until after the first run. You should consider using the '--warmup' option to fill those caches before the actual benchmark. Alternatively, use the '--prepare' option to clear the caches before each timing run.
+
 ## TODO
 
 - [x] Add [Apple Silicon support](https://github.com/dskecse/laptop/commit/cde627d12c70e2fc0ab26f85ba86d8d716889232)
-- [ ] Run benchmarks via Github Actions
+- [x] Run benchmarks via Github Actions
+- [ ] Compare benchmarks between runs to avoid performance regressions
 
 ## Inspiration
 
