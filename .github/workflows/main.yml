@@ -11,5 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: sudo apt-get update
-      - run: sudo apt-get install shellcheck
+      - run: sudo apt-get install shellcheck hyperfine
       - run: shellcheck aliases exports
+      - run: [ ! -f github_token ] && cp github_token.example github_token
+      - run: ln -fs gpg-agent.conf ~/.gnupg/gpg-agent.conf
+      - run: ln -fs zshrc ~/.zshrc
+      - run: hyperfine -N 'zsh -il -c exit'
+      - run: repeat 3 { /usr/bin/time zsh -il -c exit }
