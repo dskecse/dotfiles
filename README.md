@@ -13,19 +13,41 @@
 
 ## Benchmarking
 
-To figure out how fast a new tab opens in a terminal run:
+To figure out how fast a new tab opens in a terminal,
+first make sure to gather the shell arguments in a terminal tab currently open:
 
-    repeat 3 { /usr/bin/time zsh -i -c exit }
+```sh
+> echo "$-"
+569JNRXZghiklms
+```
 
-The last time it was run the stats were:
+In this case e.g. `i` indicates whether the shell is "interactive",
+and `l` whether the shell is a "login" one (see the output of `zsh --help` for more info).
 
-    1.04 real         0.64 user         0.36 sys
-    1.04 real         0.64 user         0.36 sys
-    1.03 real         0.63 user         0.36 sys
+NOTE: Another way to check whether the shell is interactive/non-interactive or login/non-login:
 
-To find out what happens during that time run:
+```sh
+[[ -o interactive ]] && echo "interactive" || echo "non-interactive"
+[[ -o login ]] && echo "login" || echo "non-Login"
+```
 
-    /bin/zsh -i -x
+Then run the following command with the options above or at least `il` (if they are present):
+
+```sh
+repeat 3 { /usr/bin/time zsh -il -c exit }
+```
+
+The last time it was run, the stats were:
+
+    0.56 real         0.27 user         0.26 sys
+    0.55 real         0.27 user         0.26 sys
+    0.54 real         0.26 user         0.26 sys
+
+To find out what happens during that time, run:
+
+```sh
+zsh -il -x
+```
 
 ## TODO
 
