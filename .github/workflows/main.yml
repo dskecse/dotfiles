@@ -17,4 +17,5 @@ jobs:
       - run: cp github_token.example github_token
       - run: ln -fs zshrc ~/.zshrc
       - run: hyperfine -N 'zsh -il -c exit'
+      - run: enable -r repeat
       - run: repeat 3 { /usr/bin/time zsh -il -c exit }
