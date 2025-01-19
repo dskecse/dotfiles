@@ -19,11 +19,11 @@ else
   HOMEBREW_PREFIX="/usr/local"
 fi
 
-export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
 
-export PATH="$PATH:/usr/local/lib/node_modules"
+export PATH="$PATH:$HOMEBREW_PREFIX/lib/node_modules"
 
-# This adds "/usr/local/bin" to PATH, which already happens to be there
+# This adds "$HOMEBREW_PREFIX/bin" to PATH, which already happens to be there
 # Command substitution w/ `yarn global bin` is slow
 # export PATH="$PATH:$(yarn global bin)"
 
