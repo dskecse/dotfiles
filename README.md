@@ -51,6 +51,17 @@ To find out what happens during that time, run:
 zsh -il -x
 ```
 
+This will output the zsh init process xtrace output to stderr.
+In order to redirect the output to a running log file instead, run:
+
+```sh
+exec 2>> trace.log
+set -x
+zsh -il -x
+```
+
+https://comp.unix.shell.narkive.com/B3NOS6f2/zsh-how-to-send-startup-scripts-xtrace-to-file
+
 Benchmarks are now run on Github Actions using [hyperfine](https://github.com/sharkdp/hyperfine).
 The following are [initial results](https://github.com/dskecse/dotfiles/actions/runs/12535587955/job/34957644878):
 
