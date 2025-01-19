@@ -1,6 +1,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# Use a customization directory other than
+# the built-in ~/.oh-my-zsh/custom one.
+# https://github.com/ohmyzsh/ohmyzsh/wiki/Customization#using-another-customization-directory
+ZSH_CUSTOM="$HOME/.dotfiles/zsh/custom"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
