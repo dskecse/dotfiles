@@ -23,9 +23,18 @@ export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
 
 export PATH="$PATH:$HOMEBREW_PREFIX/lib/node_modules"
 
-# This adds "$HOMEBREW_PREFIX/bin" to PATH, which already happens to be there
+# The following adds "$HOMEBREW_PREFIX/bin" to PATH, exported implicitly by the omz "yarn" plugin:
+#
+#   export PATH="$PATH:$(yarn global bin)"
+#
+# https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/yarn/yarn.plugin.zsh#L3
+# But somehow it stopped working on arm64.
+# "yarn" is itself in "$HOMEBREW_PREFIX/bin" and is failing w/ this error silently:
+#
+#   zsh: command not found: yarn
+#
 # Command substitution w/ `yarn global bin` is slow
-# export PATH="$PATH:$(yarn global bin)"
+export PATH="$HOMEBREW_PREFIX/bin:$PATH"
 
 # The sqlite formula is keg-only, which means it was not symlinked
 # into /usr/local, because macOS provides an older sqlite3.
