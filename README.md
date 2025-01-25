@@ -5,9 +5,11 @@
 ```sh
 git clone https://github.com/dskecse/dotfiles ~/.dotfiles
 cd $_
-[ ! -f github_token ] && cp github_token.example github_token
-ln -fs gpg-agent.conf ~/.gnupg/gpg-agent.conf
-ln -fs bundle/config ~/.bundle/config
+[[ ! -f github_token ]] && cp github_token.example github_token
+mkdir -p ~/.gnupg && ln -fs ~/.dotfiles/gpg-agent.conf ~/.gnupg/gpg-agent.conf
+mkdir -p ~/.bundle && ln -fs ~/.dotfiles/bundle/config ~/.bundle/config
+# Manully add "$HOMEBREW_PREFIX/bin" to PATH, so that "brew" command is available.
+export PATH="/opt/homebrew/bin:$PATH"
 brew tap thoughtbot/formulae
 brew install rcm
 env RCRC=$HOME/.dotfiles/rcrc rcup
