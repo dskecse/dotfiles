@@ -15,4 +15,4 @@ jobs:
       - run: shellcheck aliases exports
       - run: cp github_token.example github_token
       - run: ln -fs zshrc ~/.zshrc
-      - run: hyperfine -N --warmup 3 '/bin/zsh -il -c exit'
+      - run: hyperfine -N --warmup 10 '/bin/zsh -il -c exit'
