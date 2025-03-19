@@ -15,4 +15,4 @@ jobs:
       - run: shellcheck aliases exports
       - run: cp github_token.example github_token
       - run: ln -fs zshrc ~/.zshrc
-      - run: sudo -v && hyperfine --prepare 'sudo sync && echo 3 | sudo tee /proc/sys/vm/drop_caches' '/bin/zsh -il -c exit'
+      - run: sudo -v && hyperfine --prepare 'sync; echo 3 | sudo tee /proc/sys/vm/drop_caches' '/bin/zsh -il -c exit'
