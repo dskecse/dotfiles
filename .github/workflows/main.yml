@@ -15,5 +15,5 @@ jobs:
       - run: shellcheck aliases exports
       - run: cp github_token.example github_token
       - run: ln -fs zshrc ~/.zshrc
-      - run: ls -lah /proc/sys/vm 2>/dev/null || true
+      - run: echo 3 | sudo tee /proc/sys/vm/drop_caches
       - run: hyperfine -N --prepare 'sudo sync' '/bin/zsh -il -c exit'
