@@ -54,7 +54,7 @@ export RUBY_CONFIGURE_OPTS
 RUBY_CONFIGURE_OPTS="--with-openssl-dir=$HOMEBREW_PREFIX/opt/openssl"
 RUBY_CONFIGURE_OPTS="${RUBY_CONFIGURE_OPTS} --with-opt-dir=$HOMEBREW_PREFIX/opt/jemalloc --with-jemalloc"
 
-eval "$(keychain --eval --agents gpg --quiet)"
+eval "$(keychain --eval --ssh-allow-gpg --ssh-spawn-gpg --quiet)"
 
 unset DOCKER_TLS_VERIFY
 unset DOCKER_CERT_PATH
