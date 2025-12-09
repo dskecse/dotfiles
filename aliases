@@ -11,6 +11,7 @@ alias bsl='brew services list'
 alias bs='brew services'
 alias bbdf='brew bundle dump --force'
 alias op='open http://localhost:3000/rails/mailers'
+alias smr='samply record'
 
 alias abc='cd ~/code/ruby/github.com/activebilling/core'
 alias rv='cd ~/code/ruby/github.com/revvco/revv-v3'
