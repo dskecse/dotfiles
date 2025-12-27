@@ -15,6 +15,26 @@ brew install rcm
 env RCRC=$HOME/.dotfiles/rcrc rcup
 ```
 
+## What it does
+
+It uses the [`rcup`](https://github.com/thoughtbot/rcm?tab=readme-ov-file#programs)
+command from the Homebrew `thoughtbot/formulae` tap that installs and updates dotfiles.
+
+All files without a dot prefix in the current directory are then symlinked to the
+dotted filename in the home directory, so `./zshrc` is symlinked to `~/.zshrc`.
+
+All directories in the current one have their structure copied to the home directory,
+then a non-dotted symlink is created within, so `./bundle/config` would cause the `~/.bundle`
+directory to be created, then `config` would be symlinked within.
+
+Exclusions can be specified in the user configuration file denoted by `RCRC`, which defaults
+to `~/.rcrc`.
+
+To revert the changes, use the `rcdn` command, which is the opposite of `rcup`.
+
+To test the changes to the `.rcrc` file or simply dry-run the `rcup` command, use the `lsrc`
+command that shows all the dotfiles that would be created and where they would be symlinked to.
+
 ## Benchmarking
 
 To figure out how fast a new tab opens in a terminal,
