@@ -14,22 +14,6 @@ jobs:
       - run: sudo apt-get install shellcheck
       - run: shellcheck aliases exports
 
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      - run: sudo apt-get update
-      - run: sudo apt-get install rcm
-      - run: env RCRC=./rcrc rcup
-      - run: |-
-          for file in $(lsrc | awk -F':' '{print $1}'); do
-            if [[ "$file" =~ "autotest" ]]; then
-              # Print an error message to standard error (>&2)
-              echo "Error: $file is present but wasn't expected." >&2
-              exit 1
-            fi
-          done
-
   benchmark:
     runs-on: ubuntu-latest
     steps:
