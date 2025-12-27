@@ -14,6 +14,23 @@ jobs:
       - run: sudo apt-get install shellcheck
       - run: shellcheck aliases exports
 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: sudo apt-get update
+      - run: sudo apt-get install rcm
+      - run: env RCRC=./rcrc rcup
+      - run: |-
+          files=(.autotest .gemrc .gitattributes .gitconfig .github_token .gitignore_global .hushlogin .iex.exs .inputrc .irbrc .railsrc .rspec .ruby-version .zshrc)
+          for file in "${files[@]}"; do
+            if [[ ! -f "$HOME/$file" ]]; then
+              # Print an error message to standard error (>&2)
+              echo "Error: $HOME/$file is missing." >&2
+              exit 1
+            fi
+          done
+
   benchmark:
     runs-on: ubuntu-latest
     steps:
