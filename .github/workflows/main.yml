@@ -23,7 +23,7 @@ jobs:
       - run: env RCRC=./rcrc rcup
       - run: |-
           for file in $(lsrc | awk -F':' '{print $1}'); do
-            if [[ "$file" =~ "README.md" ]]; then
+            if [[ "$file" =~ "autotest" ]]; then
               # Print an error message to standard error (>&2)
               echo "Error: $file is present but wasn't expected." >&2
               exit 1
