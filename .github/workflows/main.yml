@@ -23,8 +23,7 @@ jobs:
       - run: echo "$(pwd)"
       - run: echo "$HOME"
       - run: env RCRC=./rcrc rcup
-      - run: ls -lah "$HOME/work"
-      - run: ls -lah "$HOME/actions-runner"
+      - run: ls -lah "$HOME/work/dotfiles"
       - run: |-
           files=(.autotest .gemrc .gitattributes .gitconfig .github_token .gitignore_global .hushlogin .iex.exs .inputrc .irbrc .railsrc .rspec .ruby-version .zshrc)
           for file in "${files[@]}"; do
