@@ -20,6 +20,7 @@ jobs:
       - uses: actions/checkout@v6
       - run: sudo apt-get update
       - run: sudo apt-get install rcm
+      - run: echo "$(pwd)"
       - run: env RCRC=./rcrc rcup
       - run: |-
           files=(.autotest .gemrc .gitattributes .gitconfig .github_token .gitignore_global .hushlogin .iex.exs .inputrc .irbrc .railsrc .rspec .ruby-version .zshrc)
