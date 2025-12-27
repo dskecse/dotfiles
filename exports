@@ -40,8 +40,6 @@ export PATH="$HOMEBREW_PREFIX/bin:$PATH"
 # into /usr/local, because macOS provides an older sqlite3.
 export PATH="$HOMEBREW_PREFIX/opt/sqlite/bin:$PATH"
 
-export PATH="$HOMEBREW_PREFIX/opt/erlang@25/bin:$PATH"
-
 # Add PG bin directory to PATH for properly locating executables like pg_config
 # Resolves `pg` gem installation error
 export PATH="$PATH:$HOMEBREW_PREFIX/opt/postgresql@18/bin"
