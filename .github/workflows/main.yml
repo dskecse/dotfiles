@@ -21,6 +21,7 @@ jobs:
       - run: sudo apt-get update
       - run: sudo apt-get install rcm
       - run: echo "$(pwd)"
+      - run: echo "$HOME"
       - run: env RCRC=./rcrc rcup
       - run: |-
           files=(.autotest .gemrc .gitattributes .gitconfig .github_token .gitignore_global .hushlogin .iex.exs .inputrc .irbrc .railsrc .rspec .ruby-version .zshrc)
