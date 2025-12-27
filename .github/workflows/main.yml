@@ -20,14 +20,12 @@ jobs:
       - uses: actions/checkout@v6
       - run: sudo apt-get update
       - run: sudo apt-get install rcm
-      - run: which lsrc
       - run: env RCRC=./rcrc rcup
       - run: |-
-          files=(.autotest .gemrc .gitattributes .gitconfig .github_token .gitignore_global .hushlogin .iex.exs .inputrc .irbrc .railsrc .rspec .ruby-version .zshrc)
-          for file in "${files[@]}"; do
-            if [[ ! -f "$HOME/$file" ]]; then
+          for file in $(lsrc | awk -F':' '{print $1}'); do
+            if [[ "$file" =~ "README.md" ]]; then
               # Print an error message to standard error (>&2)
-              echo "Error: $HOME/$file is missing." >&2
+              echo "Error: $file is present but wasn't expected." >&2
               exit 1
             fi
           done
