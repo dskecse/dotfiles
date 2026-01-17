@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 alias zip='zip -9'
 alias f='git ls-files | grep'
 alias 'rds!'='rake db:setup'

@@ -1,1 +1,1 @@
-EXCLUDES="README.md aliases exports dskecse.zsh-theme github_token.example gpg-agent.conf bundle/config"
+EXCLUDES="README.md aliases exports zsh/custom github_token.example gpg-agent.conf bundle/config"

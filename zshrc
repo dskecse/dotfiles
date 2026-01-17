@@ -101,7 +101,3 @@ export EDITOR='vim'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# in general you must define aliases before functions
-# http://zsh.sourceforge.net/Intro/intro_4.html
-source "$HOME/.dotfiles/aliases"
