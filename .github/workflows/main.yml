@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v6
       - run: sudo apt-get update
       - run: sudo apt-get install shellcheck
-      - run: shellcheck aliases exports
+      - run: shellcheck -s sh zsh/custom/aliases.zsh exports
 
   benchmark:
     runs-on: ubuntu-latest
