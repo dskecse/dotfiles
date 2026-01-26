@@ -1,0 +1,2 @@
+# See https://platform.openai.com/api-keys
+export OPENAI_API_KEY="sk-proj-xxx"
