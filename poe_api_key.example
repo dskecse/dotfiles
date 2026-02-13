@@ -1,0 +1,2 @@
+# See https://poe.com/api/keys
+export POE_API_KEY="xxx"

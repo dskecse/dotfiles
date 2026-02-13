@@ -7,6 +7,7 @@ git clone https://github.com/dskecse/dotfiles ~/.dotfiles
 cd $_
 [[ ! -f github_token ]] && cp github_token.example github_token
 [[ ! -f openai_api_key ]] && cp openai_api_key.example openai_api_key
+[[ ! -f poe_api_key ]] && cp poe_api_key.example poe_api_key
 mkdir -p ~/.gnupg && ln -fs ~/.dotfiles/gpg-agent.conf ~/.gnupg/gpg-agent.conf
 mkdir -p ~/.bundle && ln -fs ~/.dotfiles/bundle/config ~/.bundle/config
 # Manully add "$HOMEBREW_PREFIX/bin" to PATH, so that "brew" command is available.

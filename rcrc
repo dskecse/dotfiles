@@ -1,1 +1,1 @@
-EXCLUDES="README.md aliases exports zsh/custom github_token.example gpg-agent.conf bundle/config openai_api_key.example"
+EXCLUDES="README.md aliases exports zsh/custom github_token.example gpg-agent.conf bundle/config openai_api_key.example poe_api_key.example"

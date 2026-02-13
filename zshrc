@@ -75,6 +75,7 @@ source "$ZSH/oh-my-zsh.sh"
 source "$HOME/.dotfiles/exports"
 source "$HOME/.github_token"
 source "$HOME/.openai_api_key"
+source "$HOME/.poe_api_key"
 
 # Setting the default Ruby thru ~/.ruby-version
 chruby "$(cat "$HOME/.ruby-version")"
