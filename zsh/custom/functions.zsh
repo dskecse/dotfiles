@@ -21,7 +21,8 @@ rbrm() {
 rbup() {
   ruby-install --update
 
-  local latest_ruby_version=$(tail -1 "$HOME/.cache/ruby-install/ruby/stable.txt")
+  local latest_ruby_version
+  latest_ruby_version=$(tail -1 "$HOME/.cache/ruby-install/ruby/stable.txt")
   if chruby | grep -Fq "$latest_ruby_version"; then
     echo "Ruby $latest_ruby_version already installed, aborting..."
     return
