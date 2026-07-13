@@ -3,7 +3,7 @@
   email = "dskecse@gmail.com"
   signingkey = 4EE23CDEF4B8E76B
 [core]
-  editor = vim
+  editor = nvim
   autocrlf = input
   ignore = dirty
   excludesfile = ~/.gitignore_global
