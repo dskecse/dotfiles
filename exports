@@ -37,6 +37,9 @@ export PATH="$PATH:$HOMEBREW_PREFIX/lib/node_modules"
 # Command substitution w/ `yarn global bin` is slow
 export PATH="$HOMEBREW_PREFIX/bin:$PATH"
 
+# Override system-wide curl
+export PATH="$HOMEBREW_PREFIX/opt/curl/bin:$PATH"
+
 # The sqlite formula is keg-only, which means it was not symlinked
 # into /usr/local, because macOS provides an older sqlite3.
 export PATH="$HOMEBREW_PREFIX/opt/sqlite/bin:$PATH"
